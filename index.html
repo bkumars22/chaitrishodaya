@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaitrishodaya — Global AI Quality Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F1;
+    --bg-deep: #F1EADB;
+    --panel: #FFFFFF;
+    --panel-2: #FDFAF3;
+    --line: #E7DFCC;
+    --text: #1E2A3B;
+    --text-dim: #5B6472;
+    --text-faint: #94978F;
+    --gold: #A9790F;
+    --gold-dim: #F3E4B8;
+    --blue: #3D5A99;
+    --blue-dim: #E7EEF9;
+    --white-section: #FFFFFF;
+    --white-text: #1E2A3B;
+    --white-dim: #5B6472;
+    --serif: 'Fraunces', serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.65; }
+  ::selection { background: var(--gold-dim); color: var(--gold); }
+  img, svg { display: block; max-width: 100%; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Nav ---------- */
+  /* ---------- Premium texture ---------- */
+  .grain { position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.025; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > * { animation: staggerIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .reveal-stagger.visible > *:nth-child(1) { animation-delay: 0.05s; }
+  .reveal-stagger.visible > *:nth-child(2) { animation-delay: 0.13s; }
+  .reveal-stagger.visible > *:nth-child(3) { animation-delay: 0.21s; }
+  .reveal-stagger.visible > *:nth-child(4) { animation-delay: 0.29s; }
+  .reveal-stagger.visible > *:nth-child(5) { animation-delay: 0.37s; }
+  .reveal-stagger.visible > *:nth-child(6) { animation-delay: 0.45s; }
+  @keyframes staggerIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; } }
+
+  /* ---------- Nav scroll state ---------- */
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); transition: height 0.3s ease, background 0.3s ease; }
+  nav.scrolled { background: rgba(250,247,241,0.97); box-shadow: 0 1px 0 rgba(30,42,59,0.06); }
+  nav.scrolled .wrap { height: 62px; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand {
+    display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600;
+    font-size: 26px; letter-spacing: 0.3px; font-style: italic;
+    background: linear-gradient(100deg, #8A6A12 0%, #C9A227 35%, #E8C158 55%, #A9790F 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold);
+  }
+  .brand-mark { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .brand-mark svg { width: 100%; height: 100%; overflow: visible; }
+  .brand-mark-lg { width: 62px; height: 62px; margin-left: -2px; }
+  .nav .brand-mark-lg { width: 56px; height: 56px; }
+  .nav-links { display: flex; gap: 38px; font-size: 13.5px; align-items: center; }
+  .nav-links a { color: var(--text-dim); text-decoration: none; transition: color 0.15s; font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { border: 1px solid var(--gold); color: var(--gold) !important; padding: 10px 20px; border-radius: 2px; letter-spacing: 0.3px; }
+  .nav-cta:hover { background: var(--gold); color: #FFFFFF !important; }
+  @media (max-width: 860px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 90px 0 100px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(32px, 4.6vw, 50px); line-height: 1.15; font-weight: 500; letter-spacing: -0.5px; color: var(--text); }
+  .hero-tagline {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--text-faint); margin-top: 16px; font-weight: 500;
+  }
+  .hero-tagline::before { content: '— '; color: var(--gold); }
+  .hero h1 em {
+    font-style: italic; font-weight: 500; display: inline-block; position: relative;
+    font-size: 1.08em; padding-bottom: 6px;
+    background: linear-gradient(100deg, #8A6410 0%, #C9932E 30%, #F0C868 50%, #C9932E 70%, #8A6410 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold);
+    animation: shimmer 5s linear infinite;
+  }
+  .hero h1 em::after {
+    content: ''; position: absolute; left: 2px; right: 6%; bottom: 0; height: 3px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent 92%);
+  }
+  @keyframes shimmer { to { background-position: 200% center; } }
+  @media (prefers-reduced-motion: reduce) { .hero h1 em { animation: none; } }
+  .hero-sub { font-size: 16px; color: var(--text-dim); max-width: 520px; margin: 26px 0 38px; line-height: 1.8; font-weight: 400; }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { font-family: var(--body); font-size: 13.5px; font-weight: 600; padding: 15px 26px; border-radius: 2px; text-decoration: none; letter-spacing: 0.2px; transition: all 0.18s; display: inline-flex; align-items: center; gap: 9px; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--gold); color: #FFFFFF; }
+  .btn-primary:hover { background: #DBB53A; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(201,162,39,0.25); }
+  .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+  .btn-ghost:hover { border-color: var(--text-dim); transform: translateY(-1px); }
+
+  .hero-globe { position: relative; }
+  .earth-wrap { position: relative; padding: 30px; }
+  .earth-wrap::before {
+    content: ''; position: absolute; inset: 10px; border-radius: 50%;
+    background: radial-gradient(circle, transparent 62%, rgba(93,150,230,0.35) 68%, rgba(93,150,230,0.12) 78%, transparent 88%);
+    filter: blur(6px); pointer-events: none;
+  }
+  .earth-sphere {
+    width: 100%; aspect-ratio: 1; border-radius: 50%; position: relative; overflow: hidden;
+    box-shadow:
+      inset 22px -22px 55px rgba(0,0,0,0.5),
+      inset -8px 8px 34px rgba(255,255,255,0.25),
+      0 40px 80px -10px rgba(30,42,59,0.35),
+      0 0 0 1px rgba(93,150,230,0.15);
+  }
+  .earth-sphere .earth-texture {
+    position: absolute; top: 0; left: 0; height: 100%; width: 200%;
+    background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Solarsystemscope_texture_8k_earth_daymap.jpg');
+    background-repeat: repeat-x; background-size: 50% 100%;
+    animation: earthRotate 45s linear infinite;
+    filter: saturate(1.08) contrast(1.04);
+  }
+  .earth-sphere .earth-shade {
+    position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,0.55), transparent 38%),
+                radial-gradient(circle at 32% 30%, rgba(255,255,255,0.2), transparent 55%),
+                radial-gradient(circle at 70% 80%, rgba(6,10,16,0.65), transparent 58%),
+                radial-gradient(circle at 50% 50%, transparent 60%, rgba(93,150,230,0.18) 100%);
+  }
+  @keyframes earthRotate { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .earth-sphere .earth-texture { animation: none; } }
+
+  /* ---------- AI network nodes overlay on globe ---------- */
+  .earth-nodes { position: absolute; inset: 0; z-index: 5; pointer-events: none; }
+  .earth-node {
+    position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%; background: #E8A93D;
+    box-shadow: 0 0 8px 2px rgba(232,169,61,0.7);
+    animation: nodePulse 2.4s ease-out infinite;
+  }
+  .earth-node.n2 { animation-delay: 0.4s; }
+  .earth-node.n3 { animation-delay: 0.8s; }
+  .earth-node.n4 { animation-delay: 1.2s; }
+  .earth-node.n5 { animation-delay: 1.6s; }
+  .earth-node.n6 { animation-delay: 2.0s; }
+  @keyframes nodePulse {
+    0% { box-shadow: 0 0 0 0 rgba(232,169,61,0.55), 0 0 8px 2px rgba(232,169,61,0.7); }
+    70% { box-shadow: 0 0 0 16px rgba(232,169,61,0), 0 0 8px 2px rgba(232,169,61,0.7); }
+    100% { box-shadow: 0 0 0 0 rgba(232,169,61,0), 0 0 8px 2px rgba(232,169,61,0.7); }
+  }
+  .earth-links { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+  .earth-links path { stroke: #5B8DEF; stroke-width: 1.4; fill: none; opacity: 0.55; stroke-dasharray: 4 5; animation: dataFlow 3s linear infinite; }
+  @keyframes dataFlow { to { stroke-dashoffset: -18; } }
+  @media (prefers-reduced-motion: reduce) { .earth-node { animation: none; } .earth-links path { animation: none; } }
+
+  .trust-strip { display: flex; gap: 0; margin-top: 68px; border-top: 1px solid var(--line); }
+  .trust-item { flex: 1; padding: 26px 28px 0; border-right: 1px solid var(--line); }
+  .trust-item:last-child { border-right: none; }
+  .trust-num { font-family: var(--serif); font-size: 30px; color: var(--gold); font-weight: 500; }
+  .trust-label { font-size: 12.5px; color: var(--text-faint); margin-top: 6px; }
+  @media (max-width: 700px) { .trust-strip { flex-wrap: wrap; } .trust-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 20px; } }
+
+  /* ---------- Section shared ---------- */
+  section { padding: 90px 0; }
+  .section.on-dark { border-top: 1px solid var(--line); }
+  .section-head { margin-bottom: 50px; max-width: 640px; }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .section-title { font-family: var(--serif); font-size: clamp(26px, 3.2vw, 36px); font-weight: 500; color: var(--text); letter-spacing: -0.3px; line-height: 1.25; }
+  .section-desc { color: var(--text-dim); font-size: 15px; margin-top: 16px; line-height: 1.8; }
+
+  /* ---------- Light section variant ---------- */
+  .light-section { background: var(--white-section); color: var(--white-text); }
+  .light-section .section-title { color: var(--white-text); }
+  .light-section .section-desc { color: var(--white-dim); }
+  .light-section .section-eyebrow { color: #9A7A17; }
+
+  /* ---------- Services ---------- */
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid rgba(22,32,46,0.12); }
+  @media (max-width: 980px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-cell { padding: 36px 30px; border-right: 1px solid rgba(22,32,46,0.12); border-bottom: 1px solid rgba(22,32,46,0.12); display: flex; flex-direction: column; }
+  .service-cell:nth-child(4n) { border-right: none; }
+  .service-num { font-family: var(--mono); font-size: 11px; color: #9A7A17; margin-bottom: 20px; }
+  .service-name { font-family: var(--serif); font-size: 19px; color: var(--white-text); font-weight: 600; margin-bottom: 12px; }
+  .service-desc { font-size: 13px; color: var(--white-dim); line-height: 1.7; flex-grow: 1; margin-bottom: 18px; }
+  .service-includes { font-size: 12px; color: #6B7280; line-height: 2; }
+  .service-includes li { list-style: none; padding-left: 14px; position: relative; }
+  .service-includes li::before { content: '—'; position: absolute; left: 0; color: #C9A227; }
+
+  /* ---------- Process ---------- */
+  .process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 10px; }
+  @media (max-width: 800px) { .process-row { grid-template-columns: 1fr 1fr; } }
+  .process-num { font-family: var(--serif); font-size: 34px; color: var(--gold); font-weight: 400; margin-bottom: 14px; }
+  .process-name { font-family: var(--serif); font-size: 16px; color: var(--text); margin-bottom: 8px; font-weight: 600; }
+  .process-desc { font-size: 12.5px; color: var(--text-faint); line-height: 1.7; }
+
+  /* ---------- Quote ---------- */
+  .quote-block { padding: 6px 0 6px 30px; border-left: 2px solid var(--gold); margin: 10px 0; }
+  .quote-block p { font-family: var(--serif); font-size: 24px; color: var(--text); line-height: 1.5; font-weight: 400; font-style: italic; }
+  .quote-block cite { display: block; margin-top: 16px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); font-style: normal; letter-spacing: 0.5px; }
+
+  /* ---------- Global presence ---------- */
+  .presence-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; }
+  @media (max-width: 900px) { .presence-grid { grid-template-columns: 1fr; } }
+  .presence-list { display: flex; flex-direction: column; gap: 22px; margin-top: 30px; }
+  .presence-item { display: flex; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+  .presence-item .loc { color: var(--text); font-weight: 500; }
+  .presence-item .detail { color: var(--text-faint); font-family: var(--mono); font-size: 11.5px; }
+
+  /* ---------- Products ---------- */
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 980px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .products-grid { grid-template-columns: 1fr; } }
+  .product-card { background: var(--panel); padding: 30px 28px; display: flex; flex-direction: column; transition: background 0.3s ease, box-shadow 0.3s ease; }
+  .product-card:hover { background: var(--panel-2); box-shadow: inset 0 1px 0 rgba(201,162,39,0.3); }
+  .product-card:hover .product-name { color: var(--gold); }
+  .product-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+  .product-status { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-dim); padding: 4px 10px; }
+  .product-name { font-family: var(--serif); font-size: 21px; color: var(--text); font-weight: 600; margin-bottom: 4px; transition: color 0.25s ease; }
+  .product-tagline { font-family: var(--mono); font-size: 11px; color: var(--text-faint); margin-bottom: 16px; }
+  .product-desc { font-size: 13px; color: var(--text-dim); line-height: 1.75; flex-grow: 1; margin-bottom: 18px; }
+  .product-metric { font-family: var(--mono); font-size: 11.5px; color: var(--gold); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-bottom: 18px; }
+  .product-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .tag { font-family: var(--mono); font-size: 10px; color: var(--text-faint); }
+  .tag:not(:last-child)::after { content: '·'; margin-left: 8px; color: var(--line); }
+  .product-link { font-size: 12.5px; color: var(--text); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .product-link:hover { color: var(--gold); }
+
+  /* ---------- Contact ---------- */
+  .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; }
+  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info-item { padding-bottom: 24px; margin-bottom: 24px; border-bottom: 1px solid var(--line); }
+  .contact-info-label { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .contact-info-value { font-family: var(--serif); font-size: 18px; color: var(--text); }
+  .contact-info-value a { color: var(--text); text-decoration: none; }
+  .contact-info-value a:hover { color: var(--gold); }
+
+  .form-row { margin-bottom: 20px; }
+  .form-row label { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 9px; }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line); border-radius: 0; padding: 10px 2px;
+    color: var(--text); font-family: var(--body); font-size: 15px; outline: none; transition: border-color 0.15s;
+  }
+  .form-row select option { background: var(--panel); }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--gold); }
+  .form-row textarea { min-height: 90px; resize: vertical; }
+  .form-note { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); margin-top: 16px; line-height: 1.7; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 60px 0 36px; border-top: 1px solid var(--line); background: var(--bg-deep); }
+  .footer-row { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 36px; }
+  .footer-brand-title {
+    font-family: var(--serif); font-size: 24px; font-style: italic; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+    background: linear-gradient(100deg, #8A6A12 0%, #C9A227 35%, #E8C158 55%, #A9790F 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--gold);
+  }
+  .footer-sub { font-size: 12.5px; color: var(--text-dim); max-width: 320px; line-height: 1.7; }
+  .footer-cols { display: flex; gap: 60px; }
+  .footer-col-title { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13px; color: var(--text-dim); text-decoration: none; margin-bottom: 12px; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Chaitrishodaya<span class="brand-mark brand-mark-lg"><svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterH" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerH" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowH" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowH" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowH)"><path d="M28.0,30.8 Q17.8,21.4 4.2,24.4 Q14.4,33.8 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q21.3,18.6 7.5,17.1 Q14.2,29.3 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q25.6,17.1 13.0,11.3 Q15.4,24.9 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q30.1,17.1 20.1,7.5 Q17.9,21.2 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q34.4,18.5 28.0,6.2 Q21.6,18.5 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q38.1,21.2 35.9,7.5 Q25.9,17.1 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q40.6,24.9 43.0,11.3 Q30.4,17.1 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q41.8,29.3 48.5,17.1 Q34.7,18.6 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q41.6,33.8 51.8,24.4 Q38.2,21.4 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q25.1,21.6 15.6,19.5 Q18.5,28.7 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q27.7,21.1 19.2,16.5 Q19.5,26.2 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q30.4,21.4 23.4,14.6 Q21.1,24.0 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q32.8,22.4 28.0,14.0 Q23.2,22.4 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q34.9,24.0 32.6,14.6 Q25.6,21.4 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q36.5,26.2 36.8,16.5 Q28.3,21.1 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q37.5,28.7 40.4,19.5 Q30.9,21.6 28.0,30.8 Z" fill="url(#petalInnerH)"/><circle cx="28.0" cy="30.8" r="4.2" fill="url(#centerGlowH)"/></g></svg></span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact" class="nav-cta">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">Global AI Quality Systems</div>
+          <h1>Your ambition.<br><em>Our innovation.</em></h1>
+          <div class="hero-tagline">Engineered to endure</div>
+          <p class="hero-sub">
+            Chaitrishodaya designs and operates production-grade quality architecture for AI systems — evaluation,
+            monitoring, and testing infrastructure built on the pattern behind six systems already running
+            in production, for organizations building AI they can stand behind.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Get in touch →</a>
+            <a href="#products" class="btn btn-ghost">See our products</a>
+          </div>
+        </div>
+        <div class="hero-globe">
+<div class="earth-wrap"><div class="earth-sphere"><div class="earth-texture"></div><div class="earth-shade"></div><div class="earth-nodes">
+  <span class="earth-node n1" style="top:30%; left:38%;"></span>
+  <span class="earth-node n2" style="top:26%; left:58%;"></span>
+  <span class="earth-node n3" style="top:44%; left:70%;"></span>
+  <span class="earth-node n4" style="top:58%; left:32%;"></span>
+  <span class="earth-node n5" style="top:62%; left:56%;"></span>
+  <span class="earth-node n6" style="top:38%; left:22%;"></span>
+</div>
+<svg class="earth-links" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <path d="M38,30 Q48,20 58,26" vector-effect="non-scaling-stroke"/>
+  <path d="M58,26 Q65,35 70,44" vector-effect="non-scaling-stroke"/>
+  <path d="M22,38 Q30,48 32,58" vector-effect="non-scaling-stroke"/>
+  <path d="M32,58 Q44,60 56,62" vector-effect="non-scaling-stroke"/>
+</svg>
+</div></div>        </div>
+      </div>
+
+      <div class="trust-strip reveal-stagger reveal">
+        <div class="trust-item"><div class="trust-num">6</div><div class="trust-label">Production AI systems shipped</div></div>
+        <div class="trust-item"><div class="trust-num">84%</div><div class="trust-label">Average cost reduction via model routing</div></div>
+        <div class="trust-item"><div class="trust-num">5</div><div class="trust-label">AI-specific incident types monitored</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Services</div>
+        <h2 class="section-title">Four ways we close the gap between&nbsp;"it works" and&nbsp;"it's trustworthy"</h2>
+        <p class="section-desc">Each engagement maps to one layer of the gate architecture we use in our own products.</p>
+      </div>
+
+      <div class="services-grid reveal-stagger reveal">
+        <div class="service-cell">
+          <div class="service-num">01</div>
+          <div class="service-name">AI Quality Architecture</div>
+          <p class="service-desc">Design and audit the evaluation, gating, and monitoring layers your AI system is missing before it reaches production.</p>
+          <ul class="service-includes">
+            <li>Architecture audit</li>
+            <li>Gate design & rollout plan</li>
+            <li>Documentation handoff</li>
+          </ul>
+        </div>
+        <div class="service-cell">
+          <div class="service-num">02</div>
+          <div class="service-name">Production AI Monitoring</div>
+          <p class="service-desc">Live incident detection for hallucination, cost spikes, compliance drift, and prompt injection — modeled on our own AIMO system.</p>
+          <ul class="service-includes">
+            <li>Five-signal incident detection</li>
+            <li>Root-cause correlation</li>
+            <li>Alerting integration</li>
+          </ul>
+        </div>
+        <div class="service-cell">
+          <div class="service-num">03</div>
+          <div class="service-name">Automated QA for AI</div>
+          <p class="service-desc">Repo-aware test generation, coverage scoring, and defect detection pipelines — the same pattern behind QAIP.</p>
+          <ul class="service-includes">
+            <li>RAG-based test generation</li>
+            <li>CI/CD integration</li>
+            <li>Coverage gap reporting</li>
+          </ul>
+        </div>
+        <div class="service-cell">
+          <div class="service-num">04</div>
+          <div class="service-name">Adversarial Evaluation</div>
+          <p class="service-desc">Graduated-intensity red-teaming that reports the exact point your system's behavioral rules break, not just pass or fail.</p>
+          <ul class="service-includes">
+            <li>Golden dataset design</li>
+            <li>Robustness curve reporting</li>
+            <li>Fix verification loop</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">How We Work</div>
+        <h2 class="section-title">A disciplined four-step engagement, every time</h2>
+      </div>
+      <div class="process-row reveal-stagger reveal">
+        <div>
+          <div class="process-num">01</div>
+          <div class="process-name">Audit</div>
+          <div class="process-desc">We trace your current pipeline end to end and find where evaluation and monitoring are missing.</div>
+        </div>
+        <div>
+          <div class="process-num">02</div>
+          <div class="process-name">Design</div>
+          <div class="process-desc">We propose the specific gates your system needs — not a generic checklist, your actual failure modes.</div>
+        </div>
+        <div>
+          <div class="process-num">03</div>
+          <div class="process-name">Build</div>
+          <div class="process-desc">We implement and integrate directly into your existing CI/CD and monitoring stack.</div>
+        </div>
+        <div>
+          <div class="process-num">04</div>
+          <div class="process-name">Verify</div>
+          <div class="process-desc">We stress-test the new gates with real adversarial cases before calling it done.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="philosophy" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Philosophy</div>
+        <h2 class="section-title">Evaluation scores lie by default. Architecture is how you catch it.</h2>
+        <p class="section-desc">On one of our own systems, automated evaluation scored 94% while real-world compliance was 22.2%. Every service we offer exists because of that gap.</p>
+      </div>
+      <div class="quote-block reveal">
+        <p>"The most dangerous AI failure is not the one that crashes. It is the one that looks healthy while being wrong."</p>
+        <cite>WORKING PRINCIPLE BEHIND EVERY CHAITRISHODAYA ENGAGEMENT</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Products</div>
+        <h2 class="section-title">What we've built with this approach</h2>
+        <p class="section-desc">Six systems, running in production, each proving one piece of the gate architecture.</p>
+      </div>
+
+      <div class="products-grid reveal-stagger reveal">
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Live</div></div>
+          <div class="product-name">QAIP</div>
+          <div class="product-tagline">QA Intelligent Platform</div>
+          <p class="product-desc">Points at any GitHub repo, scores risk, and generates real Playwright tests — getting smarter every sprint via RAG memory.</p>
+          <div class="product-metric">₹50 → ₹8 per run · 84% cost reduction</div>
+          <div class="product-tags"><span class="tag">LangGraph</span><span class="tag">pgvector</span><span class="tag">DeepEval</span></div>
+          <a href="https://bkumars22.github.io/QA-Intelligent-Platform" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Live</div></div>
+          <div class="product-name">SCIP</div>
+          <div class="product-tagline">Supply Chain Intelligence Platform</div>
+          <p class="product-desc">Full supply chain platform — cost workflows, supplier risk scoring — proving one engineer can ship what used to need a team.</p>
+          <div class="product-metric">80+ endpoints · P0 bug caught pre-launch</div>
+          <div class="product-tags"><span class="tag">Spring Boot</span><span class="tag">React Native</span></div>
+          <a href="https://bkumars22.github.io/SupplyChainPlatformProject" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Live</div></div>
+          <div class="product-name">ARIA</div>
+          <div class="product-tagline">Socratic AI Tutor, 35 languages</div>
+          <p class="product-desc">Never gives direct answers — guides through questions. Closed a 22.2%-to-100% real-world compliance gap.</p>
+          <div class="product-metric">94% eval vs. 22.2% real — closed</div>
+          <div class="product-tags"><span class="tag">ChromaDB</span><span class="tag">Adversarial Eval</span></div>
+          <a href="https://bkumars22.github.io/ARIA" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Core</div></div>
+          <div class="product-name">AIMO</div>
+          <div class="product-tagline">AI Incident Monitoring</div>
+          <p class="product-desc">Watches every other system for five AI-specific failure modes — once caught a bug in itself, not just what it monitors.</p>
+          <div class="product-metric">5 incident types tracked in parallel</div>
+          <div class="product-tags"><span class="tag">asyncio</span><span class="tag">SHAP</span></div>
+          <a href="https://bkumars22.github.io/AIMO" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Core</div></div>
+          <div class="product-name">BCT</div>
+          <div class="product-tagline">Behavioral Contract Testing</div>
+          <p class="product-desc">Tests an AI system's rules under graduated adversarial pressure — reports exactly where it breaks.</p>
+          <div class="product-metric">pip install bct-framework</div>
+          <div class="product-tags"><span class="tag">Python</span><span class="tag">Adversarial Testing</span></div>
+          <a href="https://bkumars22.github.io/bct-framework/" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Core</div></div>
+          <div class="product-name">AIPQ</div>
+          <div class="product-tagline">Prompt Quality CI Gate</div>
+          <p class="product-desc">Versions every prompt like code. Blocks deployment automatically if quality drops below threshold.</p>
+          <div class="product-metric">v2 scored 0.60 → auto-reverted to v1's 0.93</div>
+          <div class="product-tags"><span class="tag">GitHub Actions</span><span class="tag">Golden Datasets</span></div>
+          <a href="https://bkumars22.github.io/AIPQ/" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-title">Tell us what your AI system is missing</h2>
+        <p class="section-desc">We typically reply within one business day.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value"><a href="mailto:swamy.kumar02@gmail.com">Send us a message directly ↗</a></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Based in</div>
+            <div class="contact-info-value">Bengaluru, India</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Elsewhere</div>
+            <div class="contact-info-value"><a href="#">GitHub</a> · <a href="#">LinkedIn</a></div>
+          </div>
+        </div>
+
+        <div>
+          <form id="contactForm">
+            <div class="form-row">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@company.com" required>
+            </div>
+            <div class="form-row">
+              <label for="cf-service">Interested in</label>
+              <select id="cf-service" name="service">
+                <option>AI Quality Architecture</option>
+                <option>Production AI Monitoring</option>
+                <option>Automated QA for AI</option>
+                <option>Adversarial Evaluation</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell us about your system…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="cfSubmitBtn">Send message →</button>
+            <div class="form-note">Opens your email client with this pre-filled — one click away from reaching us.</div>
+          </form>
+
+          <div id="cfSuccess" style="display:none; text-align:center; padding: 40px 20px;">
+            <div style="font-size:34px; margin-bottom:14px;">✓</div>
+            <div style="font-family: var(--serif); font-size: 20px; color: var(--text); margin-bottom: 8px;">Your query has been submitted</div>
+            <div style="font-size: 13.5px; color: var(--text-dim); max-width: 320px; margin: 0 auto 20px; line-height: 1.7;">
+              Thank you for reaching out. Your message has reached us, and we'll be in touch with you shortly.
+            </div>
+            <button class="btn btn-ghost" id="cfSendAnother">Send another message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <div class="footer-brand-title">Chaitrishodaya<span class="brand-mark brand-mark-lg"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowF" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowF" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowF)"><path d="M24.0,26.4 Q15.2,18.3 3.6,20.9 Q12.4,29.0 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q18.3,15.9 6.4,14.7 Q12.2,25.1 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q22.0,14.7 11.1,9.6 Q13.2,21.4 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q25.8,14.6 17.2,6.4 Q15.4,18.2 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q29.5,15.8 24.0,5.3 Q18.5,15.8 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q32.6,18.2 30.8,6.4 Q22.2,14.6 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q34.8,21.4 36.9,9.6 Q26.0,14.7 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.8,25.1 41.6,14.7 Q29.7,15.9 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.6,29.0 44.4,20.9 Q32.8,18.3 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q21.5,18.5 13.4,16.7 Q15.9,24.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q23.7,18.1 16.4,14.1 Q16.7,22.4 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q26.0,18.3 20.1,12.5 Q18.1,20.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q28.1,19.2 24.0,12.0 Q19.9,19.2 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q29.9,20.6 27.9,12.5 Q22.0,18.3 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q31.3,22.4 31.6,14.1 Q24.3,18.1 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q32.1,24.6 34.6,16.7 Q26.5,18.5 24.0,26.4 Z" fill="url(#petalInnerF)"/><circle cx="24.0" cy="26.4" r="3.6" fill="url(#centerGlowF)"/></g></svg></span></div>
+          <p class="footer-sub">Global AI quality systems studio. Founded by Kumara Swamy, AI Technical Architect.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <div class="footer-col-title">Site</div>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Elsewhere</div>
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="mailto:swamy.kumar02@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Chaitrishodaya</span>
+        <span>Built the same way our products are: one gate at a time.</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value;
+    const email = document.getElementById('cf-email').value;
+    const service = document.getElementById('cf-service').value;
+    const message = document.getElementById('cf-message').value;
+    const subject = encodeURIComponent('Inquiry: ' + service + ' — from ' + name);
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+    window.location.href = 'mailto:swamy.kumar02@gmail.com?subject=' + subject + '&body=' + body;
+
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('cfSuccess').style.display = 'block';
+  });
+
+  document.getElementById('cfSendAnother').addEventListener('click', function () {
+    document.getElementById('contactForm').reset();
+    document.getElementById('contactForm').style.display = 'block';
+    document.getElementById('cfSuccess').style.display = 'none';
+  });
+
+  // ---------- Scroll reveal ----------
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach((el) => revealObserver.observe(el));
+
+  // ---------- Animated stat counters ----------
+  function animateCount(el, target, suffix, duration) {
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.round(target * eased);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterEls = document.querySelectorAll('.trust-num');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        const match = raw.match(/^(\d+)(.*)$/);
+        if (match) {
+          const targetNum = parseInt(match[1], 10);
+          const suffix = match[2];
+          animateCount(el, targetNum, suffix, 1100);
+        }
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counterEls.forEach((el) => counterObserver.observe(el));
+
+  // ---------- Nav scroll state ----------
+  const navEl = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) navEl.classList.add('scrolled');
+    else navEl.classList.remove('scrolled');
+  }, { passive: true });
+</script>
+
+</body>
+</html>
