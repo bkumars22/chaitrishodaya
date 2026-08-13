@@ -191,6 +191,26 @@
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid rgba(22,32,46,0.12); }
   @media (max-width: 980px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+  @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+  .pricing-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 30px 26px;
+    display: flex; flex-direction: column;
+  }
+  .pricing-card.featured { border-color: var(--gold); box-shadow: 0 8px 24px rgba(169,121,15,0.12); position: relative; }
+  .pricing-card.featured::before {
+    content: 'MOST COMMON'; position: absolute; top: -11px; left: 26px; background: var(--gold); color: #FFFFFF;
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; padding: 3px 10px; border-radius: 20px;
+  }
+  .pricing-tier-name { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .pricing-price { font-family: var(--mono); font-size: 15px; color: var(--gold); font-weight: 600; margin-bottom: 16px; }
+  .pricing-desc { font-size: 14px; color: var(--text-dim); line-height: 1.7; flex-grow: 1; margin-bottom: 18px; }
+  .pricing-fit { font-size: 12.5px; color: var(--text-faint); padding-top: 16px; border-top: 1px solid var(--line); line-height: 1.6; }
+  .pricing-fit span { font-weight: 600; color: var(--text); }
+  .pricing-closing { text-align: center; font-size: 14px; color: var(--text-dim); margin-top: 36px; }
+  .pricing-closing a { color: var(--gold); font-weight: 600; text-decoration: none; }
+  .pricing-closing a:hover { text-decoration: underline; }
   .service-cell { padding: 36px 30px; border-right: 1px solid rgba(22,32,46,0.12); border-bottom: 1px solid rgba(22,32,46,0.12); display: flex; flex-direction: column; }
   .service-cell:nth-child(3n) { border-right: none; }
   .service-cell.span-2 { grid-column: span 2; }
@@ -719,6 +739,7 @@
     <div class="brand">Chaitrishodaya<span class="brand-mark brand-mark-lg"><svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterH" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerH" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowH" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowH" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowH)"><path d="M28.0,30.8 Q17.8,21.4 4.2,24.4 Q14.4,33.8 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q21.3,18.6 7.5,17.1 Q14.2,29.3 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q25.6,17.1 13.0,11.3 Q15.4,24.9 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q30.1,17.1 20.1,7.5 Q17.9,21.2 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q34.4,18.5 28.0,6.2 Q21.6,18.5 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q38.1,21.2 35.9,7.5 Q25.9,17.1 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q40.6,24.9 43.0,11.3 Q30.4,17.1 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q41.8,29.3 48.5,17.1 Q34.7,18.6 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q41.6,33.8 51.8,24.4 Q38.2,21.4 28.0,30.8 Z" fill="url(#petalOuterH)" opacity="0.95"/><path d="M28.0,30.8 Q25.1,21.6 15.6,19.5 Q18.5,28.7 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q27.7,21.1 19.2,16.5 Q19.5,26.2 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q30.4,21.4 23.4,14.6 Q21.1,24.0 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q32.8,22.4 28.0,14.0 Q23.2,22.4 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q34.9,24.0 32.6,14.6 Q25.6,21.4 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q36.5,26.2 36.8,16.5 Q28.3,21.1 28.0,30.8 Z" fill="url(#petalInnerH)"/><path d="M28.0,30.8 Q37.5,28.7 40.4,19.5 Q30.9,21.6 28.0,30.8 Z" fill="url(#petalInnerH)"/><circle cx="28.0" cy="30.8" r="4.2" fill="url(#centerGlowH)"/></g></svg></span></div>
     <div class="nav-links">
       <a href="#services">Services</a>
+      <a href="#pricing" onclick="showView('home', 'pricing'); return false;">Pricing</a>
       <a href="#products">Products</a>
       <a href="#philosophy">Philosophy</a>
       <a href="#catalogue" onclick="showView('catalogue'); return false;">Catalogue</a>
@@ -834,6 +855,39 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Engagement Model</div>
+        <h2 class="section-title">Three ways to start, no surprises on cost</h2>
+        <p class="section-desc">Every engagement begins with a scoped, fixed-price first step — you know exactly what you're paying before anything starts.</p>
+      </div>
+
+      <div class="pricing-grid reveal-stagger reveal">
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Audit</div>
+          <div class="pricing-price">Starting from ₹1,50,000</div>
+          <p class="pricing-desc">A focused 1–2 week engagement. We trace your current AI pipeline, identify exactly which gates are missing, and deliver a written architecture report with a prioritized rollout plan. No commitment beyond this.</p>
+          <div class="pricing-fit"><span>Best for:</span> teams who need clarity before committing to a bigger build</div>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-tier-name">Sprint</div>
+          <div class="pricing-price">Starting from ₹4,00,000</div>
+          <p class="pricing-desc">A 4–6 week focused build. We implement one specific layer — quality gates, security hardening, cost optimization, whatever your audit identified as most urgent — directly into your existing stack.</p>
+          <div class="pricing-fit"><span>Best for:</span> teams with a known, specific gap to close</div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-tier-name">Partnership</div>
+          <div class="pricing-price">Custom quote</div>
+          <p class="pricing-desc">Ongoing engagement across multiple systems or continuous monitoring and support. Scoped individually based on your systems and cadence.</p>
+          <div class="pricing-fit"><span>Best for:</span> teams that want continuous AI quality coverage, not a one-time fix</div>
+        </div>
+      </div>
+
+      <p class="pricing-closing">Every engagement starts with a conversation, not a contract. <a href="#contact" onclick="showView('home', 'contact'); return false;">Get in touch →</a></p>
     </div>
   </section>
 
@@ -991,7 +1045,7 @@
         </div>
 
         <div>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/mdenzqll" method="POST">
             <div class="form-row">
               <label for="cf-name">Name</label>
               <input type="text" id="cf-name" name="name" placeholder="Your name" required>
@@ -1016,7 +1070,7 @@
               <textarea id="cf-message" name="message" placeholder="Tell us about your system…" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary" id="cfSubmitBtn">Send message →</button>
-            <div class="form-note">Opens your email client with this pre-filled — one click away from reaching us.</div>
+            <div class="form-note" id="cfFormNote">Submits directly — no email app needed, works for every visitor.</div>
           </form>
 
           <div id="cfSuccess" style="display:none; text-align:center; padding: 40px 20px;">
@@ -1221,22 +1275,41 @@
 
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = document.getElementById('cf-name').value;
-    const email = document.getElementById('cf-email').value;
-    const service = document.getElementById('cf-service').value;
-    const message = document.getElementById('cf-message').value;
-    const subject = encodeURIComponent('Inquiry: ' + service + ' — from ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-    window.location.href = 'mailto:swamy.kumar02@gmail.com?subject=' + subject + '&body=' + body;
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('cfSubmitBtn');
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
 
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('cfSuccess').style.display = 'block';
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('cfSuccess').style.display = 'block';
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(function () {
+        submitBtn.textContent = 'Something went wrong — try again';
+        submitBtn.disabled = false;
+        setTimeout(function () { submitBtn.textContent = originalBtnText; }, 3000);
+      });
   });
 
   document.getElementById('cfSendAnother').addEventListener('click', function () {
-    document.getElementById('contactForm').reset();
-    document.getElementById('contactForm').style.display = 'block';
+    const form = document.getElementById('contactForm');
+    form.reset();
+    form.style.display = 'block';
     document.getElementById('cfSuccess').style.display = 'none';
+    document.getElementById('cfSubmitBtn').textContent = 'Send message →';
+    document.getElementById('cfSubmitBtn').disabled = false;
   });
 
   // ---------- Scroll reveal ----------
