@@ -172,9 +172,9 @@
   @media (max-width: 700px) { .trust-strip { flex-wrap: wrap; } .trust-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 20px; } }
 
   /* ---------- Section shared ---------- */
-  section { padding: 90px 0; }
+  section { padding: 68px 0; }
   .section.on-dark { border-top: 1px solid var(--line); }
-  .section-head { margin-bottom: 50px; max-width: 640px; }
+  .section-head { margin-bottom: 38px; max-width: 640px; }
   .section-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
   .section-title { font-family: var(--serif); font-size: clamp(26px, 3.2vw, 36px); font-weight: 500; color: var(--text); letter-spacing: -0.3px; line-height: 1.25; }
   .section-desc { color: var(--text-dim); font-size: 15px; margin-top: 16px; line-height: 1.8; }
@@ -222,6 +222,13 @@
   .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   @media (max-width: 980px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .products-grid { grid-template-columns: 1fr; } }
+  .cta-card { grid-column: span 2; background: linear-gradient(120deg, #F3E4B8 0%, #FAF7F1 60%); padding: 0 !important; }
+  @media (max-width: 980px) { .cta-card { grid-column: span 2; } }
+  @media (max-width: 640px) { .cta-card { grid-column: span 1; } }
+  .cta-card-inner { padding: 36px 34px; display: flex; flex-direction: column; height: 100%; justify-content: center; }
+  .cta-card-eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: #9A7A17; margin-bottom: 12px; }
+  .cta-card-title { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--text); line-height: 1.35; margin-bottom: 10px; max-width: 420px; }
+  .cta-card-desc { font-size: 13.5px; color: var(--white-dim); line-height: 1.7; max-width: 400px; }
   .product-card { background: var(--panel); padding: 30px 28px; display: flex; flex-direction: column; transition: background 0.3s ease, box-shadow 0.3s ease; }
   .product-card:hover { background: var(--panel-2); box-shadow: inset 0 1px 0 rgba(201,162,39,0.3); }
   .product-card:hover .product-name { color: var(--gold); }
@@ -297,9 +304,11 @@
           <h1>Your ambition.<br><em>Our innovation.</em></h1>
           <div class="hero-tagline">Engineered to endure</div>
           <p class="hero-sub">
-            Chaitrishodaya designs and operates production-grade quality architecture for AI systems — evaluation,
-            monitoring, and testing infrastructure built on the pattern behind six systems already running
-            in production, for organizations building AI they can stand behind.
+            Chaitrishodaya designs, builds, and operates complete AI systems that turn ambition into
+            production-ready reality — engineered for real-world scale, built to earn trust from day one.
+          </p>
+          <p class="hero-sub" style="margin-top:-24px; font-size:14px; color:var(--text-faint); font-style:italic;">
+            Seven systems, one standard: built to be trusted, not just to work.
           </p>
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Get in touch →</a>
@@ -325,7 +334,7 @@
       </div>
 
       <div class="trust-strip reveal-stagger reveal">
-        <div class="trust-item"><div class="trust-num">6</div><div class="trust-label">Production AI systems shipped</div></div>
+        <div class="trust-item"><div class="trust-num">7</div><div class="trust-label">Production AI systems shipped</div></div>
         <div class="trust-item"><div class="trust-num">84%</div><div class="trust-label">Average cost reduction via model routing</div></div>
         <div class="trust-item"><div class="trust-num">5</div><div class="trust-label">AI-specific incident types monitored</div></div>
       </div>
@@ -336,49 +345,49 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="section-eyebrow">Services</div>
-        <h2 class="section-title">Four ways we close the gap between&nbsp;"it works" and&nbsp;"it's trustworthy"</h2>
-        <p class="section-desc">Each engagement maps to one layer of the gate architecture we use in our own products.</p>
+        <h2 class="section-title">Complete AI solutions, from first architecture sketch to production</h2>
+        <p class="section-desc">We design, build, and operate AI systems end to end — the same way we've built our own seven products, from full platforms to the quality architecture running underneath them.</p>
       </div>
 
       <div class="services-grid reveal-stagger reveal">
         <div class="service-cell">
           <div class="service-num">01</div>
-          <div class="service-name">AI Quality Architecture</div>
-          <p class="service-desc">Design and audit the evaluation, gating, and monitoring layers your AI system is missing before it reaches production.</p>
+          <div class="service-name">AI System Architecture & Development</div>
+          <p class="service-desc">We design and build complete AI-powered platforms from the ground up — not prototypes, systems engineered to carry real production traffic.</p>
           <ul class="service-includes">
-            <li>Architecture audit</li>
-            <li>Gate design & rollout plan</li>
-            <li>Documentation handoff</li>
+            <li>End-to-end platform design</li>
+            <li>LLM & RAG pipeline engineering</li>
+            <li>Production deployment</li>
           </ul>
         </div>
         <div class="service-cell">
           <div class="service-num">02</div>
-          <div class="service-name">Production AI Monitoring</div>
-          <p class="service-desc">Live incident detection for hallucination, cost spikes, compliance drift, and prompt injection — modeled on our own AIMO system.</p>
+          <div class="service-name">Enterprise AI Integration</div>
+          <p class="service-desc">We connect AI into your existing systems and workflows, unifying data and intelligence across teams — the same pattern behind ZENTRAVIX.</p>
           <ul class="service-includes">
-            <li>Five-signal incident detection</li>
-            <li>Root-cause correlation</li>
-            <li>Alerting integration</li>
+            <li>Cross-system RAG integration</li>
+            <li>Role-based intelligence dashboards</li>
+            <li>Real-time data pipelines</li>
           </ul>
         </div>
         <div class="service-cell">
           <div class="service-num">03</div>
-          <div class="service-name">Automated QA for AI</div>
-          <p class="service-desc">Repo-aware test generation, coverage scoring, and defect detection pipelines — the same pattern behind QAIP.</p>
+          <div class="service-name">AI Quality & Reliability Engineering</div>
+          <p class="service-desc">Evaluation, monitoring, and adversarial testing layers that keep production AI systems trustworthy — the discipline behind QAIP, AIMO, and BCT.</p>
           <ul class="service-includes">
-            <li>RAG-based test generation</li>
-            <li>CI/CD integration</li>
-            <li>Coverage gap reporting</li>
+            <li>Automated test generation</li>
+            <li>Live incident monitoring</li>
+            <li>Adversarial robustness testing</li>
           </ul>
         </div>
         <div class="service-cell">
           <div class="service-num">04</div>
-          <div class="service-name">Adversarial Evaluation</div>
-          <p class="service-desc">Graduated-intensity red-teaming that reports the exact point your system's behavioral rules break, not just pass or fail.</p>
+          <div class="service-name">AI Cost & Performance Optimization</div>
+          <p class="service-desc">Smart model routing and pipeline efficiency that cut cost without cutting quality — proven at an 84% reduction on our own systems.</p>
           <ul class="service-includes">
-            <li>Golden dataset design</li>
-            <li>Robustness curve reporting</li>
-            <li>Fix verification loop</li>
+            <li>Model routing strategy</li>
+            <li>Prompt & pipeline efficiency audit</li>
+            <li>Cost-to-quality benchmarking</li>
           </ul>
         </div>
       </div>
@@ -421,7 +430,7 @@
       <div class="section-head reveal">
         <div class="section-eyebrow">Philosophy</div>
         <h2 class="section-title">Evaluation scores lie by default. Architecture is how you catch it.</h2>
-        <p class="section-desc">On one of our own systems, automated evaluation scored 94% while real-world compliance was 22.2%. Every service we offer exists because of that gap.</p>
+        <p class="section-desc">On one of our own systems, automated evaluation scored 94% while real-world compliance was 22.2% — a gap that would have reached real users if no one had gone looking for it. That's the moment this company was built to prevent, for every team we work with.</p>
       </div>
       <div class="quote-block reveal">
         <p>"The most dangerous AI failure is not the one that crashes. It is the one that looks healthy while being wrong."</p>
@@ -435,10 +444,19 @@
       <div class="section-head reveal">
         <div class="section-eyebrow">Products</div>
         <h2 class="section-title">What we've built with this approach</h2>
-        <p class="section-desc">Six systems, running in production, each proving one piece of the gate architecture.</p>
+        <p class="section-desc">Seven systems, running in production, each proving one piece of the gate architecture.</p>
       </div>
 
       <div class="products-grid reveal-stagger reveal">
+        <div class="product-card">
+          <div class="product-top"><div class="product-status">Live</div></div>
+          <div class="product-name">ZENTRAVIX</div>
+          <div class="product-tagline">Organisation Intelligence Platform</div>
+          <p class="product-desc">Integrates SCIP, ARIA, and QAIP into one enterprise intelligence layer — role-specific dashboards from CEO to junior developer, answering real questions from live org data via RAG.</p>
+          <div class="product-metric">3 systems unified · RAG-powered Q&A over live data</div>
+          <div class="product-tags"><span class="tag">Next.js</span><span class="tag">LangGraph</span><span class="tag">pgvector</span></div>
+          <a href="https://bkumars22.github.io/ZENTRAVIX" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
         <div class="product-card">
           <div class="product-top"><div class="product-status">Live</div></div>
           <div class="product-name">QAIP</div>
@@ -493,6 +511,14 @@
           <div class="product-tags"><span class="tag">GitHub Actions</span><span class="tag">Golden Datasets</span></div>
           <a href="https://bkumars22.github.io/AIPQ/" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
         </div>
+        <div class="product-card cta-card">
+          <div class="cta-card-inner">
+            <div class="cta-card-eyebrow">Building the eighth system</div>
+            <div class="cta-card-title">Have an AI system that needs this kind of architecture?</div>
+            <p class="cta-card-desc">Every product on this page started as one conversation about a gap someone needed closed. Yours could be next.</p>
+            <a href="#contact" class="btn btn-primary" style="margin-top:18px; align-self:flex-start;">Start the conversation →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -501,8 +527,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <div class="section-eyebrow">Contact</div>
-        <h2 class="section-title">Tell us what your AI system is missing</h2>
-        <p class="section-desc">We typically reply within one business day.</p>
+        <h2 class="section-title">Every AI system has a blind spot it hasn't shown you yet</h2>
+        <p class="section-desc">Tell us about yours — before your users find it for you. We typically reply within one business day.</p>
       </div>
 
       <div class="contact-grid">
@@ -534,10 +560,10 @@
             <div class="form-row">
               <label for="cf-service">Interested in</label>
               <select id="cf-service" name="service">
-                <option>AI Quality Architecture</option>
-                <option>Production AI Monitoring</option>
-                <option>Automated QA for AI</option>
-                <option>Adversarial Evaluation</option>
+                <option>AI System Architecture & Development</option>
+                <option>Enterprise AI Integration</option>
+                <option>AI Quality & Reliability Engineering</option>
+                <option>AI Cost & Performance Optimization</option>
                 <option>Something else</option>
               </select>
             </div>
