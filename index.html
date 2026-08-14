@@ -112,17 +112,6 @@
   .btn-ghost:hover { border-color: var(--text-dim); transform: translateY(-1px); }
 
   .hero-globe { position: relative; }
-  .earth-hand-wrap { position: relative; max-width: 400px; margin: 0 auto; }
-  .emotive-earth-wrap { position: relative; z-index: 2; margin-bottom: -118px; max-width: 230px; margin-left: auto; margin-right: auto; }
-  .emotive-earth-wrap svg { width: 100%; height: auto; display: block; }
-  .ai-hand-under { position: relative; z-index: 1; max-width: 400px; margin: 0 auto; }
-  .ai-hand-under svg { width: 100%; height: auto; display: block; }
-  @media (max-width: 900px) { .earth-hand-wrap { max-width: 300px; } .ai-hand-under { max-width: 300px; } .emotive-earth-wrap { margin-bottom: -70px; max-width: 170px; } }
-  .earth-hand-wrap { position: relative; max-width: 400px; margin: 0 auto; }
-  .earth-hand-wrap .earth-wrap { position: relative; z-index: 2; margin-bottom: -118px; max-width: 230px; margin-left: auto; margin-right: auto; }
-  .ai-hand-under { position: relative; z-index: 1; max-width: 400px; margin: 0 auto; }
-  .ai-hand-under svg { width: 100%; height: auto; display: block; }
-  @media (max-width: 900px) { .earth-hand-wrap { max-width: 300px; } .ai-hand-under { max-width: 300px; } .earth-hand-wrap .earth-wrap { margin-bottom: -70px; max-width: 170px; } }
   .earth-wrap { position: relative; padding: 20px; max-width: 380px; margin: 0 auto; }
   .earth-wrap::before {
     content: ''; position: absolute; inset: 10px; border-radius: 50%;
@@ -222,6 +211,17 @@
   .pricing-fit { font-size: 12.5px; color: var(--text-faint); padding-top: 16px; border-top: 1px solid var(--line); line-height: 1.6; }
   .pricing-fit span { font-weight: 600; color: var(--text); }
   .pricing-closing { text-align: center; font-size: 14px; color: var(--text-dim); margin-top: 36px; }
+
+  .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 900px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .tech-grid { grid-template-columns: 1fr; } }
+  .tech-group { background: var(--panel); padding: 26px 24px; }
+  .tech-group-name { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .tech-tag {
+    font-family: var(--mono); font-size: 11px; color: var(--text-dim); background: var(--panel-2);
+    border: 1px solid var(--line); padding: 5px 10px; border-radius: 20px;
+  }
   .pricing-closing a { color: var(--gold); font-weight: 600; text-decoration: none; }
   .pricing-closing a:hover { text-decoration: underline; }
   .service-cell { padding: 36px 30px; border-right: 1px solid rgba(22,32,46,0.12); border-bottom: 1px solid rgba(22,32,46,0.12); display: flex; flex-direction: column; }
@@ -1094,6 +1094,85 @@
             <div class="cta-card-title">Have an AI system that needs this kind of architecture?</div>
             <p class="cta-card-desc">Every product on this page started as one conversation about a gap someone needed closed. Yours could be next.</p>
             <a href="#contact" class="btn btn-primary" style="margin-top:18px; align-self:flex-start;">Start the conversation →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="technologies" class="section on-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Technologies</div>
+        <h2 class="section-title">What's actually running underneath</h2>
+        <p class="section-desc">Every technology below is in real use across the seven systems above — not a generic list, the actual stack.</p>
+      </div>
+
+      <div class="tech-grid reveal-stagger reveal">
+        <div class="tech-group">
+          <div class="tech-group-name">AI / ML & Agents</div>
+          <div class="tech-tags">
+            <span class="tech-tag">LangGraph</span><span class="tech-tag">Claude AI</span><span class="tech-tag">Groq AI</span>
+            <span class="tech-tag">Whisper STT</span><span class="tech-tag">deepeval</span><span class="tech-tag">CrewAI</span>
+            <span class="tech-tag">IsolationForest</span><span class="tech-tag">SHAP</span><span class="tech-tag">RAGAS</span>
+            <span class="tech-tag">LangSmith</span><span class="tech-tag">DistilBERT</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">RAG & Vector Search</div>
+          <div class="tech-tags">
+            <span class="tech-tag">pgvector</span><span class="tech-tag">ChromaDB</span><span class="tech-tag">sentence-transformers</span>
+            <span class="tech-tag">RAG Pipelines</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">MCP & Tool Integration</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Playwright MCP</span><span class="tech-tag">GitHub MCP</span><span class="tech-tag">Jira MCP</span>
+            <span class="tech-tag">Slack MCP</span><span class="tech-tag">Filesystem MCP</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">Full Stack & Backend</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Spring Boot</span><span class="tech-tag">Next.js 14</span><span class="tech-tag">React 18</span>
+            <span class="tech-tag">React Native</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Node.js</span>
+            <span class="tech-tag">WebSocket</span><span class="tech-tag">Redis</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">Databases</div>
+          <div class="tech-tags">
+            <span class="tech-tag">PostgreSQL 15</span><span class="tech-tag">Oracle</span><span class="tech-tag">H2</span>
+            <span class="tech-tag">Flyway</span><span class="tech-tag">JPA / Hibernate</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">Testing & QA</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Playwright TypeScript</span><span class="tech-tag">Selenium WebDriver</span>
+            <span class="tech-tag">TestNG</span><span class="tech-tag">JUnit 5</span><span class="tech-tag">Cucumber / BDD</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">Security</div>
+          <div class="tech-tags">
+            <span class="tech-tag">OWASP Top 10</span><span class="tech-tag">BCrypt</span><span class="tech-tag">JWT</span>
+            <span class="tech-tag">RBAC</span><span class="tech-tag">SAST</span><span class="tech-tag">Spring Security</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">CI/CD & DevOps</div>
+          <div class="tech-tags">
+            <span class="tech-tag">GitHub Actions</span><span class="tech-tag">Docker Compose</span><span class="tech-tag">Railway</span>
+            <span class="tech-tag">GitHub Pages</span><span class="tech-tag">Jenkins</span><span class="tech-tag">Bamboo</span>
+          </div>
+        </div>
+        <div class="tech-group">
+          <div class="tech-group-name">Languages</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Java 17/21</span><span class="tech-tag">Python</span><span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">JavaScript</span><span class="tech-tag">SQL</span>
           </div>
         </div>
       </div>
