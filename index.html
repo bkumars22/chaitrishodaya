@@ -26,6 +26,63 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is AI Quality Engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI Quality Engineering combines AI evaluation, behavioral testing, adversarial testing, monitoring, and continuous quality verification to improve the reliability of production AI systems — closing the gap between what an automated eval score reports and how a system actually behaves under real, adversarial use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide AI testing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Chaitrishodaya provides AI testing for LLM applications, AI agents, RAG systems, and production AI platforms — including adversarial golden-dataset testing, automated test generation, and multi-framework test automation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you test AI agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We evaluate AI agent behavior, tool usage, decision paths, reliability, security, and failure modes — including multi-agent systems built with LangGraph and CrewAI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you develop AI systems, not just test them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We design and build complete AI applications, AI agents, RAG platforms, and enterprise AI systems — ten of which are live, documented, and publicly demonstrable today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help reduce AI infrastructure costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We analyze model routing, prompt design, and pipeline efficiency to reduce AI operating cost while maintaining required quality — demonstrated at an 84% cost reduction on our own production system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide AI security testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our AI security work includes prompt injection testing, adversarial defense, data protection, access control, and AI-specific security risks that traditional application security testing doesn't cover."
+      }
+    }
+  ]
+}
+</script>
+
 <!-- Open Graph / social share preview -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chaitrishodaya.com/">
@@ -372,6 +429,13 @@
   .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
   @media (max-width: 980px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 640px) { .products-grid { grid-template-columns: 1fr; } }
+
+  .solution-category { margin-bottom: 44px; }
+  .solution-category .products-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+  .solution-category:last-of-type { margin-bottom: 28px; }
+  .solution-head { margin-bottom: 18px; padding-left: 2px; }
+  .solution-title { font-family: var(--serif); font-size: 20px; color: var(--text); margin-bottom: 6px; }
+  .solution-outcome { font-size: 14px; color: var(--text-dim); max-width: 620px; }
   .cta-card { grid-column: span 2; background: linear-gradient(120deg, #F3E4B8 0%, #FAF7F1 60%); padding: 0 !important; }
   @media (max-width: 980px) { .cta-card { grid-column: span 2; } }
   @media (max-width: 640px) { .cta-card { grid-column: span 1; } }
@@ -682,7 +746,7 @@
 
  
  
-#view-privacy {
+#view-privacy, #view-research {
     --bg: #FAF7F1; --bg-deep: #F1EADB; --panel: #FFFFFF; --line: #E7DFCC;
     --text: #1E2A3B; --text-dim: #5B6472; --text-faint: #94978F;
     --gold: #A9790F; --gold-dim: #F3E4B8;
@@ -692,65 +756,65 @@
 
  
  
-#view-privacy * { box-sizing: border-box; margin: 0; padding: 0; }
+#view-privacy *, #view-research * { box-sizing: border-box; margin: 0; padding: 0; }
 
 
  
  
-#view-privacy { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
+#view-privacy, #view-research { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
 
 
  
  
-#view-privacy .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+#view-privacy .priv-wrap, #view-research .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
 
 
 
 
  
  
-#view-privacy nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+#view-privacy nav, #view-research nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+#view-privacy nav .priv-wrap, #view-research nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
 
 
  
  
-#view-privacy .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
+#view-privacy .priv-brand, #view-faq .priv-brand, #view-research .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-back-link, #view-faq .priv-back-link, #view-research .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-back-link:hover { color: var(--gold); }
+#view-privacy .priv-back-link:hover, #view-faq .priv-back-link:hover, #view-research .priv-back-link:hover { color: var(--gold); }
 
 
  
  
-#view-privacy .priv-nav-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+#view-privacy .priv-nav-actions, #view-faq .priv-nav-actions, #view-research .priv-nav-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
 
 
  
  
-#view-privacy .priv-nav-text-link { font-family: var(--body); font-size: 13.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link { font-family: var(--body); font-size: 13.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-nav-text-link:hover { color: var(--gold); }
+#view-privacy .priv-nav-text-link:hover, #view-faq .priv-nav-text-link:hover, #view-research .priv-nav-text-link:hover { color: var(--gold); }
 
 
  
  
 @media (max-width: 700px) { 
-#view-privacy .priv-nav-text-link { display: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link { display: none; }
  }
 
 
@@ -758,99 +822,145 @@
 
  
  
-#view-privacy header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+#view-privacy header.page-head, #view-research header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+#view-privacy .priv-eyebrow, #view-research .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
 
 
  
  
-#view-privacy h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
+#view-privacy h1, #view-research h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
 
 
  
  
-#view-privacy .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
-
-
-
-
- 
- 
-#view-privacy main { padding: 48px 0 90px; }
-
-
- 
- 
-#view-privacy section.block { margin-bottom: 40px; }
-
-
- 
- 
-#view-privacy h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy ul { margin: 0 0 14px 22px; }
-
-
- 
- 
-#view-privacy li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
-
-
- 
- 
-#view-privacy strong { color: var(--text); font-weight: 600; }
-
-
- 
- 
-#view-privacy a.inline { color: var(--gold); text-decoration: underline; }
+#view-privacy .updated, #view-research .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
 
 
 
 
  
  
-#view-privacy .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
+#view-privacy main, #view-research main { padding: 48px 0 90px; }
 
 
  
  
-#view-privacy .note-box p:last-child { margin-bottom: 0; }
+#view-privacy section.block, #view-research section.block { margin-bottom: 40px; }
+
+
+ 
+ 
+#view-privacy h2, #view-research h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy p, #view-research p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy ul, #view-research ul { margin: 0 0 14px 22px; }
+
+
+ 
+ 
+#view-privacy li, #view-research li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
+
+
+ 
+ 
+#view-privacy strong, #view-research strong { color: var(--text); font-weight: 600; }
+
+
+ 
+ 
+#view-privacy a.inline, #view-research a.inline { color: var(--gold); text-decoration: underline; }
 
 
 
 
  
  
-#view-privacy footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
+#view-privacy .note-box, #view-research .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
 
 
  
  
-#view-privacy .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+#view-privacy .note-box p:last-child, #view-research .note-box p:last-child { margin-bottom: 0; }
+
+
 
 
  
  
-#view-privacy .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+#view-privacy footer, #view-research footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
 
 
  
  
-#view-privacy .priv-footer-inner a:hover { color: var(--gold); }
+#view-privacy .priv-footer-inner, #view-research .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
 
+
+ 
+ 
+#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+
+
+ 
+ 
+#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover { color: var(--gold); }
+
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; padding: 20px 24px;
+}
+.faq-item summary {
+  cursor: pointer; font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600;
+  color: var(--text); list-style: none; display: flex; align-items: center; justify-content: space-between;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; font-size: 22px; color: var(--gold); margin-left: 16px; flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin-top: 14px; color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+
+.research-callout {
+  max-width: 760px; margin: 0 auto; background: var(--panel); border: 1px dashed var(--gold);
+  border-radius: 14px; padding: 28px 32px; text-align: center;
+}
+.research-eyebrow {
+  display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.6px; color: var(--gold); text-transform: uppercase;
+  background: rgba(169,121,15,0.1); padding: 4px 12px; border-radius: 999px; margin-bottom: 14px;
+}
+.research-title { font-family: var(--serif); font-size: 22px; color: var(--text); margin-bottom: 12px; }
+.research-desc { color: var(--text-dim); font-size: 14.5px; line-height: 1.65; margin-bottom: 14px; }
+.research-note { color: var(--text-dim); font-size: 12.5px; font-style: italic; opacity: 0.85; }
+
+.research-callout-active { border: 1px solid var(--gold); background: linear-gradient(160deg, #FFFEFB 0%, var(--gold-dim) 130%); }
+.research-eyebrow-active { background: var(--gold); color: #FFFFFF; }
+.research-stats { display: flex; justify-content: center; gap: 28px; margin: 18px 0; flex-wrap: wrap; }
+.research-stat { font-size: 13px; color: var(--text-dim); }
+.research-stat strong { display: block; font-family: var(--serif); font-size: 20px; color: var(--gold); }
+
+.formula-block {
+  background: #1E2A3B; color: #F3E4B8; font-family: var(--mono); font-size: 14px;
+  padding: 18px 22px; border-radius: 10px; margin: 16px 0; overflow-x: auto; line-height: 1.7;
+}
+#view-research main section { margin-bottom: 34px; }
+#view-research main h2 { font-family: var(--serif); font-size: 19px; color: var(--text); margin-bottom: 12px; }
+#view-research main p { margin-bottom: 10px; }
+#view-research main ul { margin: 10px 0 10px 22px; }
+#view-research main li { margin-bottom: 8px; }
+#view-research main code { font-family: var(--mono); background: var(--gold-dim); color: var(--gold); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
 
 </style>
 </head>
@@ -870,6 +980,7 @@
       <a href="#philosophy">Philosophy</a>
       <a href="#" onclick="openJournalModal(); return false;">Journal</a>
       <a href="#decisions">Decisions</a>
+      <a href="#research" onclick="showView('research'); return false;">Research</a>
       <a href="#catalogue" onclick="showView('catalogue'); return false;">Catalogue</a>
       <a href="#contact" class="nav-cta">Contact us</a>
     </div>
@@ -918,7 +1029,7 @@
       </div>
 
       <div class="trust-strip reveal-stagger reveal">
-        <div class="trust-item"><div class="trust-num">9</div><div class="trust-label">Production AI systems shipped</div></div>
+        <div class="trust-item"><div class="trust-num">10</div><div class="trust-label">Production AI systems shipped</div></div>
         <div class="trust-item"><div class="trust-num">84%</div><div class="trust-label">Average cost reduction via model routing</div></div>
         <div class="trust-item"><div class="trust-num">5</div><div class="trust-label">AI-specific incident types monitored</div></div>
       </div>
@@ -1143,103 +1254,148 @@
   <section id="products" class="section on-dark">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="section-eyebrow">Products</div>
-        <h2 class="section-title">What we've built with this approach</h2>
-        <p class="section-desc">Ten systems, independently built and live today, each proving one piece of the gate architecture.</p>
+        <div class="section-eyebrow">Solutions</div>
+        <h2 class="section-title">Five problems. Ten systems proving each one solved.</h2>
+        <p class="section-desc">Organized by what's actually solved, not just what's built — each category below is a real, distinct problem, with live, working systems as the proof, not a claim.</p>
+      </div>
+
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">AI Quality &amp; Trust Verification</h3>
+          <p class="solution-outcome">Don't just trust an AI metric — verify it's statistically sound before anyone acts on it.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Core</div></div>
+            <div class="product-name">MTS</div>
+            <div class="product-tagline">Metric Trust Score</div>
+            <p class="product-desc">Audits AI metric and evaluation data for statistical trustworthiness — flags when a dashboard number is backed by too little data, or a handful of outliers, before you trust it.</p>
+            <div class="product-metric">Modified Z-score + IQR cross-check, EWMA-based completeness</div>
+            <div class="product-tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Statistics</span></div>
+            <a href="https://mts.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Core</div></div>
+            <div class="product-name">AIPQ</div>
+            <div class="product-tagline">Prompt Quality CI Gate</div>
+            <p class="product-desc">Versions every prompt like code. Blocks deployment automatically if quality drops below threshold.</p>
+            <div class="product-metric">v2 scored 0.60 → auto-reverted to v1's 0.93</div>
+            <div class="product-tags"><span class="tag">GitHub Actions</span><span class="tag">Golden Datasets</span></div>
+            <a href="https://aipq.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Core</div></div>
+            <div class="product-name">BCT</div>
+            <div class="product-tagline">Behavioral Contract Testing</div>
+            <p class="product-desc">Tests an AI system's rules under graduated adversarial pressure — reports exactly where it breaks.</p>
+            <div class="product-metric">pip install bct-framework</div>
+            <div class="product-tags"><span class="tag">Python</span><span class="tag">Adversarial Testing</span></div>
+            <a href="https://bct.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">Multi-Agent Orchestration</h3>
+          <p class="solution-outcome">Coordinate multiple specialized AI agents on one task, not one model trying to do everything.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Live</div></div>
+            <div class="product-name">QAIP</div>
+            <div class="product-tagline">QA Intelligent Platform</div>
+            <p class="product-desc">Points at any GitHub repo, scores risk, and generates real Playwright tests — getting smarter every sprint via RAG memory.</p>
+            <div class="product-metric">₹50 → ₹8 per run · 84% cost reduction</div>
+            <div class="product-tags"><span class="tag">LangGraph</span><span class="tag">pgvector</span><span class="tag">DeepEval</span></div>
+            <a href="https://qaip.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Live</div></div>
+            <div class="product-name">ZENTRAVIX</div>
+            <div class="product-tagline">Organisation Intelligence Platform</div>
+            <p class="product-desc">Integrates SCIP, ARIA, and QAIP into one enterprise intelligence layer — role-specific dashboards from CEO to junior developer, answering real questions from live org data via RAG.</p>
+            <div class="product-metric">3 systems unified · RAG-powered Q&A over live data</div>
+            <div class="product-tags"><span class="tag">Next.js</span><span class="tag">LangGraph</span><span class="tag">pgvector</span></div>
+            <a href="https://zentravix.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">Predictive Risk &amp; Monitoring</h3>
+          <p class="solution-outcome">Catch failures before they happen, not after — across AI systems and supply chains alike.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Core</div></div>
+            <div class="product-name">AIMO</div>
+            <div class="product-tagline">AI Incident Monitoring</div>
+            <p class="product-desc">Watches every other system for five AI-specific failure modes — once caught a bug in itself, not just what it monitors.</p>
+            <div class="product-metric">5 incident types tracked in parallel</div>
+            <div class="product-tags"><span class="tag">asyncio</span><span class="tag">SHAP</span></div>
+            <a href="https://aimo.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Live</div></div>
+            <div class="product-name">SCIP</div>
+            <div class="product-tagline">Supply Chain Intelligence Platform</div>
+            <p class="product-desc">Full supply chain platform — cost workflows, supplier risk scoring — proving one engineer can ship what used to need a team.</p>
+            <div class="product-metric">80+ endpoints · P0 bug caught pre-launch</div>
+            <div class="product-tags"><span class="tag">Spring Boot</span><span class="tag">React Native</span></div>
+            <a href="https://scip.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">Test Automation at Scale</h3>
+          <p class="solution-outcome">Generate real, runnable tests across any framework, any project — not locked to one tool.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Live</div></div>
+            <div class="product-name">Universal Test Framework</div>
+            <div class="product-tagline">One Test Flow, Five Automation Tools</div>
+            <p class="product-desc">Describe a test flow once, in one tool-agnostic format — generate real, runnable Playwright, Selenium, Cypress, TestNG, or Cucumber code from it. Tested against a separate, independently-built app (SCIP), where it caught a genuine production bug.</p>
+            <div class="product-metric">5 real adapters, 1 shared intermediate format, cross-project bug found</div>
+            <div class="product-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Java</span></div>
+            <a href="https://utf.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Core</div></div>
+            <div class="product-name">Locator Framework</div>
+            <div class="product-tagline">Playwright Modular Locator Framework</div>
+            <p class="product-desc">A pluggable Strategy-pattern locator engine for UI test automation — when the primary locator goes stale, it falls through to the next strategy and logs exactly which one healed it.</p>
+            <div class="product-metric">9 tests, 100% pass — pure Python, synthetic HTML, and a real live site</div>
+            <div class="product-tags"><span class="tag">Playwright</span><span class="tag">pytest</span><span class="tag">OpenCV</span></div>
+            <a href="https://locator.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live dashboard ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">Adaptive AI Learning Systems</h3>
+          <p class="solution-outcome">AI that teaches through guided reasoning, not direct answers — and proves it under adversarial pressure.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-status">Live</div></div>
+            <div class="product-name">ARIA</div>
+            <div class="product-tagline">Socratic AI Tutor, 35 languages</div>
+            <p class="product-desc">Never gives direct answers — guides through questions. Closed a 22.2%-to-100% real-world compliance gap.</p>
+            <div class="product-metric">94% eval vs. 22.2% real — closed</div>
+            <div class="product-tags"><span class="tag">ChromaDB</span><span class="tag">Adversarial Eval</span></div>
+            <a href="https://aria.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
+          </div>
+        </div>
       </div>
 
       <div class="products-grid reveal-stagger reveal">
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Live</div></div>
-          <div class="product-name">ZENTRAVIX</div>
-          <div class="product-tagline">Organisation Intelligence Platform</div>
-          <p class="product-desc">Integrates SCIP, ARIA, and QAIP into one enterprise intelligence layer — role-specific dashboards from CEO to junior developer, answering real questions from live org data via RAG.</p>
-          <div class="product-metric">3 systems unified · RAG-powered Q&A over live data</div>
-          <div class="product-tags"><span class="tag">Next.js</span><span class="tag">LangGraph</span><span class="tag">pgvector</span></div>
-          <a href="https://zentravix.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Live</div></div>
-          <div class="product-name">QAIP</div>
-          <div class="product-tagline">QA Intelligent Platform</div>
-          <p class="product-desc">Points at any GitHub repo, scores risk, and generates real Playwright tests — getting smarter every sprint via RAG memory.</p>
-          <div class="product-metric">₹50 → ₹8 per run · 84% cost reduction</div>
-          <div class="product-tags"><span class="tag">LangGraph</span><span class="tag">pgvector</span><span class="tag">DeepEval</span></div>
-          <a href="https://qaip.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Live</div></div>
-          <div class="product-name">SCIP</div>
-          <div class="product-tagline">Supply Chain Intelligence Platform</div>
-          <p class="product-desc">Full supply chain platform — cost workflows, supplier risk scoring — proving one engineer can ship what used to need a team.</p>
-          <div class="product-metric">80+ endpoints · P0 bug caught pre-launch</div>
-          <div class="product-tags"><span class="tag">Spring Boot</span><span class="tag">React Native</span></div>
-          <a href="https://scip.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Live</div></div>
-          <div class="product-name">ARIA</div>
-          <div class="product-tagline">Socratic AI Tutor, 35 languages</div>
-          <p class="product-desc">Never gives direct answers — guides through questions. Closed a 22.2%-to-100% real-world compliance gap.</p>
-          <div class="product-metric">94% eval vs. 22.2% real — closed</div>
-          <div class="product-tags"><span class="tag">ChromaDB</span><span class="tag">Adversarial Eval</span></div>
-          <a href="https://aria.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Core</div></div>
-          <div class="product-name">AIMO</div>
-          <div class="product-tagline">AI Incident Monitoring</div>
-          <p class="product-desc">Watches every other system for five AI-specific failure modes — once caught a bug in itself, not just what it monitors.</p>
-          <div class="product-metric">5 incident types tracked in parallel</div>
-          <div class="product-tags"><span class="tag">asyncio</span><span class="tag">SHAP</span></div>
-          <a href="https://aimo.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Core</div></div>
-          <div class="product-name">BCT</div>
-          <div class="product-tagline">Behavioral Contract Testing</div>
-          <p class="product-desc">Tests an AI system's rules under graduated adversarial pressure — reports exactly where it breaks.</p>
-          <div class="product-metric">pip install bct-framework</div>
-          <div class="product-tags"><span class="tag">Python</span><span class="tag">Adversarial Testing</span></div>
-          <a href="https://bct.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Core</div></div>
-          <div class="product-name">AIPQ</div>
-          <div class="product-tagline">Prompt Quality CI Gate</div>
-          <p class="product-desc">Versions every prompt like code. Blocks deployment automatically if quality drops below threshold.</p>
-          <div class="product-metric">v2 scored 0.60 → auto-reverted to v1's 0.93</div>
-          <div class="product-tags"><span class="tag">GitHub Actions</span><span class="tag">Golden Datasets</span></div>
-          <a href="https://aipq.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Core</div></div>
-          <div class="product-name">Locator Framework</div>
-          <div class="product-tagline">Playwright Modular Locator Framework</div>
-          <p class="product-desc">A pluggable Strategy-pattern locator engine for UI test automation — when the primary locator goes stale, it falls through to the next strategy and logs exactly which one healed it.</p>
-          <div class="product-metric">9 tests, 100% pass — pure Python, synthetic HTML, and a real live site</div>
-          <div class="product-tags"><span class="tag">Playwright</span><span class="tag">pytest</span><span class="tag">OpenCV</span></div>
-          <a href="https://locator.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live dashboard ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Core</div></div>
-          <div class="product-name">MTS</div>
-          <div class="product-tagline">Metric Trust Score</div>
-          <p class="product-desc">Audits AI metric and evaluation data for statistical trustworthiness — flags when a dashboard number is backed by too little data, or a handful of outliers, before you trust it.</p>
-          <div class="product-metric">Modified Z-score + IQR cross-check, EWMA-based completeness</div>
-          <div class="product-tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Statistics</span></div>
-          <a href="https://mts.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card">
-          <div class="product-top"><div class="product-status">Live</div></div>
-          <div class="product-name">Universal Test Framework</div>
-          <div class="product-tagline">One Test Flow, Five Automation Tools</div>
-          <p class="product-desc">Describe a test flow once, in one tool-agnostic format — generate real, runnable Playwright, Selenium, Cypress, TestNG, or Cucumber code from it. Tested against a separate, independently-built app (SCIP), where it caught a genuine production bug.</p>
-          <div class="product-metric">5 real adapters, 1 shared intermediate format, cross-project bug found</div>
-          <div class="product-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">Java</span></div>
-          <a href="https://utf.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live demo ↗</a>
-        </div>
-        <div class="product-card cta-card">
+        <div class="product-card cta-card" style="grid-column: 1 / -1;">
           <div class="cta-card-inner">
             <div class="cta-card-eyebrow">Building the eleventh system</div>
             <div class="cta-card-title">Have an AI system that needs this kind of architecture?</div>
@@ -2064,6 +2220,158 @@
 
 
 </div>
+
+<div id="view-faq" class="app-view" style="display:none;">
+
+
+<nav>
+  <div class="priv-wrap">
+    <a href="#home" onclick="showView('home'); return false;" class="priv-brand">Chaitrishodaya</a>
+    <div class="priv-nav-actions">
+      <a href="#services" onclick="showView('home', 'services'); return false;" class="priv-nav-text-link">Services</a>
+      <a href="#products" onclick="showView('home', 'products'); return false;" class="priv-nav-text-link">Products</a>
+      <a href="#catalogue" onclick="showView('catalogue'); return false;" class="priv-nav-text-link">Catalogue</a>
+      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="priv-wrap">
+    <div class="priv-eyebrow">FAQ</div>
+    <h1>Questions we actually get asked</h1>
+  </div>
+</header>
+
+<main>
+  <div class="priv-wrap">
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is AI Quality Engineering?</summary>
+        <p>AI Quality Engineering combines AI evaluation, behavioral testing, adversarial testing, monitoring, and continuous quality verification to improve the reliability of production AI systems — closing the gap between what an automated eval score reports and how a system actually behaves under real, adversarial use.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you provide AI testing services?</summary>
+        <p>Yes. Chaitrishodaya provides AI testing for LLM applications, AI agents, RAG systems, and production AI platforms — including adversarial golden-dataset testing, automated test generation, and multi-framework test automation.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you test AI agents?</summary>
+        <p>Yes. We evaluate AI agent behavior, tool usage, decision paths, reliability, security, and failure modes — including multi-agent systems built with LangGraph and CrewAI.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you develop AI systems, not just test them?</summary>
+        <p>Yes. We design and build complete AI applications, AI agents, RAG platforms, and enterprise AI systems — ten of which are live, documented, and publicly demonstrable today.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you help reduce AI infrastructure costs?</summary>
+        <p>Yes. We analyze model routing, prompt design, and pipeline efficiency to reduce AI operating cost while maintaining required quality — demonstrated at an 84% cost reduction on our own production system.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you provide AI security testing?</summary>
+        <p>Yes. Our AI security work includes prompt injection testing, adversarial defense, data protection, access control, and AI-specific security risks that traditional application security testing doesn't cover.</p>
+      </details>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="priv-wrap priv-footer-inner" style="max-width:1180px;">
+    <span>© 2026 Chaitrishodaya</span>
+    <a href="#home" onclick="showView('home'); return false;">← Back to homepage</a>
+  </div>
+</footer>
+
+
+</div>
+
+<div id="view-research" class="app-view" style="display:none;">
+
+
+<nav>
+  <div class="priv-wrap">
+    <a href="#home" onclick="showView('home'); return false;" class="priv-brand">Chaitrishodaya</a>
+    <div class="priv-nav-actions">
+      <a href="#services" onclick="showView('home', 'services'); return false;" class="priv-nav-text-link">Services</a>
+      <a href="#products" onclick="showView('home', 'products'); return false;" class="priv-nav-text-link">Products</a>
+      <a href="#philosophy" onclick="showView('home', 'philosophy'); return false;" class="priv-nav-text-link">Philosophy</a>
+      <a href="#decisions" onclick="showView('home', 'decisions'); return false;" class="priv-nav-text-link">Decisions</a>
+      <a href="#catalogue" onclick="showView('catalogue'); return false;" class="priv-nav-text-link">Catalogue</a>
+      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="priv-wrap">
+    <div class="priv-eyebrow">Research — In Development, Simulator-Verified</div>
+    <h1>Quantum-Assisted Test Selection</h1>
+  </div>
+</header>
+
+<main>
+  <div class="priv-wrap">
+
+    <p>Given a large generated test suite and a limited CI/CD time budget, this module formulates optimal test selection as a combinatorial optimization problem, solved via a quantum-classical hybrid approach — with a classical baseline always computed alongside it, both as a fallback and as the correctness check every quantum-derived result gets measured against.</p>
+
+    <div class="research-stats" style="margin: 32px 0;">
+      <div class="research-stat"><strong>54</strong> tests, all passing</div>
+      <div class="research-stat"><strong>3-factor</strong> trust layer on every result</div>
+      <div class="research-stat"><strong>Simulator</strong>-verified</div>
+    </div>
+
+    <section>
+      <h2>1. The Problem, Formally</h2>
+      <p>Test selection is framed as Quadratic Unconstrained Binary Optimization (QUBO) — the standard form consumable by quantum optimization approaches. Each test <code>i</code> is a binary decision variable x<sub>i</sub> ∈ {0,1} — run it, or don't.</p>
+      <div class="formula-block">
+        Minimize: Q(x) = − Σᵢ dᵢ·xᵢ &nbsp;+&nbsp; Σᵢ Σⱼ&gt;ᵢ oᵢⱼ·xᵢ·xⱼ &nbsp;+&nbsp; λ · (Σᵢ tᵢ·xᵢ)² / B²
+      </div>
+      <p style="margin-top:14px;">Where:</p>
+      <ul>
+        <li><code>dᵢ</code> — historical defect-detection rate of test i (reward for selecting high-value tests)</li>
+        <li><code>oᵢⱼ</code> — coverage overlap between tests i and j (penalty for redundant pairs)</li>
+        <li><code>tᵢ</code> — execution time of test i, <code>B</code> — the total time budget</li>
+        <li><code>λ</code> — penalty weight balancing budget adherence against detection value</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Why This Needs a Trust Layer, Not Just an Answer</h2>
+      <p>The budget term above is a <em>soft</em> penalty, not a hard constraint — QUBO can't natively express "never exceed B," only "increasingly discourage exceeding B." This is the direct, measured cause of a real finding from testing: the quantum-derived "optimal" selection can come out <strong>more conservative</strong> than the classical hard-constraint optimum. Three factors are computed on every result before it's ever shown:</p>
+      <div class="formula-block">
+        Trust = ( S<sub>shot</sub> + A<sub>classical</sub> + C<sub>hardware</sub> ) / 3
+      </div>
+      <ul>
+        <li><code>S_shot</code> — shot consistency: the frequency of the most common result across repeated runs. Low consistency signals a noise-dominated, unreliable output.</li>
+        <li><code>A_classical</code> — agreement with the classical baseline: what fraction of the quantum-selected tests match the known-correct classical answer.</li>
+        <li><code>C_hardware</code> — hardware/backend calibration context at the time of the run.</li>
+      </ul>
+      <p style="margin-top:14px;">If <code>Trust ≤ 0.7</code>, the system automatically falls back to the classical result — a low-trust quantum answer is discarded, not left for a human to notice.</p>
+    </section>
+
+    <section>
+      <h2>3. The Real Finding</h2>
+      <p>Testing surfaced a genuine, non-obvious result: because the budget constraint is a soft penalty, the QUBO's mathematically "optimal" answer can under-use the available time budget rather than risk the penalty — producing a selection that's technically valid but leaves real defect-detection value on the table compared to the classical hard-constraint solution. This is precisely why the classical-agreement trust factor exists — it's what catches this specific failure mode automatically, rather than requiring someone to notice the shortfall by inspection.</p>
+    </section>
+
+    <section>
+      <h2>4. Honest Current Scope</h2>
+      <p>This runs on a local quantum circuit simulator today — it produces mathematically real QAOA (Quantum Approximate Optimization Algorithm) results against the QUBO formulation above, fully tested with 54 passing tests. Connecting to real quantum hardware is wired into the architecture but intentionally not yet enabled — an explicit next step, not implied or overstated here.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="priv-wrap priv-footer-inner" style="max-width:1180px;">
+    <span>© 2026 Chaitrishodaya</span>
+    <a href="#home" onclick="showView('home'); return false;">← Back to homepage</a>
+  </div>
+</footer>
+
+
+</div>
 <script>
 
   document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -2202,7 +2510,7 @@
   }
   (function() {
     var initial = window.location.hash.replace('#', '');
-    if (initial === 'catalogue' || initial === 'privacy') {
+    if (initial === 'catalogue' || initial === 'privacy' || initial === 'faq' || initial === 'research') {
       showView(initial);
     }
   })();
