@@ -148,6 +148,8 @@
   @media (prefers-reduced-motion: reduce) { .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; } }
 
   /* ---------- Nav scroll state ---------- */
+  .app-view { min-height: 100vh; display: flex; flex-direction: column; }
+  .app-view footer { margin-top: auto; }
   nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); transition: height 0.3s ease, background 0.3s ease; }
   nav.scrolled { background: rgba(250,247,241,0.97); box-shadow: 0 1px 0 rgba(30,42,59,0.06); }
   nav.scrolled .wrap { height: 62px; }
@@ -771,7 +773,7 @@
 
  
  
-#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies {
+#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue {
     --bg: #FAF7F1; --bg-deep: #F1EADB; --panel: #FFFFFF; --line: #E7DFCC;
     --text: #1E2A3B; --text-dim: #5B6472; --text-faint: #94978F;
     --gold: #A9790F; --gold-dim: #F3E4B8;
@@ -786,60 +788,60 @@
 
  
  
-#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
+#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
 
 
  
  
-#view-privacy .priv-wrap, #view-research .priv-wrap, #view-qaip .priv-wrap, #view-scip .priv-wrap, #view-mts .priv-wrap, #view-aipq .priv-wrap, #view-bct .priv-wrap, #view-aimo .priv-wrap, #view-zentravix .priv-wrap, #view-aria .priv-wrap, #view-utf .priv-wrap, #view-locator .priv-wrap, #view-services .priv-wrap, #view-products .priv-wrap, #view-philosophy .priv-wrap, #view-decisions .priv-wrap, #view-journal .priv-wrap, #view-technologies .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+#view-privacy .priv-wrap, #view-research .priv-wrap, #view-qaip .priv-wrap, #view-scip .priv-wrap, #view-mts .priv-wrap, #view-aipq .priv-wrap, #view-bct .priv-wrap, #view-aimo .priv-wrap, #view-zentravix .priv-wrap, #view-aria .priv-wrap, #view-utf .priv-wrap, #view-locator .priv-wrap, #view-services .priv-wrap, #view-products .priv-wrap, #view-philosophy .priv-wrap, #view-decisions .priv-wrap, #view-journal .priv-wrap, #view-technologies .priv-wrap, #view-catalogue .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
 
 
 
 
  
  
-#view-privacy nav, #view-research nav, #view-qaip nav, #view-scip nav, #view-mts nav, #view-aipq nav, #view-bct nav, #view-aimo nav, #view-zentravix nav, #view-aria nav, #view-utf nav, #view-locator nav, #view-services nav, #view-products nav, #view-philosophy nav, #view-decisions nav, #view-journal nav, #view-technologies nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+#view-privacy nav, #view-research nav, #view-qaip nav, #view-scip nav, #view-mts nav, #view-aipq nav, #view-bct nav, #view-aimo nav, #view-zentravix nav, #view-aria nav, #view-utf nav, #view-locator nav, #view-services nav, #view-products nav, #view-philosophy nav, #view-decisions nav, #view-journal nav, #view-technologies nav, #view-catalogue nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy nav .priv-wrap, #view-research nav .priv-wrap, #view-qaip nav .priv-wrap, #view-scip nav .priv-wrap, #view-mts nav .priv-wrap, #view-aipq nav .priv-wrap, #view-bct nav .priv-wrap, #view-aimo nav .priv-wrap, #view-zentravix nav .priv-wrap, #view-aria nav .priv-wrap, #view-utf nav .priv-wrap, #view-locator nav .priv-wrap, #view-services nav .priv-wrap, #view-products nav .priv-wrap, #view-philosophy nav .priv-wrap, #view-decisions nav .priv-wrap, #view-journal nav .priv-wrap, #view-technologies nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+#view-privacy nav .priv-wrap, #view-research nav .priv-wrap, #view-qaip nav .priv-wrap, #view-scip nav .priv-wrap, #view-mts nav .priv-wrap, #view-aipq nav .priv-wrap, #view-bct nav .priv-wrap, #view-aimo nav .priv-wrap, #view-zentravix nav .priv-wrap, #view-aria nav .priv-wrap, #view-utf nav .priv-wrap, #view-locator nav .priv-wrap, #view-services nav .priv-wrap, #view-products nav .priv-wrap, #view-philosophy nav .priv-wrap, #view-decisions nav .priv-wrap, #view-journal nav .priv-wrap, #view-technologies nav .priv-wrap, #view-catalogue nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; overflow: hidden; }
 
 
  
  
-#view-privacy .priv-brand, #view-faq .priv-brand, #view-research .priv-brand, #view-qaip .priv-brand, #view-scip .priv-brand, #view-mts .priv-brand, #view-aipq .priv-brand, #view-bct .priv-brand, #view-aimo .priv-brand, #view-zentravix .priv-brand, #view-aria .priv-brand, #view-utf .priv-brand, #view-locator .priv-brand, #view-services .priv-brand, #view-products .priv-brand, #view-philosophy .priv-brand, #view-decisions .priv-brand, #view-journal .priv-brand, #view-technologies .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
+#view-privacy .priv-brand, #view-faq .priv-brand, #view-research .priv-brand, #view-qaip .priv-brand, #view-scip .priv-brand, #view-mts .priv-brand, #view-aipq .priv-brand, #view-bct .priv-brand, #view-aimo .priv-brand, #view-zentravix .priv-brand, #view-aria .priv-brand, #view-utf .priv-brand, #view-locator .priv-brand, #view-services .priv-brand, #view-products .priv-brand, #view-philosophy .priv-brand, #view-decisions .priv-brand, #view-journal .priv-brand, #view-technologies .priv-brand, #view-catalogue .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-back-link, #view-faq .priv-back-link, #view-research .priv-back-link, #view-qaip .priv-back-link, #view-scip .priv-back-link, #view-mts .priv-back-link, #view-aipq .priv-back-link, #view-bct .priv-back-link, #view-aimo .priv-back-link, #view-zentravix .priv-back-link, #view-aria .priv-back-link, #view-utf .priv-back-link, #view-locator .priv-back-link, #view-services .priv-back-link, #view-products .priv-back-link, #view-philosophy .priv-back-link, #view-decisions .priv-back-link, #view-journal .priv-back-link, #view-technologies .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-back-link, #view-faq .priv-back-link, #view-research .priv-back-link, #view-qaip .priv-back-link, #view-scip .priv-back-link, #view-mts .priv-back-link, #view-aipq .priv-back-link, #view-bct .priv-back-link, #view-aimo .priv-back-link, #view-zentravix .priv-back-link, #view-aria .priv-back-link, #view-utf .priv-back-link, #view-locator .priv-back-link, #view-services .priv-back-link, #view-products .priv-back-link, #view-philosophy .priv-back-link, #view-decisions .priv-back-link, #view-journal .priv-back-link, #view-technologies .priv-back-link, #view-catalogue .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-back-link:hover, #view-faq .priv-back-link:hover, #view-research .priv-back-link:hover, #view-qaip .priv-back-link:hover, #view-scip .priv-back-link:hover, #view-mts .priv-back-link:hover, #view-aipq .priv-back-link:hover, #view-bct .priv-back-link:hover, #view-aimo .priv-back-link:hover, #view-zentravix .priv-back-link:hover, #view-aria .priv-back-link:hover, #view-utf .priv-back-link:hover, #view-locator .priv-back-link:hover, #view-services .priv-back-link:hover, #view-products .priv-back-link:hover, #view-philosophy .priv-back-link:hover, #view-decisions .priv-back-link:hover, #view-journal .priv-back-link:hover, #view-technologies .priv-back-link:hover { color: var(--gold); }
+#view-privacy .priv-back-link:hover, #view-faq .priv-back-link:hover, #view-research .priv-back-link:hover, #view-qaip .priv-back-link:hover, #view-scip .priv-back-link:hover, #view-mts .priv-back-link:hover, #view-aipq .priv-back-link:hover, #view-bct .priv-back-link:hover, #view-aimo .priv-back-link:hover, #view-zentravix .priv-back-link:hover, #view-aria .priv-back-link:hover, #view-utf .priv-back-link:hover, #view-locator .priv-back-link:hover, #view-services .priv-back-link:hover, #view-products .priv-back-link:hover, #view-philosophy .priv-back-link:hover, #view-decisions .priv-back-link:hover, #view-journal .priv-back-link:hover, #view-technologies .priv-back-link:hover, #view-catalogue .priv-back-link:hover { color: var(--gold); }
 
 
  
  
-#view-privacy .priv-nav-actions, #view-faq .priv-nav-actions, #view-research .priv-nav-actions, #view-qaip .priv-nav-actions, #view-scip .priv-nav-actions, #view-mts .priv-nav-actions, #view-aipq .priv-nav-actions, #view-bct .priv-nav-actions, #view-aimo .priv-nav-actions, #view-zentravix .priv-nav-actions, #view-aria .priv-nav-actions, #view-utf .priv-nav-actions, #view-locator .priv-nav-actions, #view-services .priv-nav-actions, #view-products .priv-nav-actions, #view-philosophy .priv-nav-actions, #view-decisions .priv-nav-actions, #view-journal .priv-nav-actions, #view-technologies .priv-nav-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+#view-privacy .priv-nav-actions, #view-faq .priv-nav-actions, #view-research .priv-nav-actions, #view-qaip .priv-nav-actions, #view-scip .priv-nav-actions, #view-mts .priv-nav-actions, #view-aipq .priv-nav-actions, #view-bct .priv-nav-actions, #view-aimo .priv-nav-actions, #view-zentravix .priv-nav-actions, #view-aria .priv-nav-actions, #view-utf .priv-nav-actions, #view-locator .priv-nav-actions, #view-services .priv-nav-actions, #view-products .priv-nav-actions, #view-philosophy .priv-nav-actions, #view-decisions .priv-nav-actions, #view-journal .priv-nav-actions, #view-technologies .priv-nav-actions, #view-catalogue .priv-nav-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
 
 
  
  
-#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link { font-family: var(--body); font-size: 13.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link { font-family: var(--body); font-size: 13.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-nav-text-link:hover, #view-faq .priv-nav-text-link:hover, #view-research .priv-nav-text-link:hover, #view-qaip .priv-nav-text-link:hover, #view-scip .priv-nav-text-link:hover, #view-mts .priv-nav-text-link:hover, #view-aipq .priv-nav-text-link:hover, #view-bct .priv-nav-text-link:hover, #view-aimo .priv-nav-text-link:hover, #view-zentravix .priv-nav-text-link:hover, #view-aria .priv-nav-text-link:hover, #view-utf .priv-nav-text-link:hover, #view-locator .priv-nav-text-link:hover, #view-services .priv-nav-text-link:hover, #view-products .priv-nav-text-link:hover, #view-philosophy .priv-nav-text-link:hover, #view-decisions .priv-nav-text-link:hover, #view-journal .priv-nav-text-link:hover, #view-technologies .priv-nav-text-link:hover { color: var(--gold); }
+#view-privacy .priv-nav-text-link:hover, #view-faq .priv-nav-text-link:hover, #view-research .priv-nav-text-link:hover, #view-qaip .priv-nav-text-link:hover, #view-scip .priv-nav-text-link:hover, #view-mts .priv-nav-text-link:hover, #view-aipq .priv-nav-text-link:hover, #view-bct .priv-nav-text-link:hover, #view-aimo .priv-nav-text-link:hover, #view-zentravix .priv-nav-text-link:hover, #view-aria .priv-nav-text-link:hover, #view-utf .priv-nav-text-link:hover, #view-locator .priv-nav-text-link:hover, #view-services .priv-nav-text-link:hover, #view-products .priv-nav-text-link:hover, #view-philosophy .priv-nav-text-link:hover, #view-decisions .priv-nav-text-link:hover, #view-journal .priv-nav-text-link:hover, #view-technologies .priv-nav-text-link:hover, #view-catalogue .priv-nav-text-link:hover { color: var(--gold); }
 
 
  
  
 @media (max-width: 700px) { 
-#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link { display: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link { display: none; }
  }
 
 
@@ -847,98 +849,98 @@
 
  
  
-#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head, #view-catalogue header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow, #view-catalogue .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
 
 
  
  
-#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
+#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1, #view-catalogue h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
 
 
  
  
-#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
-
-
-
-
- 
- 
-#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main { padding: 48px 0 90px; }
-
-
- 
- 
-#view-privacy section.block, #view-research section.block, #view-qaip section.block, #view-scip section.block, #view-mts section.block, #view-aipq section.block, #view-bct section.block, #view-aimo section.block, #view-zentravix section.block, #view-aria section.block, #view-utf section.block, #view-locator section.block, #view-services section.block, #view-products section.block, #view-philosophy section.block, #view-decisions section.block, #view-journal section.block, #view-technologies section.block { margin-bottom: 40px; }
-
-
- 
- 
-#view-privacy h2, #view-research h2, #view-qaip h2, #view-scip h2, #view-mts h2, #view-aipq h2, #view-bct h2, #view-aimo h2, #view-zentravix h2, #view-aria h2, #view-utf h2, #view-locator h2, #view-services h2, #view-products h2, #view-philosophy h2, #view-decisions h2, #view-journal h2, #view-technologies h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy p, #view-research p, #view-qaip p, #view-scip p, #view-mts p, #view-aipq p, #view-bct p, #view-aimo p, #view-zentravix p, #view-aria p, #view-utf p, #view-locator p, #view-services p, #view-products p, #view-philosophy p, #view-decisions p, #view-journal p, #view-technologies p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy ul, #view-research ul, #view-qaip ul, #view-scip ul, #view-mts ul, #view-aipq ul, #view-bct ul, #view-aimo ul, #view-zentravix ul, #view-aria ul, #view-utf ul, #view-locator ul, #view-services ul, #view-products ul, #view-philosophy ul, #view-decisions ul, #view-journal ul, #view-technologies ul { margin: 0 0 14px 22px; }
-
-
- 
- 
-#view-privacy li, #view-research li, #view-qaip li, #view-scip li, #view-mts li, #view-aipq li, #view-bct li, #view-aimo li, #view-zentravix li, #view-aria li, #view-utf li, #view-locator li, #view-services li, #view-products li, #view-philosophy li, #view-decisions li, #view-journal li, #view-technologies li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
-
-
- 
- 
-#view-privacy strong, #view-research strong, #view-qaip strong, #view-scip strong, #view-mts strong, #view-aipq strong, #view-bct strong, #view-aimo strong, #view-zentravix strong, #view-aria strong, #view-utf strong, #view-locator strong, #view-services strong, #view-products strong, #view-philosophy strong, #view-decisions strong, #view-journal strong, #view-technologies strong { color: var(--text); font-weight: 600; }
-
-
- 
- 
-#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline { color: var(--gold); text-decoration: underline; }
+#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated, #view-catalogue .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
 
 
 
 
  
  
-#view-privacy .note-box, #view-research .note-box, #view-qaip .note-box, #view-scip .note-box, #view-mts .note-box, #view-aipq .note-box, #view-bct .note-box, #view-aimo .note-box, #view-zentravix .note-box, #view-aria .note-box, #view-utf .note-box, #view-locator .note-box, #view-services .note-box, #view-products .note-box, #view-philosophy .note-box, #view-decisions .note-box, #view-journal .note-box, #view-technologies .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
+#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main, #view-catalogue main { padding: 48px 0 90px; }
 
 
  
  
-#view-privacy .note-box p:last-child, #view-research .note-box p:last-child, #view-qaip .note-box p:last-child, #view-scip .note-box p:last-child, #view-mts .note-box p:last-child, #view-aipq .note-box p:last-child, #view-bct .note-box p:last-child, #view-aimo .note-box p:last-child, #view-zentravix .note-box p:last-child, #view-aria .note-box p:last-child, #view-utf .note-box p:last-child, #view-locator .note-box p:last-child, #view-services .note-box p:last-child, #view-products .note-box p:last-child, #view-philosophy .note-box p:last-child, #view-decisions .note-box p:last-child, #view-journal .note-box p:last-child, #view-technologies .note-box p:last-child { margin-bottom: 0; }
+#view-privacy section.block, #view-research section.block, #view-qaip section.block, #view-scip section.block, #view-mts section.block, #view-aipq section.block, #view-bct section.block, #view-aimo section.block, #view-zentravix section.block, #view-aria section.block, #view-utf section.block, #view-locator section.block, #view-services section.block, #view-products section.block, #view-philosophy section.block, #view-decisions section.block, #view-journal section.block, #view-technologies section.block, #view-catalogue section.block { margin-bottom: 40px; }
+
+
+ 
+ 
+#view-privacy h2, #view-research h2, #view-qaip h2, #view-scip h2, #view-mts h2, #view-aipq h2, #view-bct h2, #view-aimo h2, #view-zentravix h2, #view-aria h2, #view-utf h2, #view-locator h2, #view-services h2, #view-products h2, #view-philosophy h2, #view-decisions h2, #view-journal h2, #view-technologies h2, #view-catalogue h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy p, #view-research p, #view-qaip p, #view-scip p, #view-mts p, #view-aipq p, #view-bct p, #view-aimo p, #view-zentravix p, #view-aria p, #view-utf p, #view-locator p, #view-services p, #view-products p, #view-philosophy p, #view-decisions p, #view-journal p, #view-technologies p, #view-catalogue p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy ul, #view-research ul, #view-qaip ul, #view-scip ul, #view-mts ul, #view-aipq ul, #view-bct ul, #view-aimo ul, #view-zentravix ul, #view-aria ul, #view-utf ul, #view-locator ul, #view-services ul, #view-products ul, #view-philosophy ul, #view-decisions ul, #view-journal ul, #view-technologies ul, #view-catalogue ul { margin: 0 0 14px 22px; }
+
+
+ 
+ 
+#view-privacy li, #view-research li, #view-qaip li, #view-scip li, #view-mts li, #view-aipq li, #view-bct li, #view-aimo li, #view-zentravix li, #view-aria li, #view-utf li, #view-locator li, #view-services li, #view-products li, #view-philosophy li, #view-decisions li, #view-journal li, #view-technologies li, #view-catalogue li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
+
+
+ 
+ 
+#view-privacy strong, #view-research strong, #view-qaip strong, #view-scip strong, #view-mts strong, #view-aipq strong, #view-bct strong, #view-aimo strong, #view-zentravix strong, #view-aria strong, #view-utf strong, #view-locator strong, #view-services strong, #view-products strong, #view-philosophy strong, #view-decisions strong, #view-journal strong, #view-technologies strong, #view-catalogue strong { color: var(--text); font-weight: 600; }
+
+
+ 
+ 
+#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline, #view-catalogue a.inline { color: var(--gold); text-decoration: underline; }
 
 
 
 
  
  
-#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
+#view-privacy .note-box, #view-research .note-box, #view-qaip .note-box, #view-scip .note-box, #view-mts .note-box, #view-aipq .note-box, #view-bct .note-box, #view-aimo .note-box, #view-zentravix .note-box, #view-aria .note-box, #view-utf .note-box, #view-locator .note-box, #view-services .note-box, #view-products .note-box, #view-philosophy .note-box, #view-decisions .note-box, #view-journal .note-box, #view-technologies .note-box, #view-catalogue .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
 
 
  
  
-#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+#view-privacy .note-box p:last-child, #view-research .note-box p:last-child, #view-qaip .note-box p:last-child, #view-scip .note-box p:last-child, #view-mts .note-box p:last-child, #view-aipq .note-box p:last-child, #view-bct .note-box p:last-child, #view-aimo .note-box p:last-child, #view-zentravix .note-box p:last-child, #view-aria .note-box p:last-child, #view-utf .note-box p:last-child, #view-locator .note-box p:last-child, #view-services .note-box p:last-child, #view-products .note-box p:last-child, #view-philosophy .note-box p:last-child, #view-decisions .note-box p:last-child, #view-journal .note-box p:last-child, #view-technologies .note-box p:last-child, #view-catalogue .note-box p:last-child { margin-bottom: 0; }
+
+
 
 
  
  
-#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer, #view-catalogue footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
 
 
  
  
-#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover { color: var(--gold); }
+#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner, #view-catalogue .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+
+
+ 
+ 
+#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a, #view-catalogue .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+
+
+ 
+ 
+#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover, #view-catalogue .priv-footer-inner a:hover { color: var(--gold); }
 
 .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq-item {
@@ -990,12 +992,12 @@
   background: #1E2A3B; color: #F3E4B8; font-family: var(--mono); font-size: 14px;
   padding: 18px 22px; border-radius: 10px; margin: 16px 0; overflow-x: auto; line-height: 1.7;
 }
-#view-research main section, #view-qaip main section, #view-scip main section, #view-mts main section, #view-aipq main section, #view-bct main section, #view-aimo main section, #view-zentravix main section, #view-aria main section, #view-utf main section, #view-locator main section, #view-services main section, #view-products main section, #view-philosophy main section, #view-decisions main section, #view-journal main section, #view-technologies main section { margin-bottom: 34px; }
-#view-research main h2, #view-qaip main h2, #view-scip main h2, #view-mts main h2, #view-aipq main h2, #view-bct main h2, #view-aimo main h2, #view-zentravix main h2, #view-aria main h2, #view-utf main h2, #view-locator main h2, #view-services main h2, #view-products main h2, #view-philosophy main h2, #view-decisions main h2, #view-journal main h2, #view-technologies main h2 { font-family: var(--serif); font-size: 19px; color: var(--text); margin-bottom: 12px; }
-#view-research main p, #view-qaip main p, #view-scip main p, #view-mts main p, #view-aipq main p, #view-bct main p, #view-aimo main p, #view-zentravix main p, #view-aria main p, #view-utf main p, #view-locator main p, #view-services main p, #view-products main p, #view-philosophy main p, #view-decisions main p, #view-journal main p, #view-technologies main p { margin-bottom: 10px; }
-#view-research main ul, #view-qaip main ul, #view-scip main ul, #view-mts main ul, #view-aipq main ul, #view-bct main ul, #view-aimo main ul, #view-zentravix main ul, #view-aria main ul, #view-utf main ul, #view-locator main ul, #view-services main ul, #view-products main ul, #view-philosophy main ul, #view-decisions main ul, #view-journal main ul, #view-technologies main ul { margin: 10px 0 10px 22px; }
-#view-research main li, #view-qaip main li, #view-scip main li, #view-mts main li, #view-aipq main li, #view-bct main li, #view-aimo main li, #view-zentravix main li, #view-aria main li, #view-utf main li, #view-locator main li, #view-services main li, #view-products main li, #view-philosophy main li, #view-decisions main li, #view-journal main li, #view-technologies main li { margin-bottom: 8px; }
-#view-research main code, #view-qaip main code, #view-scip main code, #view-mts main code, #view-aipq main code, #view-bct main code, #view-aimo main code, #view-zentravix main code, #view-aria main code, #view-utf main code, #view-locator main code, #view-services main code, #view-products main code, #view-philosophy main code, #view-decisions main code, #view-journal main code, #view-technologies main code { font-family: var(--mono); background: var(--gold-dim); color: var(--gold); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+#view-research main section, #view-qaip main section, #view-scip main section, #view-mts main section, #view-aipq main section, #view-bct main section, #view-aimo main section, #view-zentravix main section, #view-aria main section, #view-utf main section, #view-locator main section, #view-services main section, #view-products main section, #view-philosophy main section, #view-decisions main section, #view-journal main section, #view-technologies main section, #view-catalogue main section { margin-bottom: 34px; }
+#view-research main h2, #view-qaip main h2, #view-scip main h2, #view-mts main h2, #view-aipq main h2, #view-bct main h2, #view-aimo main h2, #view-zentravix main h2, #view-aria main h2, #view-utf main h2, #view-locator main h2, #view-services main h2, #view-products main h2, #view-philosophy main h2, #view-decisions main h2, #view-journal main h2, #view-technologies main h2, #view-catalogue main h2 { font-family: var(--serif); font-size: 19px; color: var(--text); margin-bottom: 12px; }
+#view-research main p, #view-qaip main p, #view-scip main p, #view-mts main p, #view-aipq main p, #view-bct main p, #view-aimo main p, #view-zentravix main p, #view-aria main p, #view-utf main p, #view-locator main p, #view-services main p, #view-products main p, #view-philosophy main p, #view-decisions main p, #view-journal main p, #view-technologies main p, #view-catalogue main p { margin-bottom: 10px; }
+#view-research main ul, #view-qaip main ul, #view-scip main ul, #view-mts main ul, #view-aipq main ul, #view-bct main ul, #view-aimo main ul, #view-zentravix main ul, #view-aria main ul, #view-utf main ul, #view-locator main ul, #view-services main ul, #view-products main ul, #view-philosophy main ul, #view-decisions main ul, #view-journal main ul, #view-technologies main ul, #view-catalogue main ul { margin: 10px 0 10px 22px; }
+#view-research main li, #view-qaip main li, #view-scip main li, #view-mts main li, #view-aipq main li, #view-bct main li, #view-aimo main li, #view-zentravix main li, #view-aria main li, #view-utf main li, #view-locator main li, #view-services main li, #view-products main li, #view-philosophy main li, #view-decisions main li, #view-journal main li, #view-technologies main li, #view-catalogue main li { margin-bottom: 8px; }
+#view-research main code, #view-qaip main code, #view-scip main code, #view-mts main code, #view-aipq main code, #view-bct main code, #view-aimo main code, #view-zentravix main code, #view-aria main code, #view-utf main code, #view-locator main code, #view-services main code, #view-products main code, #view-philosophy main code, #view-decisions main code, #view-journal main code, #view-technologies main code, #view-catalogue main code { font-family: var(--mono); background: var(--gold-dim); color: var(--gold); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
 
 </style>
 </head>
@@ -1276,13 +1278,18 @@
 
 
 <nav>
-  <div class="cat-wrap">
-    <a href="#home" onclick="showView('home'); return false;" class="cat-brand">Chaitrishodaya</a>
-    <div class="cat-nav-actions">
-      <a href="#services" onclick="showView('home', 'services'); return false;" class="cat-nav-text-link">Services</a>
-      <a href="#products" onclick="showView('home', 'products'); return false;" class="cat-nav-text-link">Products</a>
-      <a href="#privacy" onclick="showView('privacy'); return false;" class="cat-nav-text-link">Privacy</a>
-      <a href="#home" onclick="showView('home'); return false;" class="cat-back-link">← Back to home</a>
+  <div class="priv-wrap">
+    <a href="#home" onclick="showView('home'); return false;" class="priv-brand">Chaitrishodaya<span class="brand-mark brand-mark-sm"><svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterH0CATCATCATCATCATCATCATCATCATCAT" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerH0CATCATCATCATCATCATCATCAT" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowH0CATCAT" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowH0CATCAT" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowH0CATCAT)"><path d="M28.0,30.8 Q17.8,21.4 4.2,24.4 Q14.4,33.8 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q21.3,18.6 7.5,17.1 Q14.2,29.3 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q25.6,17.1 13.0,11.3 Q15.4,24.9 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q30.1,17.1 20.1,7.5 Q17.9,21.2 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q34.4,18.5 28.0,6.2 Q21.6,18.5 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q38.1,21.2 35.9,7.5 Q25.9,17.1 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q40.6,24.9 43.0,11.3 Q30.4,17.1 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q41.8,29.3 48.5,17.1 Q34.7,18.6 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q41.6,33.8 51.8,24.4 Q38.2,21.4 28.0,30.8 Z" fill="url(#petalOuterH0CATCATCATCATCATCATCATCATCATCAT)" opacity="0.95"/><path d="M28.0,30.8 Q25.1,21.6 15.6,19.5 Q18.5,28.7 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q27.7,21.1 19.2,16.5 Q19.5,26.2 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q30.4,21.4 23.4,14.6 Q21.1,24.0 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q32.8,22.4 28.0,14.0 Q23.2,22.4 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q34.9,24.0 32.6,14.6 Q25.6,21.4 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q36.5,26.2 36.8,16.5 Q28.3,21.1 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><path d="M28.0,30.8 Q37.5,28.7 40.4,19.5 Q30.9,21.6 28.0,30.8 Z" fill="url(#petalInnerH0CATCATCATCATCATCATCATCAT)"/><circle cx="28.0" cy="30.8" r="4.2" fill="url(#centerGlowH0CATCAT)"/></g></svg></span></a>
+    <div class="priv-nav-actions">
+      <a href="#services" onclick="showView('services'); return false;" class="priv-nav-text-link">Services</a>
+      <a href="#products" onclick="showView('products'); return false;" class="priv-nav-text-link">Products</a>
+      <a href="#philosophy" onclick="showView('philosophy'); return false;" class="priv-nav-text-link">Philosophy</a>
+      <a href="#journal" onclick="showView('journal'); return false;" class="priv-nav-text-link">Journal</a>
+      <a href="#decisions" onclick="showView('decisions'); return false;" class="priv-nav-text-link">Decisions</a>
+      <a href="#research" onclick="showView('research'); return false;" class="priv-nav-text-link">Research</a>
+      <a href="#catalogue" onclick="showView('catalogue'); return false;" class="priv-nav-text-link">Catalogue</a>
+      <a href="#technologies" onclick="showView('technologies'); return false;" class="priv-nav-text-link">Technologies</a>
+      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
     </div>
   </div>
 </nav>
@@ -4267,7 +4274,7 @@ last-known-good prompt (never blocks)</div>
   function showView(name, scrollTargetId) {
     document.querySelectorAll('.app-view').forEach(function(v) { v.style.display = 'none'; });
     var target = document.getElementById('view-' + name);
-    if (target) target.style.display = 'block';
+    if (target) target.style.display = 'flex';
     window.scrollTo(0, 0);
     if (name === 'home' && scrollTargetId) {
       setTimeout(function() {
