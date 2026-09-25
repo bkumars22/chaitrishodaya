@@ -538,7 +538,7 @@
   .subpage-crumb { padding-top: 22px; padding-bottom: 4px; }
   .subpage-crumb a { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.3px; color: var(--text-dim); text-decoration: none; }
   .subpage-crumb a:hover { color: var(--gold); }
-  @media (max-width: 860px) {
+  @media (max-width: 1180px) {
     .app-view nav .priv-nav-actions { display: none !important; position: absolute !important; top: 100%; left: 0; right: 0; background: var(--bg);
       flex-direction: column !important; align-items: flex-start !important; gap: 0 !important; border-top: 1px solid var(--line);
       box-shadow: 0 12px 24px rgba(0,0,0,0.08); overflow: visible !important; }
@@ -557,6 +557,105 @@
     max-width: clamp(1180px, 88vw, 1560px) !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important;
     padding-left: 32px !important; padding-right: 32px !important; box-sizing: border-box !important; }
   .app-view .priv-wrap:not(nav .priv-wrap) > * { max-width: 716px; }
+
+  /* ===================== Homepage sections (hx-) ===================== */
+  .hx-sec { padding: 96px 0; }
+  .hx-tint { background: var(--panel-2); }
+  .hx-link { font-family: var(--mono); font-size: 12px; letter-spacing: 0.4px; color: var(--gold); text-decoration: none; }
+  .hx-more { margin-top: 40px; }
+
+  .hx-stack { padding: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); }
+  .hx-stack-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 30px 0 32px; }
+  .hx-stack-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-faint); white-space: nowrap; }
+  .hx-stack-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 26px; width: 100%; }
+  .hx-stack-row span { font-family: var(--serif); font-size: 17px; font-weight: 600; color: #7A7F87; letter-spacing: 0.2px; white-space: nowrap; }
+
+  .hx-life { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .hx-life-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 30px 26px 26px; display: flex; flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .hx-life-card::before { content: ''; position: absolute; left: 26px; right: 26px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: linear-gradient(90deg, #C9971E, #F0C868); }
+  .hx-life-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -22px rgba(30,42,59,0.28); border-color: #D9C9A0; }
+  .hx-life-num { font-family: var(--mono); font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .hx-life-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 10px; }
+  .hx-life-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+  .hx-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hx-chips a { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.3px; color: var(--text); text-decoration: none; padding: 6px 11px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--panel-2); transition: all 0.18s; }
+  .hx-chips a:hover { border-color: var(--gold); color: var(--gold); background: #FFF; }
+
+  .hx-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .hx-cap { display: flex; flex-direction: column; text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 34px 30px 28px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .hx-cap:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -22px rgba(30,42,59,0.28); }
+  .hx-cap-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--gold);
+    background: linear-gradient(135deg, #F3EBD8, #E8D9B5); margin-bottom: 22px; }
+  .hx-cap h3 { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--text); line-height: 1.3; margin-bottom: 12px; }
+  .hx-cap p { font-size: 15px; color: var(--text-dim); line-height: 1.75; margin-bottom: 22px; flex: 1; }
+  .hx-proof { font-family: var(--mono); font-size: 12px; color: var(--gold); line-height: 1.6; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+
+  .hx-domains { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .hx-domain { display: flex; flex-direction: column; text-decoration: none; padding: 32px 30px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: var(--panel); transition: background 0.2s ease; }
+  .hx-domain:hover { background: #FFFDF8; }
+  .hx-domain h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+  .hx-domain p { font-size: 14.5px; color: var(--text-dim); line-height: 1.7; margin-bottom: 18px; flex: 1; }
+
+  .hx-impact { background: linear-gradient(160deg, #1E2A3B 0%, #16202E 100%); padding: 92px 0; position: relative; overflow: hidden; }
+  .hx-impact::after { content: ''; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,200,104,0.14), transparent 70%); pointer-events: none; }
+  .hx-impact-head { margin-bottom: 48px; }
+  .hx-impact-head .section-eyebrow { color: #E8C158; }
+  .hx-impact-head h2 { font-family: var(--serif); font-size: clamp(26px, 3.2vw, 36px); font-weight: 500; color: #FFFFFF; letter-spacing: -0.3px; }
+  .hx-impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.12); }
+  .hx-stat { padding: 34px 28px 8px 0; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 28px; }
+  .hx-stat:last-child { border-right: none; margin-right: 0; }
+  .hx-stat-num { font-family: var(--serif); font-size: clamp(38px, 4.2vw, 54px); font-weight: 600; line-height: 1; margin-bottom: 14px;
+    background: linear-gradient(90deg, #F0C868, #C9971E); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hx-stat-label { font-size: 14px; color: rgba(255,255,255,0.72); line-height: 1.65; max-width: 260px; }
+
+  .hx-record { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .hx-story { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 14px 14px 4px; padding: 30px 28px 26px; display: flex; flex-direction: column; }
+  .hx-story-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .hx-story p { font-family: var(--serif); font-size: 17px; line-height: 1.65; color: var(--text); margin-bottom: 22px; flex: 1; }
+  .hx-story code { font-family: var(--mono); font-size: 13.5px; background: var(--bg-deep); padding: 1px 6px; border-radius: 4px; }
+
+  .hx-res { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .hx-res-card { text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  .hx-res-card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -22px rgba(30,42,59,0.28); }
+  .hx-res-type { font-family: var(--mono); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .hx-res-card h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .hx-res-card p { font-size: 14px; color: var(--text-dim); line-height: 1.7; }
+
+  .footer-cols.hx-footer-cols { gap: 56px; flex-wrap: wrap; }
+
+  @media (max-width: 1100px) {
+    .hx-life, .hx-res { grid-template-columns: repeat(2, 1fr); }
+    .hx-domains { grid-template-columns: repeat(2, 1fr); }
+    .hx-impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .hx-stat { border-right: none; margin-right: 0; padding-right: 20px; }
+    .hx-stack-row { justify-content: center; }
+  }
+  @media (max-width: 760px) {
+    .hx-sec { padding: 68px 0; } .hx-impact { padding: 68px 0; }
+    .hx-life, .hx-caps, .hx-domains, .hx-record, .hx-res { grid-template-columns: 1fr; }
+    .hx-impact-grid { grid-template-columns: 1fr 1fr; }
+    .hx-stack-row { gap: 8px 22px; } .hx-stack-row span { font-size: 16px; }
+    .footer-cols.hx-footer-cols { gap: 32px; }
+  }
+
+  /* ===== Responsive header: hamburger up to 1180px, tighter menu on laptops — identical on every page ===== */
+  @media (max-width: 1180px) {
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: flex-start; gap: 0;
+      border-top: 1px solid var(--line); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+    .nav-links.mobile-open { display: flex; }
+    .nav-links a { width: 100%; padding: 16px 24px; border-bottom: 1px solid var(--line); }
+    .nav-links a.nav-cta { margin: 12px 24px; width: calc(100% - 48px); text-align: center; border: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+    .nav-hamburger { display: flex; }
+  }
+  @media (min-width: 1181px) and (max-width: 1439px) {
+    .nav-links { gap: 16px; }
+    .app-view nav .priv-nav-actions { gap: 16px !important; }
+  }
 </style>
 <style>
 /* ---- catalogue view (fully scoped) ---- */
@@ -1233,6 +1332,177 @@
 
   
 
+    <!-- ===== Homepage: built-on strip ===== -->
+  <section class="hx-stack">
+    <div class="wrap">
+      <div class="hx-stack-inner">
+        <div class="hx-stack-label">Built on production&#8209;grade foundations</div>
+        <div class="hx-stack-row">
+          <span>LangGraph</span><span>CrewAI</span><span>Claude</span><span>deepeval</span><span>PostgreSQL + pgvector</span><span>FastAPI</span><span>Spring Boot</span><span>Playwright</span><span>Docker</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: lifecycle ===== -->
+  <section class="section on-dark hx-sec" id="lifecycle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">The Platform</div>
+        <h2 class="section-title">Confidence at every stage of the AI lifecycle</h2>
+        <p class="section-desc">Ten systems, each built for one stage of shipping AI you can trust &mdash; and wired to work together, not just sit side by side.</p>
+      </div>
+      <div class="hx-life reveal">
+        <div class="hx-life-card">
+          <div class="hx-life-num">01 &middot; Build</div>
+          <h3>Ship real AI systems</h3>
+          <p>Multi-agent pipelines, retrieval and decision models &mdash; engineered to production standard, not prototypes.</p>
+          <div class="hx-chips">
+            <a href="#qaip" onclick="showView('qaip'); return false;">QAIP</a><a href="#zentravix" onclick="showView('zentravix'); return false;">ZENTRAVIX</a><a href="#scip" onclick="showView('scip'); return false;">SCIP</a><a href="#aria" onclick="showView('aria'); return false;">ARIA</a>
+          </div>
+        </div>
+        <div class="hx-life-card">
+          <div class="hx-life-num">02 &middot; Verify</div>
+          <h3>Test what evaluations miss</h3>
+          <p>Statistical trust checks, adversarial pressure and cross-framework tests that surface what clean-question evals never see.</p>
+          <div class="hx-chips">
+            <a href="#mts" onclick="showView('mts'); return false;">MTS</a><a href="#bct" onclick="showView('bct'); return false;">BCT</a><a href="#utf" onclick="showView('utf'); return false;">UTF</a><a href="#locator" onclick="showView('locator'); return false;">Locator</a>
+          </div>
+        </div>
+        <div class="hx-life-card">
+          <div class="hx-life-num">03 &middot; Gate</div>
+          <h3>Block regressions before deploy</h3>
+          <p>Every prompt versioned like code and scored against a golden dataset &mdash; below threshold, it doesn&rsquo;t ship.</p>
+          <div class="hx-chips">
+            <a href="#aipq" onclick="showView('aipq'); return false;">AIPQ</a>
+          </div>
+        </div>
+        <div class="hx-life-card">
+          <div class="hx-life-num">04 &middot; Monitor</div>
+          <h3>Catch failures in production</h3>
+          <p>Five AI-specific failure modes watched in parallel, with root-cause lookup back into the quality gate.</p>
+          <div class="hx-chips">
+            <a href="#aimo" onclick="showView('aimo'); return false;">AIMO</a>
+          </div>
+        </div>
+      </div>
+      <div class="hx-more reveal"><a href="#products" onclick="showView('products'); return false;" class="btn btn-ghost">Explore all ten systems &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: capabilities ===== -->
+  <section class="section on-dark hx-sec hx-tint" id="capabilities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Quality Built In</div>
+        <h2 class="section-title">AI that proves itself, not just performs</h2>
+        <p class="section-desc">Every capability below exists because a real system failed in a way ordinary testing didn&rsquo;t catch.</p>
+      </div>
+      <div class="hx-caps reveal">
+        <a class="hx-cap" href="#aipq" onclick="showView('aipq'); return false;">
+          <div class="hx-cap-icon">&#9670;</div>
+          <h3>Catch regressions before they ship</h3>
+          <p>Prompts are versioned like code and scored against a golden dataset before they can reach users.</p>
+          <div class="hx-proof">v2 scored 0.60 &rarr; auto-reverted to v1&rsquo;s 0.93</div>
+          <span class="hx-link">AIPQ &rarr;</span>
+        </a>
+        <a class="hx-cap" href="#bct" onclick="showView('bct'); return false;">
+          <div class="hx-cap-icon">&#9651;</div>
+          <h3>Prove behaviour under pressure</h3>
+          <p>Graduated adversarial testing finds the exact point a rule breaks &mdash; where clean-question evaluations see nothing.</p>
+          <div class="hx-proof">ARIA: 94% in eval &middot; 22.2% under real pressure &middot; closed to 100%</div>
+          <span class="hx-link">BCT &rarr;</span>
+        </a>
+        <a class="hx-cap" href="#aimo" onclick="showView('aimo'); return false;">
+          <div class="hx-cap-icon">&#9711;</div>
+          <h3>See failures before your users do</h3>
+          <p>Five AI-specific failure modes watched in parallel &mdash; including inside the monitor itself.</p>
+          <div class="hx-proof">Caught a silent bug in its own pipeline</div>
+          <span class="hx-link">AIMO &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: domains ===== -->
+  <section class="section on-dark hx-sec" id="domains">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Domains</div>
+        <h2 class="section-title">Built for high-stakes domains</h2>
+        <p class="section-desc">Places where an AI system being wrong costs money, trust or compliance &mdash; and where we&rsquo;ve already built something real.</p>
+      </div>
+      <div class="hx-domains reveal">
+        <a class="hx-domain" href="#demo-register"><h3>Banking &amp; financial services</h3><p>Document intelligence where access control runs before retrieval, with a tamper-evident audit trail.</p><span class="hx-link">Request a walkthrough &rarr;</span></a>
+        <a class="hx-domain" href="#scip" onclick="showView('scip'); return false;"><h3>Supply chain &amp; manufacturing</h3><p>Supplier risk scoring with explainable IsolationForest and SHAP, on a full-stack platform.</p><span class="hx-link">SCIP &rarr;</span></a>
+        <a class="hx-domain" href="#aria" onclick="showView('aria'); return false;"><h3>Education</h3><p>A Socratic tutor in 35 languages that guides instead of answering &mdash; and holds under pressure.</p><span class="hx-link">ARIA &rarr;</span></a>
+        <a class="hx-domain" href="#qaip" onclick="showView('qaip'); return false;"><h3>Software engineering &amp; QA</h3><p>From Jira story to runnable tests, with pipeline cost cut from &#8377;50 to &#8377;8 per run.</p><span class="hx-link">QAIP &rarr;</span></a>
+        <a class="hx-domain" href="#zentravix" onclick="showView('zentravix'); return false;"><h3>Enterprise operations</h3><p>Role-specific intelligence from CEO to engineer, answered from live Jira and sprint data.</p><span class="hx-link">ZENTRAVIX &rarr;</span></a>
+        <a class="hx-domain" href="#aipq" onclick="showView('aipq'); return false;"><h3>AI governance &amp; compliance</h3><p>Every prompt decision recorded &mdash; who, what and why &mdash; mapped to EU AI Act Articles 9, 12 and 14.</p><span class="hx-link">AIPQ &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: impact band ===== -->
+  <section class="hx-impact" id="impact">
+    <div class="wrap">
+      <div class="hx-impact-head reveal">
+        <div class="section-eyebrow">Measured, not claimed</div>
+        <h2>The impact, in real numbers</h2>
+      </div>
+      <div class="hx-impact-grid reveal">
+        <div class="hx-stat"><div class="hx-stat-num">4 min</div><div class="hx-stat-label">Automatic rollback of a degraded prompt &mdash; versus roughly 3 hours by hand</div></div>
+        <div class="hx-stat"><div class="hx-stat-num">100%</div><div class="hx-stat-label">Adversarial compliance, up from 22.2% under real-world pressure</div></div>
+        <div class="hx-stat"><div class="hx-stat-num">&#8377;8</div><div class="hx-stat-label">Cost per QA pipeline run, down from &#8377;50</div></div>
+        <div class="hx-stat"><div class="hx-stat-num">424</div><div class="hx-stat-label">Automated tests across the banking platform, zero mocked security boundaries</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: the record ===== -->
+  <section class="section on-dark hx-sec" id="record">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">The Record</div>
+        <h2 class="section-title">No testimonials yet. Just what actually happened.</h2>
+        <p class="section-desc">We&rsquo;re early, so instead of quotes, here are three real incidents &mdash; each one measured and documented.</p>
+      </div>
+      <div class="hx-record reveal">
+        <div class="hx-story">
+          <div class="hx-story-tag">AIPQ &middot; July 7, 2026</div>
+          <p>A prompt edit labelled &ldquo;sped up responses&rdquo; dropped quality to 0.60 against a 0.90 threshold. Drift detection flagged it and rolled back to the last good version in four minutes.</p>
+          <a href="#aipq" onclick="showView('aipq'); return false;" class="hx-link">Read the AIPQ story &rarr;</a>
+        </div>
+        <div class="hx-story">
+          <div class="hx-story-tag">ARIA &middot; Adversarial testing</div>
+          <p>Automated evaluation reported 94% compliance with &ldquo;never give the answer&rdquo;. A 20-case adversarial suite found 22.2%. Prompt hardening, calibration and temperature tuning closed it to 100%.</p>
+          <a href="#aria" onclick="showView('aria'); return false;" class="hx-link">Read the ARIA story &rarr;</a>
+        </div>
+        <div class="hx-story">
+          <div class="hx-story-tag">SCIP &middot; Boundary testing</div>
+          <p>Boundary testing found <code>BCrypt.matches(null, hash)</code> returning true &mdash; any password would unlock a deleted account. Fixed with a null guard, then locked into CI so it can&rsquo;t return.</p>
+          <a href="#scip" onclick="showView('scip'); return false;" class="hx-link">Read the SCIP story &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Homepage: resources ===== -->
+  <section class="section on-dark hx-sec hx-tint" id="resources">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Go Deeper</div>
+        <h2 class="section-title">The thinking behind the systems</h2>
+      </div>
+      <div class="hx-res reveal">
+        <a class="hx-res-card" href="#decisions" onclick="showView('decisions'); return false;"><div class="hx-res-type">Decision records</div><h3>Why, not just what</h3><p>Architecture decisions &mdash; including the alternatives that were rejected, and why.</p></a>
+        <a class="hx-res-card" href="#journal" onclick="showView('journal'); return false;"><div class="hx-res-type">Journal</div><h3>Build notes</h3><p>What happened while building, written as it happened &mdash; failures included.</p></a>
+        <a class="hx-res-card" href="#research" onclick="showView('research'); return false;"><div class="hx-res-type">Research</div><h3>Work in progress</h3><p>Ongoing research, clearly labelled by stage &mdash; never presented as finished.</p></a>
+        <a class="hx-res-card" href="#catalogue" onclick="showView('catalogue'); return false;"><div class="hx-res-type">Catalogue &middot; PDF</div><h3>Company profile</h3><p>Every product and service in one document, ready to share.</p></a>
+      </div>
+    </div>
+  </section>
+
   <!-- Video story section hidden temporarily — will re-enable later
   <section id="watch" class="section on-dark" style="padding: 30px 0;">
     <div class="wrap" style="text-align:center;">
@@ -1402,19 +1672,36 @@
           <div class="footer-brand-title">Chaitrishodaya<span class="brand-mark brand-mark-lg"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowF" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowF" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowF)"><path d="M24.0,26.4 Q15.2,18.3 3.6,20.9 Q12.4,29.0 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q18.3,15.9 6.4,14.7 Q12.2,25.1 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q22.0,14.7 11.1,9.6 Q13.2,21.4 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q25.8,14.6 17.2,6.4 Q15.4,18.2 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q29.5,15.8 24.0,5.3 Q18.5,15.8 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q32.6,18.2 30.8,6.4 Q22.2,14.6 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q34.8,21.4 36.9,9.6 Q26.0,14.7 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.8,25.1 41.6,14.7 Q29.7,15.9 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.6,29.0 44.4,20.9 Q32.8,18.3 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q21.5,18.5 13.4,16.7 Q15.9,24.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q23.7,18.1 16.4,14.1 Q16.7,22.4 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q26.0,18.3 20.1,12.5 Q18.1,20.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q28.1,19.2 24.0,12.0 Q19.9,19.2 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q29.9,20.6 27.9,12.5 Q22.0,18.3 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q31.3,22.4 31.6,14.1 Q24.3,18.1 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q32.1,24.6 34.6,16.7 Q26.5,18.5 24.0,26.4 Z" fill="url(#petalInnerF)"/><circle cx="24.0" cy="26.4" r="3.6" fill="url(#centerGlowF)"/></g></svg></span></div>
           <p class="footer-sub">Global AI quality systems studio. Founded by Kumara Swamy, AI Technical Architect.</p>
         </div>
-        <div class="footer-cols">
+        <div class="footer-cols hx-footer-cols">
           <div class="footer-col">
-            <div class="footer-col-title">Site</div>
-            <a href="#services">Services</a>
-            <a href="#products">Products</a>
-            <a href="#philosophy">Philosophy</a>
-            <a href="#contact">Contact</a>
-            <a href="#catalogue" onclick="showView('catalogue'); return false;">View Catalogue</a>
+            <div class="footer-col-title">Products</div>
+            <a href="#aipq" onclick="showView('aipq'); return false;">AIPQ</a>
+            <a href="#aimo" onclick="showView('aimo'); return false;">AIMO</a>
+            <a href="#bct" onclick="showView('bct'); return false;">BCT</a>
+            <a href="#qaip" onclick="showView('qaip'); return false;">QAIP</a>
+            <a href="#scip" onclick="showView('scip'); return false;">SCIP</a>
+            <a href="#products" onclick="showView('products'); return false;">All ten systems</a>
           </div>
           <div class="footer-col">
-            <div class="footer-col-title">Elsewhere</div>
-            <a href="https://linkedin.com/in/kumara-swamy-7731b020" target="_blank" rel="noopener">LinkedIn</a>
+            <div class="footer-col-title">Company</div>
+            <a href="#services" onclick="showView('services'); return false;">Services</a>
+            <a href="#philosophy" onclick="showView('philosophy'); return false;">Philosophy</a>
+            <a href="#decisions" onclick="showView('decisions'); return false;">Decisions</a>
+            <a href="#journal" onclick="showView('journal'); return false;">Journal</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Resources</div>
+            <a href="#research" onclick="showView('research'); return false;">Research</a>
+            <a href="#catalogue" onclick="showView('catalogue'); return false;">Catalogue</a>
+            <a href="#faq" onclick="showView('faq'); return false;">FAQ</a>
+            <a href="#technologies" onclick="showView('technologies'); return false;">Technologies</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Get in touch</div>
+            <a href="#demo-register">Request a demo</a>
+            <a href="#contact">Contact</a>
             <a href="mailto:swamy.kumar02@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/kumara-swamy-7731b020" target="_blank" rel="noopener">LinkedIn</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">Legal</div>
