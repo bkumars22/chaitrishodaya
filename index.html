@@ -519,6 +519,44 @@
   .footer-col a { display: block; font-size: 14.5px; color: var(--text-dim); text-decoration: none; margin-bottom: 12px; }
   .footer-col a:hover { color: var(--gold); }
   .footer-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  /* ===== Unified header — every sub-page header mirrors the homepage header exactly ===== */
+  .app-view nav { line-height: 1.65; }
+  .app-view nav .priv-wrap { max-width: clamp(1180px, 88vw, 1560px) !important; width: 100% !important; margin: 0 auto !important;
+    padding: 0 32px !important; height: 76px !important; display: flex !important; align-items: center !important;
+    justify-content: space-between !important; gap: 0 !important; box-sizing: border-box; transition: height 0.3s ease; }
+  .app-view nav.scrolled .priv-wrap { height: 62px !important; }
+  .app-view nav .priv-brand { display: flex !important; align-items: center !important; gap: 10px !important; text-decoration: none;
+    font-family: var(--serif) !important; font-weight: 600 !important; font-size: 26px !important; letter-spacing: 0.3px !important; font-style: italic !important;
+    background: linear-gradient(100deg, #8A6A12 0%, #C9A227 35%, #E8C158 55%, #A9790F 100%) !important;
+    -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; flex-shrink: 0; }
+  .app-view nav .priv-brand .brand-mark-sm { width: 62px !important; height: 62px !important; margin-left: -2px; }
+  .app-view nav .priv-nav-actions { display: flex !important; align-items: center !important; gap: 26px !important; font-size: 13.5px !important;
+    font-family: var(--body) !important; overflow: visible !important; }
+  .app-view nav .priv-nav-actions > .nav-item-dd > a { font-size: 13.5px !important; font-weight: 500 !important; }
+  .app-view nav .priv-nav-actions .nav-cta { font-size: 13.5px !important; font-weight: 500 !important; text-decoration: none; }
+  .subpage-crumb { padding-top: 22px; padding-bottom: 4px; }
+  .subpage-crumb a { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.3px; color: var(--text-dim); text-decoration: none; }
+  .subpage-crumb a:hover { color: var(--gold); }
+  @media (max-width: 860px) {
+    .app-view nav .priv-nav-actions { display: none !important; position: absolute !important; top: 100%; left: 0; right: 0; background: var(--bg);
+      flex-direction: column !important; align-items: flex-start !important; gap: 0 !important; border-top: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08); overflow: visible !important; }
+    .app-view nav .priv-nav-actions.mobile-open { display: flex !important; }
+    .app-view nav .priv-nav-actions a { width: 100%; padding: 16px 24px; border-bottom: 1px solid var(--line); }
+    .app-view nav .priv-nav-actions a.nav-cta { margin: 12px 24px; width: calc(100% - 48px); text-align: center; border: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+  }
+
+  /* ===== FAQ list aligns with the other article pages ===== */
+  #view-faq .faq-list { margin: 0 !important; }
+  /* ===== Header tint identical to the homepage, at rest and when scrolled ===== */
+  .app-view nav { background: rgba(250,247,241,0.88) !important; box-shadow: none !important; }
+  .app-view nav.scrolled { background: rgba(250,247,241,0.97) !important; box-shadow: 0 1px 0 rgba(30,42,59,0.06) !important; }
+  /* ===== Unified content edge — page content starts directly under the logo on every page ===== */
+  .app-view .priv-wrap:not(nav .priv-wrap), .app-view .cat-wrap:not(nav .cat-wrap), .app-view .subpage-crumb {
+    max-width: clamp(1180px, 88vw, 1560px) !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important;
+    padding-left: 32px !important; padding-right: 32px !important; box-sizing: border-box !important; }
+  .app-view .priv-wrap:not(nav .priv-wrap) > * { max-width: 716px; }
 </style>
 <style>
 /* ---- catalogue view (fully scoped) ---- */
@@ -536,7 +574,7 @@
 
  
  
-#view-catalogue * { box-sizing: border-box; margin: 0; padding: 0; }
+#view-catalogue :where(:not(nav, nav *)) { box-sizing: border-box; margin: 0; padding: 0; }
 
 
  
@@ -783,12 +821,12 @@
 
  
  
-#view-privacy *, #view-research *, #view-qaip *, #view-scip *, #view-mts *, #view-aipq *, #view-bct *, #view-aimo *, #view-zentravix *, #view-aria *, #view-utf *, #view-locator * { box-sizing: border-box; margin: 0; padding: 0; }
+#view-privacy :where(:not(nav, nav *)), #view-research :where(:not(nav, nav *)), #view-qaip :where(:not(nav, nav *)), #view-scip :where(:not(nav, nav *)), #view-mts :where(:not(nav, nav *)), #view-aipq :where(:not(nav, nav *)), #view-bct :where(:not(nav, nav *)), #view-aimo :where(:not(nav, nav *)), #view-zentravix :where(:not(nav, nav *)), #view-aria :where(:not(nav, nav *)), #view-utf :where(:not(nav, nav *)), #view-locator :where(:not(nav, nav *)) { box-sizing: border-box; margin: 0; padding: 0; }
 
 
  
  
-#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
+#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue, #view-faq { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
 
 
  
@@ -849,29 +887,29 @@
 
  
  
-#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head, #view-catalogue header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head, #view-catalogue header.page-head, #view-faq header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow, #view-catalogue .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow, #view-catalogue .priv-eyebrow, #view-faq .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
 
 
  
  
-#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1, #view-catalogue h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
+#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1, #view-catalogue h1, #view-faq h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
 
 
  
  
-#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated, #view-catalogue .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
+#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated, #view-catalogue .updated, #view-faq .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
 
 
 
 
  
  
-#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main, #view-catalogue main { padding: 48px 0 90px; }
+#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main, #view-catalogue main, #view-faq main { padding: 48px 0 90px; }
 
 
  
@@ -906,7 +944,7 @@
 
  
  
-#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline, #view-catalogue a.inline { color: var(--gold); text-decoration: underline; }
+#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline, #view-catalogue a.inline, #view-faq a.inline { color: var(--gold); text-decoration: underline; }
 
 
 
@@ -925,22 +963,22 @@
 
  
  
-#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer, #view-catalogue footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
+#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer, #view-catalogue footer, #view-faq footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
 
 
  
  
-#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner, #view-catalogue .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner, #view-catalogue .priv-footer-inner, #view-faq .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
 
 
  
  
-#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a, #view-catalogue .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a, #view-catalogue .priv-footer-inner a, #view-faq .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover, #view-catalogue .priv-footer-inner a:hover { color: var(--gold); }
+#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover, #view-catalogue .priv-footer-inner a:hover, #view-faq .priv-footer-inner a:hover { color: var(--gold); }
 
 .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq-item {
@@ -1489,8 +1527,12 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -1623,8 +1665,12 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -1802,8 +1848,12 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -1950,8 +2000,12 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -2118,10 +2172,15 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -2354,10 +2413,15 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -2578,10 +2642,15 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -2800,10 +2869,15 @@
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -3030,10 +3104,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -3246,10 +3325,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -3464,10 +3548,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -3684,10 +3773,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -3903,10 +3997,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -4120,10 +4219,15 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('products'); return false;" class="priv-back-link">← Back to products</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
 
 <header class="page-head">
   <div class="priv-wrap">
@@ -4342,8 +4446,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -4604,8 +4712,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -4868,8 +4980,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -5016,8 +5132,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -5551,8 +5671,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -5705,8 +5829,12 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
-      <a href="#home" onclick="showView('home'); return false;" class="priv-back-link">← Back to site</a>
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
     </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -5953,11 +6081,10 @@ last-known-good prompt (never blocks)</div>
   counterEls.forEach((el) => counterObserver.observe(el));
 
   // ---------- Nav scroll state ----------
-  const navEl = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) navEl.classList.add('scrolled');
-    else navEl.classList.remove('scrolled');
-  }, { passive: true });
+  const navEls = document.querySelectorAll('nav');
+  const syncNavScroll = () => navEls.forEach((n) => n.classList.toggle('scrolled', window.scrollY > 40));
+  window.addEventListener('scroll', syncNavScroll, { passive: true });
+  syncNavScroll();
 
 
   // ---------- Multi-view single-file routing ----------
@@ -6085,10 +6212,15 @@ last-known-good prompt (never blocks)</div>
     var overlay = document.getElementById('journalModalOverlay');
     if (overlay) overlay.classList.remove('open');
   }
-  function toggleMobileNav() {
-    var nav = document.getElementById('navLinks');
-    if (nav) nav.classList.toggle('mobile-open');
+  function toggleMobileNav(btn) {
+    var nav = btn ? btn.closest('nav') : Array.prototype.find.call(document.querySelectorAll('nav'), function (n) { return n.offsetParent !== null; });
+    var menu = nav ? nav.querySelector('.nav-links, .priv-nav-actions') : null;
+    if (menu) menu.classList.toggle('mobile-open');
   }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('.priv-nav-actions.mobile-open a');
+    if (a) a.closest('.priv-nav-actions').classList.remove('mobile-open');
+  });
   // Close mobile nav automatically when any link inside it is tapped
   document.addEventListener('DOMContentLoaded', function() {
     var navLinksEl = document.getElementById('navLinks');
