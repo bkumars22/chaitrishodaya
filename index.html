@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <title>Chaitrishodaya — Global AI Quality Systems</title>
-<meta name="description" content="AI architecture, quality engineering, and security consulting. Ten production AI systems designed and built by Kumara Swamy — AI Technical Architect, 13 years enterprise engineering experience.">
+<meta name="description" content="AI architecture, quality engineering, and security consulting. Ten production AI systems and a secure banking-document pilot, designed and built by Kumara Swamy — AI Technical Architect, 13 years enterprise engineering experience.">
 <link rel="canonical" href="https://chaitrishodaya.com/">
 <script type="application/ld+json">
 {
@@ -87,7 +87,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://chaitrishodaya.com/">
 <meta property="og:title" content="Chaitrishodaya — Global AI Quality Systems">
-<meta property="og:description" content="Ten AI systems, independently built and live today — AI architecture, quality engineering, and security, engineered to be trusted, not just to work.">
+<meta property="og:description" content="Eleven AI systems, independently built — AI architecture, quality engineering, and security, engineered to be trusted, not just to work.">
 <meta property="og:image" content="https://chaitrishodaya.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -95,7 +95,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chaitrishodaya — Global AI Quality Systems">
-<meta name="twitter:description" content="Ten AI systems, independently built and live today — AI architecture, quality engineering, and security, engineered to be trusted, not just to work.">
+<meta name="twitter:description" content="Eleven AI systems, independently built — AI architecture, quality engineering, and security, engineered to be trusted, not just to work.">
 <meta name="twitter:image" content="https://chaitrishodaya.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -388,7 +388,7 @@
   .journal-modal-scroll { max-height: 85vh; overflow-y: auto; padding: 40px; }
   .journal-list { display: flex; flex-direction: column; gap: 0; }
   .journal-entry { padding: 32px 0; border-bottom: 1px solid var(--line); }
-  .journal-entry:last-child { border-bottom: none; }
+  .journal-entry:last-of-type { border-bottom: none; }
   .journal-date { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 8px; }
   .journal-title { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 12px; }
   .journal-body { font-size: 15px; line-height: 1.75; color: var(--text-dim); max-width: 780px; }
@@ -616,8 +616,8 @@
   .hx-record { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .hx-story { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 14px 14px 4px; padding: 30px 28px 26px; display: flex; flex-direction: column; }
   .hx-story-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-  .hx-story p { font-family: var(--serif); font-size: 17px; line-height: 1.65; color: var(--text); margin-bottom: 22px; flex: 1; }
-  .hx-story code { font-family: var(--mono); font-size: 13.5px; background: var(--bg-deep); padding: 1px 6px; border-radius: 4px; }
+  .hx-story p { font-family: var(--body); font-size: 15px; line-height: 1.75; color: var(--text-dim); margin-bottom: 22px; flex: 1; }
+  .hx-story code { white-space: nowrap; font-family: var(--mono); font-size: 13px; background: var(--bg-deep); padding: 1px 6px; border-radius: 4px; }
 
   .hx-res { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
   .hx-res-card { text-decoration: none; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
@@ -655,6 +655,30 @@
   @media (min-width: 1181px) and (max-width: 1439px) {
     .nav-links { gap: 16px; }
     .app-view nav .priv-nav-actions { gap: 16px !important; }
+  }
+
+  /* ===================== Right-side reading panel (cx-) — long-form pages, 1200px+ ===================== */
+  .cx-rail { display: none; }
+  @media (min-width: 1200px) {
+    .app-view .priv-wrap.cx-has-rail:not(nav .priv-wrap) { position: relative !important; padding-right: calc(32px + 272px + 64px) !important; }
+    .app-view .journal-list.cx-has-rail { position: relative !important; padding-right: calc(272px + 64px) !important; }
+    .cx-rail { display: block !important; position: absolute !important; top: 0 !important; bottom: 0 !important; width: 272px !important; max-width: 272px !important; margin: 0 !important; padding: 0 !important; }
+    .cx-rail-inner { position: sticky !important; top: 108px !important; display: flex !important; flex-direction: column !important; gap: 18px !important; margin: 0 !important; padding: 0 !important; }
+    .cx-rail-card { background: var(--panel) !important; border: 1px solid var(--line) !important; border-radius: 14px !important; padding: 22px 22px 16px !important; margin: 0 !important; }
+    .cx-rail-label { font-family: var(--mono) !important; font-size: 10.5px !important; letter-spacing: 1.8px !important; text-transform: uppercase !important; color: var(--gold) !important; margin: 0 0 10px !important; padding: 0 !important; }
+    .cx-toc { display: flex !important; flex-direction: column !important; margin: 0 !important; padding: 0 !important; }
+    .cx-toc a { display: block !important; padding: 7px 0 7px 12px !important; margin: 0 !important; border: none !important; border-left: 2px solid var(--line) !important;
+      font-family: var(--body) !important; font-size: 13.5px !important; font-weight: 400 !important; line-height: 1.45 !important; color: var(--text-dim) !important;
+      text-decoration: none !important; background: none !important; transition: color 0.15s ease, border-color 0.15s ease !important; }
+    .cx-toc a:hover { color: var(--text) !important; }
+    .cx-toc a.active { color: var(--gold) !important; border-left-color: var(--gold) !important; font-weight: 600 !important; }
+    .cx-rail-cta { background: linear-gradient(160deg, #1E2A3B 0%, #16202E 100%) !important; border-radius: 14px !important; padding: 22px !important; margin: 0 !important; }
+    .cx-rail-cta-title { font-family: var(--serif) !important; font-size: 18px !important; font-weight: 600 !important; line-height: 1.3 !important; color: #FFFFFF !important; margin: 0 0 8px !important; padding: 0 !important; }
+    .cx-rail-cta-text { font-family: var(--body) !important; font-size: 13.5px !important; line-height: 1.6 !important; color: rgba(255,255,255,0.72) !important; margin: 0 0 16px !important; padding: 0 !important; }
+    .cx-rail-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 11px 18px !important; margin: 0 !important; border-radius: 2px !important; border: none !important;
+      background: var(--gold) !important; color: #FFFFFF !important; font-family: var(--body) !important; font-size: 13px !important; font-weight: 600 !important; text-decoration: none !important; }
+    .cx-rail-btn:hover { background: #8E650C !important; color: #FFFFFF !important; }
+    .cx-anchor { scroll-margin-top: 100px; }
   }
 </style>
 <style>
@@ -910,7 +934,7 @@
 
  
  
-#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue {
+#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue, #view-bdis {
     --bg: #FAF7F1; --bg-deep: #F1EADB; --panel: #FFFFFF; --line: #E7DFCC;
     --text: #1E2A3B; --text-dim: #5B6472; --text-faint: #94978F;
     --gold: #A9790F; --gold-dim: #F3E4B8;
@@ -920,65 +944,65 @@
 
  
  
-#view-privacy :where(:not(nav, nav *)), #view-research :where(:not(nav, nav *)), #view-qaip :where(:not(nav, nav *)), #view-scip :where(:not(nav, nav *)), #view-mts :where(:not(nav, nav *)), #view-aipq :where(:not(nav, nav *)), #view-bct :where(:not(nav, nav *)), #view-aimo :where(:not(nav, nav *)), #view-zentravix :where(:not(nav, nav *)), #view-aria :where(:not(nav, nav *)), #view-utf :where(:not(nav, nav *)), #view-locator :where(:not(nav, nav *)) { box-sizing: border-box; margin: 0; padding: 0; }
+#view-privacy :where(:not(nav, nav *)), #view-research :where(:not(nav, nav *)), #view-qaip :where(:not(nav, nav *)), #view-scip :where(:not(nav, nav *)), #view-mts :where(:not(nav, nav *)), #view-aipq :where(:not(nav, nav *)), #view-bct :where(:not(nav, nav *)), #view-aimo :where(:not(nav, nav *)), #view-zentravix :where(:not(nav, nav *)), #view-aria :where(:not(nav, nav *)), #view-utf :where(:not(nav, nav *)), #view-locator :where(:not(nav, nav *)), #view-bdis :where(:not(nav, nav *)) { box-sizing: border-box; margin: 0; padding: 0; }
 
 
  
  
-#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue, #view-faq { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
+#view-privacy, #view-research, #view-qaip, #view-scip, #view-mts, #view-aipq, #view-bct, #view-aimo, #view-zentravix, #view-aria, #view-utf, #view-locator, #view-services, #view-products, #view-philosophy, #view-decisions, #view-journal, #view-technologies, #view-catalogue, #view-faq, #view-bdis { background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.7; min-height: 100vh; display: block; }
 
 
  
  
-#view-privacy .priv-wrap, #view-research .priv-wrap, #view-qaip .priv-wrap, #view-scip .priv-wrap, #view-mts .priv-wrap, #view-aipq .priv-wrap, #view-bct .priv-wrap, #view-aimo .priv-wrap, #view-zentravix .priv-wrap, #view-aria .priv-wrap, #view-utf .priv-wrap, #view-locator .priv-wrap, #view-services .priv-wrap, #view-products .priv-wrap, #view-philosophy .priv-wrap, #view-decisions .priv-wrap, #view-journal .priv-wrap, #view-technologies .priv-wrap, #view-catalogue .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+#view-privacy .priv-wrap, #view-research .priv-wrap, #view-qaip .priv-wrap, #view-scip .priv-wrap, #view-mts .priv-wrap, #view-aipq .priv-wrap, #view-bct .priv-wrap, #view-aimo .priv-wrap, #view-zentravix .priv-wrap, #view-aria .priv-wrap, #view-utf .priv-wrap, #view-locator .priv-wrap, #view-services .priv-wrap, #view-products .priv-wrap, #view-philosophy .priv-wrap, #view-decisions .priv-wrap, #view-journal .priv-wrap, #view-technologies .priv-wrap, #view-catalogue .priv-wrap, #view-bdis .priv-wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
 
 
 
 
  
  
-#view-privacy nav, #view-research nav, #view-qaip nav, #view-scip nav, #view-mts nav, #view-aipq nav, #view-bct nav, #view-aimo nav, #view-zentravix nav, #view-aria nav, #view-utf nav, #view-locator nav, #view-services nav, #view-products nav, #view-philosophy nav, #view-decisions nav, #view-journal nav, #view-technologies nav, #view-catalogue nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+#view-privacy nav, #view-research nav, #view-qaip nav, #view-scip nav, #view-mts nav, #view-aipq nav, #view-bct nav, #view-aimo nav, #view-zentravix nav, #view-aria nav, #view-utf nav, #view-locator nav, #view-services nav, #view-products nav, #view-philosophy nav, #view-decisions nav, #view-journal nav, #view-technologies nav, #view-catalogue nav, #view-bdis nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,241,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy nav .priv-wrap, #view-research nav .priv-wrap, #view-qaip nav .priv-wrap, #view-scip nav .priv-wrap, #view-mts nav .priv-wrap, #view-aipq nav .priv-wrap, #view-bct nav .priv-wrap, #view-aimo nav .priv-wrap, #view-zentravix nav .priv-wrap, #view-aria nav .priv-wrap, #view-utf nav .priv-wrap, #view-locator nav .priv-wrap, #view-services nav .priv-wrap, #view-products nav .priv-wrap, #view-philosophy nav .priv-wrap, #view-decisions nav .priv-wrap, #view-journal nav .priv-wrap, #view-technologies nav .priv-wrap, #view-catalogue nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; overflow-y: hidden; }
+#view-privacy nav .priv-wrap, #view-research nav .priv-wrap, #view-qaip nav .priv-wrap, #view-scip nav .priv-wrap, #view-mts nav .priv-wrap, #view-aipq nav .priv-wrap, #view-bct nav .priv-wrap, #view-aimo nav .priv-wrap, #view-zentravix nav .priv-wrap, #view-aria nav .priv-wrap, #view-utf nav .priv-wrap, #view-locator nav .priv-wrap, #view-services nav .priv-wrap, #view-products nav .priv-wrap, #view-philosophy nav .priv-wrap, #view-decisions nav .priv-wrap, #view-journal nav .priv-wrap, #view-technologies nav .priv-wrap, #view-catalogue nav .priv-wrap, #view-bdis nav .priv-wrap { max-width: 1180px; display: flex; align-items: center; justify-content: space-between; height: 76px; overflow-y: hidden; }
 
 
  
  
-#view-privacy .priv-brand, #view-faq .priv-brand, #view-research .priv-brand, #view-qaip .priv-brand, #view-scip .priv-brand, #view-mts .priv-brand, #view-aipq .priv-brand, #view-bct .priv-brand, #view-aimo .priv-brand, #view-zentravix .priv-brand, #view-aria .priv-brand, #view-utf .priv-brand, #view-locator .priv-brand, #view-services .priv-brand, #view-products .priv-brand, #view-philosophy .priv-brand, #view-decisions .priv-brand, #view-journal .priv-brand, #view-technologies .priv-brand, #view-catalogue .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
+#view-privacy .priv-brand, #view-faq .priv-brand, #view-research .priv-brand, #view-qaip .priv-brand, #view-scip .priv-brand, #view-mts .priv-brand, #view-aipq .priv-brand, #view-bct .priv-brand, #view-aimo .priv-brand, #view-zentravix .priv-brand, #view-aria .priv-brand, #view-utf .priv-brand, #view-locator .priv-brand, #view-services .priv-brand, #view-products .priv-brand, #view-philosophy .priv-brand, #view-decisions .priv-brand, #view-journal .priv-brand, #view-technologies .priv-brand, #view-catalogue .priv-brand, #view-bdis .priv-brand { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 600; font-size: 22px; font-style: italic; color: var(--gold); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-back-link, #view-faq .priv-back-link, #view-research .priv-back-link, #view-qaip .priv-back-link, #view-scip .priv-back-link, #view-mts .priv-back-link, #view-aipq .priv-back-link, #view-bct .priv-back-link, #view-aimo .priv-back-link, #view-zentravix .priv-back-link, #view-aria .priv-back-link, #view-utf .priv-back-link, #view-locator .priv-back-link, #view-services .priv-back-link, #view-products .priv-back-link, #view-philosophy .priv-back-link, #view-decisions .priv-back-link, #view-journal .priv-back-link, #view-technologies .priv-back-link, #view-catalogue .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+#view-privacy .priv-back-link, #view-faq .priv-back-link, #view-research .priv-back-link, #view-qaip .priv-back-link, #view-scip .priv-back-link, #view-mts .priv-back-link, #view-aipq .priv-back-link, #view-bct .priv-back-link, #view-aimo .priv-back-link, #view-zentravix .priv-back-link, #view-aria .priv-back-link, #view-utf .priv-back-link, #view-locator .priv-back-link, #view-services .priv-back-link, #view-products .priv-back-link, #view-philosophy .priv-back-link, #view-decisions .priv-back-link, #view-journal .priv-back-link, #view-technologies .priv-back-link, #view-catalogue .priv-back-link, #view-bdis .priv-back-link { font-family: var(--mono); font-size: 12.5px; color: var(--text-dim); text-decoration: none; white-space: nowrap; flex-shrink: 0; }
 
 
  
  
-#view-privacy .priv-back-link:hover, #view-faq .priv-back-link:hover, #view-research .priv-back-link:hover, #view-qaip .priv-back-link:hover, #view-scip .priv-back-link:hover, #view-mts .priv-back-link:hover, #view-aipq .priv-back-link:hover, #view-bct .priv-back-link:hover, #view-aimo .priv-back-link:hover, #view-zentravix .priv-back-link:hover, #view-aria .priv-back-link:hover, #view-utf .priv-back-link:hover, #view-locator .priv-back-link:hover, #view-services .priv-back-link:hover, #view-products .priv-back-link:hover, #view-philosophy .priv-back-link:hover, #view-decisions .priv-back-link:hover, #view-journal .priv-back-link:hover, #view-technologies .priv-back-link:hover, #view-catalogue .priv-back-link:hover { color: var(--gold); }
+#view-privacy .priv-back-link:hover, #view-faq .priv-back-link:hover, #view-research .priv-back-link:hover, #view-qaip .priv-back-link:hover, #view-scip .priv-back-link:hover, #view-mts .priv-back-link:hover, #view-aipq .priv-back-link:hover, #view-bct .priv-back-link:hover, #view-aimo .priv-back-link:hover, #view-zentravix .priv-back-link:hover, #view-aria .priv-back-link:hover, #view-utf .priv-back-link:hover, #view-locator .priv-back-link:hover, #view-services .priv-back-link:hover, #view-products .priv-back-link:hover, #view-philosophy .priv-back-link:hover, #view-decisions .priv-back-link:hover, #view-journal .priv-back-link:hover, #view-technologies .priv-back-link:hover, #view-catalogue .priv-back-link:hover, #view-bdis .priv-back-link:hover { color: var(--gold); }
 
 
  
  
-#view-privacy .priv-nav-actions, #view-faq .priv-nav-actions, #view-research .priv-nav-actions, #view-qaip .priv-nav-actions, #view-scip .priv-nav-actions, #view-mts .priv-nav-actions, #view-aipq .priv-nav-actions, #view-bct .priv-nav-actions, #view-aimo .priv-nav-actions, #view-zentravix .priv-nav-actions, #view-aria .priv-nav-actions, #view-utf .priv-nav-actions, #view-locator .priv-nav-actions, #view-services .priv-nav-actions, #view-products .priv-nav-actions, #view-philosophy .priv-nav-actions, #view-decisions .priv-nav-actions, #view-journal .priv-nav-actions, #view-technologies .priv-nav-actions, #view-catalogue .priv-nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+#view-privacy .priv-nav-actions, #view-faq .priv-nav-actions, #view-research .priv-nav-actions, #view-qaip .priv-nav-actions, #view-scip .priv-nav-actions, #view-mts .priv-nav-actions, #view-aipq .priv-nav-actions, #view-bct .priv-nav-actions, #view-aimo .priv-nav-actions, #view-zentravix .priv-nav-actions, #view-aria .priv-nav-actions, #view-utf .priv-nav-actions, #view-locator .priv-nav-actions, #view-services .priv-nav-actions, #view-products .priv-nav-actions, #view-philosophy .priv-nav-actions, #view-decisions .priv-nav-actions, #view-journal .priv-nav-actions, #view-technologies .priv-nav-actions, #view-catalogue .priv-nav-actions, #view-bdis .priv-nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
 
 
  
  
-#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link { font-family: var(--body); font-size: 12.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link, #view-bdis .priv-nav-text-link { font-family: var(--body); font-size: 12.5px; font-weight: 500; color: var(--text-dim); text-decoration: none; }
 
 
  
  
-#view-privacy .priv-nav-text-link:hover, #view-faq .priv-nav-text-link:hover, #view-research .priv-nav-text-link:hover, #view-qaip .priv-nav-text-link:hover, #view-scip .priv-nav-text-link:hover, #view-mts .priv-nav-text-link:hover, #view-aipq .priv-nav-text-link:hover, #view-bct .priv-nav-text-link:hover, #view-aimo .priv-nav-text-link:hover, #view-zentravix .priv-nav-text-link:hover, #view-aria .priv-nav-text-link:hover, #view-utf .priv-nav-text-link:hover, #view-locator .priv-nav-text-link:hover, #view-services .priv-nav-text-link:hover, #view-products .priv-nav-text-link:hover, #view-philosophy .priv-nav-text-link:hover, #view-decisions .priv-nav-text-link:hover, #view-journal .priv-nav-text-link:hover, #view-technologies .priv-nav-text-link:hover, #view-catalogue .priv-nav-text-link:hover { color: var(--gold); }
+#view-privacy .priv-nav-text-link:hover, #view-faq .priv-nav-text-link:hover, #view-research .priv-nav-text-link:hover, #view-qaip .priv-nav-text-link:hover, #view-scip .priv-nav-text-link:hover, #view-mts .priv-nav-text-link:hover, #view-aipq .priv-nav-text-link:hover, #view-bct .priv-nav-text-link:hover, #view-aimo .priv-nav-text-link:hover, #view-zentravix .priv-nav-text-link:hover, #view-aria .priv-nav-text-link:hover, #view-utf .priv-nav-text-link:hover, #view-locator .priv-nav-text-link:hover, #view-services .priv-nav-text-link:hover, #view-products .priv-nav-text-link:hover, #view-philosophy .priv-nav-text-link:hover, #view-decisions .priv-nav-text-link:hover, #view-journal .priv-nav-text-link:hover, #view-technologies .priv-nav-text-link:hover, #view-catalogue .priv-nav-text-link:hover, #view-bdis .priv-nav-text-link:hover { color: var(--gold); }
 
 
  
  
 @media (max-width: 700px) { 
-#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link { display: none; }
+#view-privacy .priv-nav-text-link, #view-faq .priv-nav-text-link, #view-research .priv-nav-text-link, #view-qaip .priv-nav-text-link, #view-scip .priv-nav-text-link, #view-mts .priv-nav-text-link, #view-aipq .priv-nav-text-link, #view-bct .priv-nav-text-link, #view-aimo .priv-nav-text-link, #view-zentravix .priv-nav-text-link, #view-aria .priv-nav-text-link, #view-utf .priv-nav-text-link, #view-locator .priv-nav-text-link, #view-services .priv-nav-text-link, #view-products .priv-nav-text-link, #view-philosophy .priv-nav-text-link, #view-decisions .priv-nav-text-link, #view-journal .priv-nav-text-link, #view-technologies .priv-nav-text-link, #view-catalogue .priv-nav-text-link, #view-bdis .priv-nav-text-link { display: none; }
  }
 
 
@@ -986,98 +1010,98 @@
 
  
  
-#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head, #view-catalogue header.page-head, #view-faq header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+#view-privacy header.page-head, #view-research header.page-head, #view-qaip header.page-head, #view-scip header.page-head, #view-mts header.page-head, #view-aipq header.page-head, #view-bct header.page-head, #view-aimo header.page-head, #view-zentravix header.page-head, #view-aria header.page-head, #view-utf header.page-head, #view-locator header.page-head, #view-services header.page-head, #view-products header.page-head, #view-philosophy header.page-head, #view-decisions header.page-head, #view-journal header.page-head, #view-technologies header.page-head, #view-catalogue header.page-head, #view-faq header.page-head, #view-bdis header.page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
 
 
  
  
-#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow, #view-catalogue .priv-eyebrow, #view-faq .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+#view-privacy .priv-eyebrow, #view-research .priv-eyebrow, #view-qaip .priv-eyebrow, #view-scip .priv-eyebrow, #view-mts .priv-eyebrow, #view-aipq .priv-eyebrow, #view-bct .priv-eyebrow, #view-aimo .priv-eyebrow, #view-zentravix .priv-eyebrow, #view-aria .priv-eyebrow, #view-utf .priv-eyebrow, #view-locator .priv-eyebrow, #view-services .priv-eyebrow, #view-products .priv-eyebrow, #view-philosophy .priv-eyebrow, #view-decisions .priv-eyebrow, #view-journal .priv-eyebrow, #view-technologies .priv-eyebrow, #view-catalogue .priv-eyebrow, #view-faq .priv-eyebrow, #view-bdis .priv-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
 
 
  
  
-#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1, #view-catalogue h1, #view-faq h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
+#view-privacy h1, #view-research h1, #view-qaip h1, #view-scip h1, #view-mts h1, #view-aipq h1, #view-bct h1, #view-aimo h1, #view-zentravix h1, #view-aria h1, #view-utf h1, #view-locator h1, #view-services h1, #view-products h1, #view-philosophy h1, #view-decisions h1, #view-journal h1, #view-technologies h1, #view-catalogue h1, #view-faq h1, #view-bdis h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 600; color: var(--text); }
 
 
  
  
-#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated, #view-catalogue .updated, #view-faq .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
-
-
-
-
- 
- 
-#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main, #view-catalogue main, #view-faq main { padding: 48px 0 90px; }
-
-
- 
- 
-#view-privacy section.block, #view-research section.block, #view-qaip section.block, #view-scip section.block, #view-mts section.block, #view-aipq section.block, #view-bct section.block, #view-aimo section.block, #view-zentravix section.block, #view-aria section.block, #view-utf section.block, #view-locator section.block, #view-services section.block, #view-products section.block, #view-philosophy section.block, #view-decisions section.block, #view-journal section.block, #view-technologies section.block, #view-catalogue section.block { margin-bottom: 40px; }
-
-
- 
- 
-#view-privacy h2, #view-research h2, #view-qaip h2, #view-scip h2, #view-mts h2, #view-aipq h2, #view-bct h2, #view-aimo h2, #view-zentravix h2, #view-aria h2, #view-utf h2, #view-locator h2, #view-services h2, #view-products h2, #view-philosophy h2, #view-decisions h2, #view-journal h2, #view-technologies h2, #view-catalogue h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy p, #view-research p, #view-qaip p, #view-scip p, #view-mts p, #view-aipq p, #view-bct p, #view-aimo p, #view-zentravix p, #view-aria p, #view-utf p, #view-locator p, #view-services p, #view-products p, #view-philosophy p, #view-decisions p, #view-journal p, #view-technologies p, #view-catalogue p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
-
-
- 
- 
-#view-privacy ul, #view-research ul, #view-qaip ul, #view-scip ul, #view-mts ul, #view-aipq ul, #view-bct ul, #view-aimo ul, #view-zentravix ul, #view-aria ul, #view-utf ul, #view-locator ul, #view-services ul, #view-products ul, #view-philosophy ul, #view-decisions ul, #view-journal ul, #view-technologies ul, #view-catalogue ul { margin: 0 0 14px 22px; }
-
-
- 
- 
-#view-privacy li, #view-research li, #view-qaip li, #view-scip li, #view-mts li, #view-aipq li, #view-bct li, #view-aimo li, #view-zentravix li, #view-aria li, #view-utf li, #view-locator li, #view-services li, #view-products li, #view-philosophy li, #view-decisions li, #view-journal li, #view-technologies li, #view-catalogue li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
-
-
- 
- 
-#view-privacy strong, #view-research strong, #view-qaip strong, #view-scip strong, #view-mts strong, #view-aipq strong, #view-bct strong, #view-aimo strong, #view-zentravix strong, #view-aria strong, #view-utf strong, #view-locator strong, #view-services strong, #view-products strong, #view-philosophy strong, #view-decisions strong, #view-journal strong, #view-technologies strong, #view-catalogue strong { color: var(--text); font-weight: 600; }
-
-
- 
- 
-#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline, #view-catalogue a.inline, #view-faq a.inline { color: var(--gold); text-decoration: underline; }
+#view-privacy .updated, #view-research .updated, #view-qaip .updated, #view-scip .updated, #view-mts .updated, #view-aipq .updated, #view-bct .updated, #view-aimo .updated, #view-zentravix .updated, #view-aria .updated, #view-utf .updated, #view-locator .updated, #view-services .updated, #view-products .updated, #view-philosophy .updated, #view-decisions .updated, #view-journal .updated, #view-technologies .updated, #view-catalogue .updated, #view-faq .updated, #view-bdis .updated { font-family: var(--mono); font-size: 12px; color: var(--text-faint); margin-top: 14px; }
 
 
 
 
  
  
-#view-privacy .note-box, #view-research .note-box, #view-qaip .note-box, #view-scip .note-box, #view-mts .note-box, #view-aipq .note-box, #view-bct .note-box, #view-aimo .note-box, #view-zentravix .note-box, #view-aria .note-box, #view-utf .note-box, #view-locator .note-box, #view-services .note-box, #view-products .note-box, #view-philosophy .note-box, #view-decisions .note-box, #view-journal .note-box, #view-technologies .note-box, #view-catalogue .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
+#view-privacy main, #view-research main, #view-qaip main, #view-scip main, #view-mts main, #view-aipq main, #view-bct main, #view-aimo main, #view-zentravix main, #view-aria main, #view-utf main, #view-locator main, #view-services main, #view-products main, #view-philosophy main, #view-decisions main, #view-journal main, #view-technologies main, #view-catalogue main, #view-faq main, #view-bdis main { padding: 48px 0 90px; }
 
 
  
  
-#view-privacy .note-box p:last-child, #view-research .note-box p:last-child, #view-qaip .note-box p:last-child, #view-scip .note-box p:last-child, #view-mts .note-box p:last-child, #view-aipq .note-box p:last-child, #view-bct .note-box p:last-child, #view-aimo .note-box p:last-child, #view-zentravix .note-box p:last-child, #view-aria .note-box p:last-child, #view-utf .note-box p:last-child, #view-locator .note-box p:last-child, #view-services .note-box p:last-child, #view-products .note-box p:last-child, #view-philosophy .note-box p:last-child, #view-decisions .note-box p:last-child, #view-journal .note-box p:last-child, #view-technologies .note-box p:last-child, #view-catalogue .note-box p:last-child { margin-bottom: 0; }
+#view-privacy section.block, #view-research section.block, #view-qaip section.block, #view-scip section.block, #view-mts section.block, #view-aipq section.block, #view-bct section.block, #view-aimo section.block, #view-zentravix section.block, #view-aria section.block, #view-utf section.block, #view-locator section.block, #view-services section.block, #view-products section.block, #view-philosophy section.block, #view-decisions section.block, #view-journal section.block, #view-technologies section.block, #view-catalogue section.block, #view-bdis section.block { margin-bottom: 40px; }
+
+
+ 
+ 
+#view-privacy h2, #view-research h2, #view-qaip h2, #view-scip h2, #view-mts h2, #view-aipq h2, #view-bct h2, #view-aimo h2, #view-zentravix h2, #view-aria h2, #view-utf h2, #view-locator h2, #view-services h2, #view-products h2, #view-philosophy h2, #view-decisions h2, #view-journal h2, #view-technologies h2, #view-catalogue h2, #view-bdis h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy p, #view-research p, #view-qaip p, #view-scip p, #view-mts p, #view-aipq p, #view-bct p, #view-aimo p, #view-zentravix p, #view-aria p, #view-utf p, #view-locator p, #view-services p, #view-products p, #view-philosophy p, #view-decisions p, #view-journal p, #view-technologies p, #view-catalogue p, #view-bdis p { font-size: 15.5px; color: var(--text-dim); margin-bottom: 14px; }
+
+
+ 
+ 
+#view-privacy ul, #view-research ul, #view-qaip ul, #view-scip ul, #view-mts ul, #view-aipq ul, #view-bct ul, #view-aimo ul, #view-zentravix ul, #view-aria ul, #view-utf ul, #view-locator ul, #view-services ul, #view-products ul, #view-philosophy ul, #view-decisions ul, #view-journal ul, #view-technologies ul, #view-catalogue ul, #view-bdis ul { margin: 0 0 14px 22px; }
+
+
+ 
+ 
+#view-privacy li, #view-research li, #view-qaip li, #view-scip li, #view-mts li, #view-aipq li, #view-bct li, #view-aimo li, #view-zentravix li, #view-aria li, #view-utf li, #view-locator li, #view-services li, #view-products li, #view-philosophy li, #view-decisions li, #view-journal li, #view-technologies li, #view-catalogue li, #view-bdis li { font-size: 15.5px; color: var(--text-dim); margin-bottom: 8px; }
+
+
+ 
+ 
+#view-privacy strong, #view-research strong, #view-qaip strong, #view-scip strong, #view-mts strong, #view-aipq strong, #view-bct strong, #view-aimo strong, #view-zentravix strong, #view-aria strong, #view-utf strong, #view-locator strong, #view-services strong, #view-products strong, #view-philosophy strong, #view-decisions strong, #view-journal strong, #view-technologies strong, #view-catalogue strong, #view-bdis strong { color: var(--text); font-weight: 600; }
+
+
+ 
+ 
+#view-privacy a.inline, #view-research a.inline, #view-qaip a.inline, #view-scip a.inline, #view-mts a.inline, #view-aipq a.inline, #view-bct a.inline, #view-aimo a.inline, #view-zentravix a.inline, #view-aria a.inline, #view-utf a.inline, #view-locator a.inline, #view-services a.inline, #view-products a.inline, #view-philosophy a.inline, #view-decisions a.inline, #view-journal a.inline, #view-technologies a.inline, #view-catalogue a.inline, #view-faq a.inline, #view-bdis a.inline { color: var(--gold); text-decoration: underline; }
 
 
 
 
  
  
-#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer, #view-catalogue footer, #view-faq footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
+#view-privacy .note-box, #view-research .note-box, #view-qaip .note-box, #view-scip .note-box, #view-mts .note-box, #view-aipq .note-box, #view-bct .note-box, #view-aimo .note-box, #view-zentravix .note-box, #view-aria .note-box, #view-utf .note-box, #view-locator .note-box, #view-services .note-box, #view-products .note-box, #view-philosophy .note-box, #view-decisions .note-box, #view-journal .note-box, #view-technologies .note-box, #view-catalogue .note-box, #view-bdis .note-box { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 10px 10px 4px; padding: 20px 24px; margin: 24px 0; }
 
 
  
  
-#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner, #view-catalogue .priv-footer-inner, #view-faq .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+#view-privacy .note-box p:last-child, #view-research .note-box p:last-child, #view-qaip .note-box p:last-child, #view-scip .note-box p:last-child, #view-mts .note-box p:last-child, #view-aipq .note-box p:last-child, #view-bct .note-box p:last-child, #view-aimo .note-box p:last-child, #view-zentravix .note-box p:last-child, #view-aria .note-box p:last-child, #view-utf .note-box p:last-child, #view-locator .note-box p:last-child, #view-services .note-box p:last-child, #view-products .note-box p:last-child, #view-philosophy .note-box p:last-child, #view-decisions .note-box p:last-child, #view-journal .note-box p:last-child, #view-technologies .note-box p:last-child, #view-catalogue .note-box p:last-child, #view-bdis .note-box p:last-child { margin-bottom: 0; }
+
+
 
 
  
  
-#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a, #view-catalogue .priv-footer-inner a, #view-faq .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+#view-privacy footer, #view-research footer, #view-qaip footer, #view-scip footer, #view-mts footer, #view-aipq footer, #view-bct footer, #view-aimo footer, #view-zentravix footer, #view-aria footer, #view-utf footer, #view-locator footer, #view-services footer, #view-products footer, #view-philosophy footer, #view-decisions footer, #view-journal footer, #view-technologies footer, #view-catalogue footer, #view-faq footer, #view-bdis footer { border-top: 1px solid var(--line); padding: 30px 0; background: var(--bg-deep); }
 
 
  
  
-#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover, #view-catalogue .priv-footer-inner a:hover, #view-faq .priv-footer-inner a:hover { color: var(--gold); }
+#view-privacy .priv-footer-inner, #view-research .priv-footer-inner, #view-qaip .priv-footer-inner, #view-scip .priv-footer-inner, #view-mts .priv-footer-inner, #view-aipq .priv-footer-inner, #view-bct .priv-footer-inner, #view-aimo .priv-footer-inner, #view-zentravix .priv-footer-inner, #view-aria .priv-footer-inner, #view-utf .priv-footer-inner, #view-locator .priv-footer-inner, #view-services .priv-footer-inner, #view-products .priv-footer-inner, #view-philosophy .priv-footer-inner, #view-decisions .priv-footer-inner, #view-journal .priv-footer-inner, #view-technologies .priv-footer-inner, #view-catalogue .priv-footer-inner, #view-faq .priv-footer-inner, #view-bdis .priv-footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); }
+
+
+ 
+ 
+#view-privacy .priv-footer-inner a, #view-research .priv-footer-inner a, #view-qaip .priv-footer-inner a, #view-scip .priv-footer-inner a, #view-mts .priv-footer-inner a, #view-aipq .priv-footer-inner a, #view-bct .priv-footer-inner a, #view-aimo .priv-footer-inner a, #view-zentravix .priv-footer-inner a, #view-aria .priv-footer-inner a, #view-utf .priv-footer-inner a, #view-locator .priv-footer-inner a, #view-services .priv-footer-inner a, #view-products .priv-footer-inner a, #view-philosophy .priv-footer-inner a, #view-decisions .priv-footer-inner a, #view-journal .priv-footer-inner a, #view-technologies .priv-footer-inner a, #view-catalogue .priv-footer-inner a, #view-faq .priv-footer-inner a, #view-bdis .priv-footer-inner a { color: var(--text-dim); text-decoration: none; }
+
+
+ 
+ 
+#view-privacy .priv-footer-inner a:hover, #view-research .priv-footer-inner a:hover, #view-qaip .priv-footer-inner a:hover, #view-scip .priv-footer-inner a:hover, #view-mts .priv-footer-inner a:hover, #view-aipq .priv-footer-inner a:hover, #view-bct .priv-footer-inner a:hover, #view-aimo .priv-footer-inner a:hover, #view-zentravix .priv-footer-inner a:hover, #view-aria .priv-footer-inner a:hover, #view-utf .priv-footer-inner a:hover, #view-locator .priv-footer-inner a:hover, #view-services .priv-footer-inner a:hover, #view-products .priv-footer-inner a:hover, #view-philosophy .priv-footer-inner a:hover, #view-decisions .priv-footer-inner a:hover, #view-journal .priv-footer-inner a:hover, #view-technologies .priv-footer-inner a:hover, #view-catalogue .priv-footer-inner a:hover, #view-faq .priv-footer-inner a:hover, #view-bdis .priv-footer-inner a:hover { color: var(--gold); }
 
 .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq-item {
@@ -1129,12 +1153,12 @@
   background: #1E2A3B; color: #F3E4B8; font-family: var(--mono); font-size: 14px;
   padding: 18px 22px; border-radius: 10px; margin: 16px 0; overflow-x: auto; line-height: 1.7;
 }
-#view-research main section, #view-qaip main section, #view-scip main section, #view-mts main section, #view-aipq main section, #view-bct main section, #view-aimo main section, #view-zentravix main section, #view-aria main section, #view-utf main section, #view-locator main section, #view-services main section, #view-products main section, #view-philosophy main section, #view-decisions main section, #view-journal main section, #view-technologies main section, #view-catalogue main section { margin-bottom: 34px; }
-#view-research main h2, #view-qaip main h2, #view-scip main h2, #view-mts main h2, #view-aipq main h2, #view-bct main h2, #view-aimo main h2, #view-zentravix main h2, #view-aria main h2, #view-utf main h2, #view-locator main h2, #view-services main h2, #view-products main h2, #view-philosophy main h2, #view-decisions main h2, #view-journal main h2, #view-technologies main h2, #view-catalogue main h2 { font-family: var(--serif); font-size: 19px; color: var(--text); margin-bottom: 12px; }
-#view-research main p, #view-qaip main p, #view-scip main p, #view-mts main p, #view-aipq main p, #view-bct main p, #view-aimo main p, #view-zentravix main p, #view-aria main p, #view-utf main p, #view-locator main p, #view-services main p, #view-products main p, #view-philosophy main p, #view-decisions main p, #view-journal main p, #view-technologies main p, #view-catalogue main p { margin-bottom: 10px; }
-#view-research main ul, #view-qaip main ul, #view-scip main ul, #view-mts main ul, #view-aipq main ul, #view-bct main ul, #view-aimo main ul, #view-zentravix main ul, #view-aria main ul, #view-utf main ul, #view-locator main ul, #view-services main ul, #view-products main ul, #view-philosophy main ul, #view-decisions main ul, #view-journal main ul, #view-technologies main ul, #view-catalogue main ul { margin: 10px 0 10px 22px; }
-#view-research main li, #view-qaip main li, #view-scip main li, #view-mts main li, #view-aipq main li, #view-bct main li, #view-aimo main li, #view-zentravix main li, #view-aria main li, #view-utf main li, #view-locator main li, #view-services main li, #view-products main li, #view-philosophy main li, #view-decisions main li, #view-journal main li, #view-technologies main li, #view-catalogue main li { margin-bottom: 8px; }
-#view-research main code, #view-qaip main code, #view-scip main code, #view-mts main code, #view-aipq main code, #view-bct main code, #view-aimo main code, #view-zentravix main code, #view-aria main code, #view-utf main code, #view-locator main code, #view-services main code, #view-products main code, #view-philosophy main code, #view-decisions main code, #view-journal main code, #view-technologies main code, #view-catalogue main code { font-family: var(--mono); background: var(--gold-dim); color: var(--gold); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+#view-research main section, #view-qaip main section, #view-scip main section, #view-mts main section, #view-aipq main section, #view-bct main section, #view-aimo main section, #view-zentravix main section, #view-aria main section, #view-utf main section, #view-locator main section, #view-services main section, #view-products main section, #view-philosophy main section, #view-decisions main section, #view-journal main section, #view-technologies main section, #view-catalogue main section, #view-bdis main section { margin-bottom: 34px; }
+#view-research main h2, #view-qaip main h2, #view-scip main h2, #view-mts main h2, #view-aipq main h2, #view-bct main h2, #view-aimo main h2, #view-zentravix main h2, #view-aria main h2, #view-utf main h2, #view-locator main h2, #view-services main h2, #view-products main h2, #view-philosophy main h2, #view-decisions main h2, #view-journal main h2, #view-technologies main h2, #view-catalogue main h2, #view-bdis main h2 { font-family: var(--serif); font-size: 19px; color: var(--text); margin-bottom: 12px; }
+#view-research main p, #view-qaip main p, #view-scip main p, #view-mts main p, #view-aipq main p, #view-bct main p, #view-aimo main p, #view-zentravix main p, #view-aria main p, #view-utf main p, #view-locator main p, #view-services main p, #view-products main p, #view-philosophy main p, #view-decisions main p, #view-journal main p, #view-technologies main p, #view-catalogue main p, #view-bdis main p { margin-bottom: 10px; }
+#view-research main ul, #view-qaip main ul, #view-scip main ul, #view-mts main ul, #view-aipq main ul, #view-bct main ul, #view-aimo main ul, #view-zentravix main ul, #view-aria main ul, #view-utf main ul, #view-locator main ul, #view-services main ul, #view-products main ul, #view-philosophy main ul, #view-decisions main ul, #view-journal main ul, #view-technologies main ul, #view-catalogue main ul, #view-bdis main ul { margin: 10px 0 10px 22px; }
+#view-research main li, #view-qaip main li, #view-scip main li, #view-mts main li, #view-aipq main li, #view-bct main li, #view-aimo main li, #view-zentravix main li, #view-aria main li, #view-utf main li, #view-locator main li, #view-services main li, #view-products main li, #view-philosophy main li, #view-decisions main li, #view-journal main li, #view-technologies main li, #view-catalogue main li, #view-bdis main li { margin-bottom: 8px; }
+#view-research main code, #view-qaip main code, #view-scip main code, #view-mts main code, #view-aipq main code, #view-bct main code, #view-aimo main code, #view-zentravix main code, #view-aria main code, #view-utf main code, #view-locator main code, #view-services main code, #view-products main code, #view-philosophy main code, #view-decisions main code, #view-journal main code, #view-technologies main code, #view-catalogue main code, #view-bdis main code { font-family: var(--mono); background: var(--gold-dim); color: var(--gold); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
 
 </style>
 </head>
@@ -1168,6 +1192,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -1313,7 +1338,7 @@
         production-ready reality — engineered for real-world scale, built to earn trust from day one.
       </p>
       <p class="hero-sub" style="margin-top:-24px; font-size:14px; color:var(--text-faint); font-style:italic;">
-        Ten systems, one standard: built to be trusted, not just to work.
+        Eleven systems, one standard: built to be trusted, not just to work.
       </p>
       <div class="hero-cta">
         <a href="#products" onclick="showView('products'); return false;" class="btn btn-primary">Explore our systems →</a>
@@ -1350,7 +1375,7 @@
       <div class="section-head reveal">
         <div class="section-eyebrow">The Platform</div>
         <h2 class="section-title">Confidence at every stage of the AI lifecycle</h2>
-        <p class="section-desc">Ten systems, each built for one stage of shipping AI you can trust &mdash; and wired to work together, not just sit side by side.</p>
+        <p class="section-desc">Eleven systems, each built for one stage of shipping AI you can trust &mdash; and wired to work together, not just sit side by side.</p>
       </div>
       <div class="hx-life reveal">
         <div class="hx-life-card">
@@ -1358,7 +1383,7 @@
           <h3>Ship real AI systems</h3>
           <p>Multi-agent pipelines, retrieval and decision models &mdash; engineered to production standard, not prototypes.</p>
           <div class="hx-chips">
-            <a href="#qaip" onclick="showView('qaip'); return false;">QAIP</a><a href="#zentravix" onclick="showView('zentravix'); return false;">ZENTRAVIX</a><a href="#scip" onclick="showView('scip'); return false;">SCIP</a><a href="#aria" onclick="showView('aria'); return false;">ARIA</a>
+            <a href="#qaip" onclick="showView('qaip'); return false;">QAIP</a><a href="#zentravix" onclick="showView('zentravix'); return false;">ZENTRAVIX</a><a href="#scip" onclick="showView('scip'); return false;">SCIP</a><a href="#aria" onclick="showView('aria'); return false;">ARIA</a><a href="#bdis" onclick="showView('bdis'); return false;">BDIS</a>
           </div>
         </div>
         <div class="hx-life-card">
@@ -1386,7 +1411,7 @@
           </div>
         </div>
       </div>
-      <div class="hx-more reveal"><a href="#products" onclick="showView('products'); return false;" class="btn btn-ghost">Explore all ten systems &rarr;</a></div>
+      <div class="hx-more reveal"><a href="#products" onclick="showView('products'); return false;" class="btn btn-ghost">Explore all eleven systems &rarr;</a></div>
     </div>
   </section>
 
@@ -1433,7 +1458,7 @@
         <p class="section-desc">Places where an AI system being wrong costs money, trust or compliance &mdash; and where we&rsquo;ve already built something real.</p>
       </div>
       <div class="hx-domains reveal">
-        <a class="hx-domain" href="#demo-register"><h3>Banking &amp; financial services</h3><p>Document intelligence where access control runs before retrieval, with a tamper-evident audit trail.</p><span class="hx-link">Request a walkthrough &rarr;</span></a>
+        <a class="hx-domain" href="#bdis" onclick="showView('bdis'); return false;"><h3>Banking &amp; financial services</h3><p>Document intelligence where access control runs before retrieval, with a tamper-evident audit trail.</p><span class="hx-link">BDIS &rarr;</span></a>
         <a class="hx-domain" href="#scip" onclick="showView('scip'); return false;"><h3>Supply chain &amp; manufacturing</h3><p>Supplier risk scoring with explainable IsolationForest and SHAP, on a full-stack platform.</p><span class="hx-link">SCIP &rarr;</span></a>
         <a class="hx-domain" href="#aria" onclick="showView('aria'); return false;"><h3>Education</h3><p>A Socratic tutor in 35 languages that guides instead of answering &mdash; and holds under pressure.</p><span class="hx-link">ARIA &rarr;</span></a>
         <a class="hx-domain" href="#qaip" onclick="showView('qaip'); return false;"><h3>Software engineering &amp; QA</h3><p>From Jira story to runnable tests, with pipeline cost cut from &#8377;50 to &#8377;8 per run.</p><span class="hx-link">QAIP &rarr;</span></a>
@@ -1544,7 +1569,7 @@
         <div>
           <div class="contact-info-item">
             <div class="contact-info-label">Why by request</div>
-            <div class="contact-info-value" style="font-size:14px; color:var(--text-dim); line-height:1.7;">A guided walkthrough shows more than a self-serve link ever could.</div>
+            <div class="contact-info-value" style="font-family:var(--body); font-size:15px; color:var(--text-dim); line-height:1.75;">A guided walkthrough shows more than a self-serve link ever could.</div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-label">Response time</div>
@@ -1579,6 +1604,7 @@
                 <option>SCIP — Supply Chain Intelligence Platform</option>
                 <option>Universal Test Framework</option>
                 <option>ARIA — Adaptive Real-time Intelligence</option>
+                <option>BDIS — Banking Document Intelligence (pilot)</option>
                 <option>Not sure yet — happy to discuss</option>
               </select>
             </div>
@@ -1680,7 +1706,8 @@
             <a href="#bct" onclick="showView('bct'); return false;">BCT</a>
             <a href="#qaip" onclick="showView('qaip'); return false;">QAIP</a>
             <a href="#scip" onclick="showView('scip'); return false;">SCIP</a>
-            <a href="#products" onclick="showView('products'); return false;">All ten systems</a>
+            <a href="#bdis" onclick="showView('bdis'); return false;">Banking (BDIS)</a>
+            <a href="#products" onclick="showView('products'); return false;">All eleven systems</a>
           </div>
           <div class="footer-col">
             <div class="footer-col-title">Company</div>
@@ -1749,6 +1776,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -1887,6 +1915,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -2070,6 +2099,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -2222,6 +2252,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -2394,6 +2425,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -2635,6 +2667,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -2864,6 +2897,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -3091,6 +3125,7 @@
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -3298,6 +3333,237 @@ last-known-good prompt (never blocks)</div>
 
 </div>
 
+<div id="view-bdis" class="app-view" style="display:none;">
+<nav>
+  <div class="priv-wrap">
+    <a href="#home" onclick="showView('home'); return false;" class="priv-brand">Chaitrishodaya<span class="brand-mark brand-mark-sm"><svg width="28" height="28" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterH6BDIS" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerH6BDIS" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowH6BDIS" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowH6BDIS" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowH6BDIS)"><path d="M28.0,30.8 Q17.8,21.4 4.2,24.4 Q14.4,33.8 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q21.3,18.6 7.5,17.1 Q14.2,29.3 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q25.6,17.1 13.0,11.3 Q15.4,24.9 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q30.1,17.1 20.1,7.5 Q17.9,21.2 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q34.4,18.5 28.0,6.2 Q21.6,18.5 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q38.1,21.2 35.9,7.5 Q25.9,17.1 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q40.6,24.9 43.0,11.3 Q30.4,17.1 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q41.8,29.3 48.5,17.1 Q34.7,18.6 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q41.6,33.8 51.8,24.4 Q38.2,21.4 28.0,30.8 Z" fill="url(#petalOuterH6BDIS)" opacity="0.95"/><path d="M28.0,30.8 Q25.1,21.6 15.6,19.5 Q18.5,28.7 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q27.7,21.1 19.2,16.5 Q19.5,26.2 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q30.4,21.4 23.4,14.6 Q21.1,24.0 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q32.8,22.4 28.0,14.0 Q23.2,22.4 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q34.9,24.0 32.6,14.6 Q25.6,21.4 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q36.5,26.2 36.8,16.5 Q28.3,21.1 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><path d="M28.0,30.8 Q37.5,28.7 40.4,19.5 Q30.9,21.6 28.0,30.8 Z" fill="url(#petalInnerH6BDIS)"/><circle cx="28.0" cy="30.8" r="4.2" fill="url(#centerGlowH6BDIS)"/></g></svg></span></a>
+    <div class="priv-nav-actions">
+      <div class="nav-item-dd">
+        <a href="#services" onclick="showView('services'); return false;">Services</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('services', event)" aria-label="Toggle Services menu">▾</button>
+        <div class="nav-dropdown" id="dd-services">
+          <a href="#services" onclick="showView('services'); return false;"><strong>AI System Architecture &amp; Development</strong><span>End-to-end platform design</span></a>
+          <a href="#services" onclick="showView('services'); return false;"><strong>Enterprise AI Integration</strong><span>Cross-system RAG integration</span></a>
+          <a href="#services" onclick="showView('services'); return false;"><strong>AI Quality &amp; Reliability Engineering</strong><span>Automated test generation</span></a>
+          <a href="#services" onclick="showView('services'); return false;"><strong>AI Cost &amp; Performance Optimization</strong><span>Model routing strategy</span></a>
+          <a href="#services" onclick="showView('services'); return false;"><strong>AI Security &amp; Compliance</strong><span>Prompt injection defense</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#products" onclick="showView('products'); return false;">Products</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('products', event)" aria-label="Toggle Products menu">▾</button>
+        <div class="nav-dropdown" id="dd-products">
+          <a href="#products" onclick="showView('products'); return false;"><strong>AI Quality &amp; Trust Verification</strong><span>MTS, AIPQ, BCT</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Multi-Agent Orchestration</strong><span>QAIP, ZENTRAVIX</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#philosophy" onclick="showView('philosophy'); return false;">Philosophy</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('philosophy', event)" aria-label="Toggle Philosophy menu">▾</button>
+        <div class="nav-dropdown" id="dd-philosophy">
+          <a href="#philosophy" onclick="showView('philosophy'); return false;"><strong>Evaluation scores lie by default</strong><span>The 94% vs. 22.2% story behind why this company exists</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#journal" onclick="showView('journal'); return false;">Journal</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('journal', event)" aria-label="Toggle Journal menu">▾</button>
+        <div class="nav-dropdown" id="dd-journal">
+          <a href="#journal" onclick="showView('journal'); return false;"><strong>The video that wouldn't play</strong><span>Aug 2026</span></a>
+          <a href="#journal" onclick="showView('journal'); return false;"><strong>SCIP's silent auth bypass</strong><span>Aug 2026</span></a>
+          <a href="#journal" onclick="showView('journal'); return false;"><strong>94% said healthy. Reality said 22.2%.</strong><span>Aug 2026</span></a>
+          <a href="#journal" onclick="showView('journal'); return false;"><strong>AIMO caught a bug in itself</strong><span>Jul 2026</span></a>
+          <a href="#journal" onclick="showView('journal'); return false;"><strong>Migrating to custom domains</strong><span>Aug 2026</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#decisions" onclick="showView('decisions'); return false;">Decisions</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('decisions', event)" aria-label="Toggle Decisions menu">▾</button>
+        <div class="nav-dropdown" id="dd-decisions">
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>LangGraph + CrewAI in QAIP</strong><span>Why not just one framework</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>Java + Python split in SCIP</strong><span>Not a single-language build</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>ARIA's strict Socratic-only rule</strong><span>No exceptions, even for simple questions</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>Merging 3 systems into ZENTRAVIX's RAG</strong><span>One unified layer, not linked dashboards</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>AIMO watches itself</strong><span>Not just the systems it monitors</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>BCT as a standalone package</strong><span>Not embedded per-project</span></a>
+          <a href="#decisions" onclick="showView('decisions'); return false;"><strong>AIPQ auto-reverts</strong><span>Not just alerts</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#research" onclick="showView('research'); return false;">Research</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('research', event)" aria-label="Toggle Research menu">▾</button>
+        <div class="nav-dropdown" id="dd-research">
+          <a href="#research" onclick="showView('research'); return false;"><strong>Quantum-Assisted Test Selection</strong><span>In development, simulator-verified</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#catalogue" onclick="showView('catalogue'); return false;">Catalogue</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('catalogue', event)" aria-label="Toggle Catalogue menu">▾</button>
+        <div class="nav-dropdown" id="dd-catalogue">
+          <a href="#catalogue" onclick="showView('catalogue'); return false;"><strong>Product &amp; Service Catalogue</strong><span>Full company profile, PDF, 7 pages</span></a>
+        </div>
+      </div>
+
+      <div class="nav-item-dd">
+        <a href="#technologies" onclick="showView('technologies'); return false;">Technologies</a>
+        <button class="nav-dd-toggle" onclick="toggleDropdown('technologies', event)" aria-label="Toggle Technologies menu">▾</button>
+        <div class="nav-dropdown" id="dd-technologies">
+          <a href="#technologies" onclick="showView('technologies'); return false;"><strong>AI / ML &amp; Agents</strong><span>LangGraph, Claude AI, CrewAI, IsolationForest</span></a>
+          <a href="#technologies" onclick="showView('technologies'); return false;"><strong>RAG &amp; Vector Search</strong><span>pgvector, ChromaDB, sentence-transformers</span></a>
+          <a href="#technologies" onclick="showView('technologies'); return false;"><strong>MCP &amp; Tool Integration</strong><span>Playwright, GitHub, Jira, Slack MCP</span></a>
+          <a href="#technologies" onclick="showView('technologies'); return false;"><strong>Full Stack &amp; Backend</strong><span>Spring Boot, Next.js, React, FastAPI</span></a>
+          <a href="#technologies" onclick="showView('technologies'); return false;"><strong>Testing &amp; Security</strong><span>Playwright, Selenium, OWASP, BCrypt</span></a>
+        </div>
+      </div>
+
+      <a href="#contact" onclick="showView('home'); setTimeout(function(){var c=document.getElementById('contact'); if(c){c.scrollIntoView({behavior:'smooth'});}},80); return false;" class="nav-cta">Contact us</a>
+    </div>
+  
+    <button class="nav-hamburger" onclick="toggleMobileNav(this);" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+  <div class="wrap subpage-crumb"><a href="#products" onclick="showView('products'); return false;">← Back to products</a></div>
+<header class="page-head">
+  <div class="priv-wrap">
+    <div class="priv-eyebrow">Product — Secure RAG for Regulated Data · Pilot</div>
+    <h1>Banking Document Intelligence</h1>
+  </div>
+</header>
+<main>
+  <div class="priv-wrap">
+    <section>
+      <h2>1. The Problem Statement</h2>
+      <p>Bank staff need answers from customer documents — KYC records, account statements, passbooks — without searching through files by hand. Retrieval-augmented generation is the obvious tool, but the common way it is built retrieves broadly first and filters afterwards. By the time anything is redacted, the model has already seen everything: a prompt-injection attempt, or a single bug in the redaction step, can expose data the user was never entitled to.</p>
+      <p>A quieter problem sits underneath. Teams choose between keyword search and vector embeddings by habit rather than evidence, even though short, field-heavy banking documents — a PAN, an account number — behave very differently under semantic search than natural-language questions do.</p>
+    </section>
+    <section>
+      <h2>2. Who This Is For</h2>
+      <ul>
+      <li>Banks, NBFCs and fintechs that want natural-language access to customer documents without widening who can see what</li>
+      <li>Compliance and audit teams that need every question — granted or denied — recorded in a form that cannot be quietly edited</li>
+      <li>Engineering teams that need evidence, not habit, when choosing between keyword and vector retrieval</li>
+      </ul>
+    </section>
+    <section>
+      <h2>3. Where This Sits in the Real Market</h2>
+      <p>Large banks are served by established, certified platforms for onboarding, KYC and client lifecycle management — <strong>Fenergo, Jumio and Moody's</strong> among them — alongside general enterprise search and RAG offerings from the major cloud providers. This pilot does not compete with them on certification or scale. It is a reference architecture for one specific, high-risk pattern: letting staff query sensitive documents with AI.</p>
+    </section>
+    <section>
+      <h2>4. The Real Gap This Addresses</h2>
+      <p>The gap is <strong>where</strong> access control happens. Retrieve-then-filter pipelines depend on every downstream filter being correct, every time. Here, the permission check runs before retrieval, as an explicit node in a LangGraph state graph: a denied request follows a graph edge that never reaches the document store at all. There is nothing to redact, because nothing was retrieved.</p>
+    </section>
+    <section>
+      <h2>5. How It's Used</h2>
+      <ul>
+      <li>A staff member signs in through OIDC and asks a plain-language question about a customer's documents</li>
+      <li>Their role is checked before retrieval — admins see everything unmasked, analysts see public and private documents with PII masked, end users see public documents only; private documents are invisible to them, not redacted</li>
+      <li>The answer is generated from the permitted documents only, and every request — granted or denied — is written to a hash-chained audit log</li>
+      <li>Admins govern uploads through an editable configuration: every document must be marked public or private, and rule changes need a second admin's approval</li>
+      </ul>
+    </section>
+    <section>
+      <h2>6. What Genuinely Differentiates This</h2>
+      <ul>
+      <li><strong>Denial is structural, not a filter</strong> — enforced as a graph edge, and verified by a test that replaces the document store with a mock and asserts it is never called on a denied request</li>
+      <li><strong>Tamper-evident by design</strong> — every request is encrypted and hash-chained; editing any past record breaks <code>verify_chain()</code>, which identifies exactly which record changed</li>
+      <li><strong>Two retrieval engines, one platform</strong> — a keyword-only (BM25) build and a hybrid vector + BM25 build share every other layer; the difference between them is a <code>git diff</code>, so the comparison itself is part of the deliverable</li>
+      <li><strong>Governance that cannot be self-approved</strong> — rule changes need a second admin; self-approval is refused server-side with HTTP 409, verified with two real admin accounts</li>
+      </ul>
+    </section>
+    <section>
+      <h2>7. Reference Architecture</h2>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:18px 0 10px;">System Overview</h3>
+      <div class="formula-block" style="white-space:pre; font-size:12px; overflow-x:auto; line-height:1.5;">Staff question
+      │
+      ▼
+┌──────────────────────────────────┐
+│ Sign-in (OIDC, verified on Keycloak) │
+└──────────────┬───────────────────┘
+               ▼
+┌──────────────────────────────────┐
+│ Access check: role + visibility    │
+│ LangGraph node — BEFORE retrieval  │
+└──────────────┬───────────────────┘
+               ▼
+           Permitted?
+         │              │
+        YES             NO
+         │              │
+         ▼              ▼
+  Scoped retrieval   Graph edge ends here —
+  (permitted docs    document store is
+   only)             never called
+         │
+         ▼
+  Answer + PII masked by role
+Every request, granted or denied →
+encrypted, hash-chained audit log</div>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">Component Breakdown</h3>
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tbody>
+        <tr><td><strong>Access Gate</strong></td><td>Role and document-visibility check as a LangGraph node, before any retrieval</td></tr>
+<tr><td><strong>Retrieval Engine</strong></td><td>Keyword-only BM25 (one file per customer) or hybrid vector + BM25 on Chroma — swappable behind one interface</td></tr>
+<tr><td><strong>Answer Layer</strong></td><td>Generates from permitted documents only, with PII masked according to role</td></tr>
+<tr><td><strong>Audit Log</strong></td><td>Encrypted, hash-chained record of every request, granted or denied</td></tr>
+<tr><td><strong>Upload Governance</strong></td><td>Config-driven upload rules, mandatory public/private choice, dual approval for rule changes</td></tr>
+        </tbody>
+      </table>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">Data Flow</h3>
+      <ol style="margin-left:20px;">
+      <li>The user signs in; identity and role come from OIDC</li>
+<li>The access node checks role and document visibility for the requested customer</li>
+<li>Denied → the request ends at a graph edge; the document store is never called, and the denial is logged</li>
+<li>Permitted → retrieval runs only over documents that role may see — physically separated per customer in the keyword build, a scoped query plus an independent ownership re-check in the vector build</li>
+<li>The answer is generated, PII is masked where the role requires it, and the request is written to the audit log</li>
+      </ol>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">Technology Stack</h3>
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tbody>
+        <tr><td>Orchestration</td><td>LangGraph state graph</td><td>Access control expressed as graph structure, not scattered conditionals</td></tr>
+<tr><td>Identity</td><td>OIDC (Keycloak)</td><td>Standards-based sign-in, verified end to end</td></tr>
+<tr><td>Retrieval</td><td>BM25 · Chroma + nomic-embed-text</td><td>Two engines behind one interface, chosen by measured traffic</td></tr>
+<tr><td>Generation</td><td>Local LLM (Ollama)</td><td>Customer documents never leave the environment</td></tr>
+<tr><td>Platform</td><td>PostgreSQL · Docker</td><td>Verified as a full live stack, not mocked services</td></tr>
+        </tbody>
+      </table>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">Real Design Trade-off, Documented</h3>
+      <p>Keyword-only retrieval wins on cost, infrastructure and simplicity, and is strongest on exact-field questions such as account numbers. Vector retrieval handles paraphrased, natural-language questions better. Rather than choose by habit, both were built on the same platform — and the recommendation is to start keyword-only, measure the real miss rate, and add vectors only when the misses justify the extra stack.</p>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">Performance, Measured Not Estimated</h3>
+      <ul>
+      <li>424 automated tests across both builds — 217 keyword, 207 vector — 100% passing</li>
+<li>Zero mocked security boundaries: access control, audit and dual approval verified against a live Docker stack, a real Keycloak instance, a real Postgres container and real embeddings in a real Chroma collection</li>
+<li>Self-approval of a governance change refused with HTTP 409, verified with two real admin accounts</li>
+      </ul>
+      <h3 style="font-family:var(--serif); font-size:16px; margin:22px 0 10px;">What This Pilot Deliberately Does Not Do</h3>
+      <ul>
+      <li>No SharePoint, OneDrive or FileNet connectors — these need external accounts the pilot does not have</li>
+<li>Azure Entra ID is not verified as a tenant — OIDC is verified against Keycloak instead</li>
+<li>No RBI, ISO, SOC 2 or PCI-DSS certification — those are organisational, not code</li>
+      </ul>
+      <p style="margin-top:22px;"><a href="#demo-register" onclick="showView('home', 'demo-register'); return false;" class="inline">Request a walkthrough of the pilot →</a></p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="priv-wrap priv-footer-inner" style="max-width:1180px;">
+    <span>© 2026 Chaitrishodaya</span>
+    <a href="#home" onclick="showView('home'); return false;">← Back to homepage</a>
+  </div>
+</footer>
+</div>
+
 <div id="view-bct" class="app-view" style="display:none;">
 
 
@@ -3326,6 +3592,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -3547,6 +3814,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -3770,6 +4038,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -3995,6 +4264,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -4219,6 +4489,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -4441,6 +4712,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -4668,6 +4940,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -4748,7 +5021,7 @@ last-known-good prompt (never blocks)</div>
         <div class="section-head reveal" style="margin-bottom:0;">
           <div class="section-eyebrow">Services</div>
           <h2 class="section-title">Complete AI solutions, from first architecture sketch to production</h2>
-          <p class="section-desc">We design, build, and operate AI systems end to end — the same way we've built our own ten products, from full platforms to the quality architecture running underneath them.</p>
+          <p class="section-desc">We design, build, and operate AI systems end to end — the same way we've built our own eleven products, from full platforms to the quality architecture running underneath them.</p>
         </div>
         <div class="services-gate-illustration reveal">
           <svg width="440" height="480" viewBox="0 0 440 480" xmlns="http://www.w3.org/2000/svg">
@@ -4934,6 +5207,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -5012,7 +5286,7 @@ last-known-good prompt (never blocks)</div>
     <div class="wrap">
       <div class="section-head reveal">
         <div class="section-eyebrow">Solutions</div>
-        <h2 class="section-title">Five problems. Ten systems proving each one solved.</h2>
+        <h2 class="section-title">Six problems. Eleven systems proving each one solved.</h2>
         <p class="section-desc">Organized by what's actually solved, not just what's built — each category below is a real, distinct problem, with live, working systems as the proof, not a claim.</p>
       </div>
 
@@ -5152,10 +5426,27 @@ last-known-good prompt (never blocks)</div>
         </div>
       </div>
 
+      <div class="solution-category reveal-stagger reveal">
+        <div class="solution-head">
+          <h3 class="solution-title">Secure AI for Regulated Data</h3>
+          <p class="solution-outcome">Let staff query sensitive documents with AI — without widening who can see what.</p>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-top"><div class="product-badge-group"><div class="product-status">Pilot</div><div class="product-status-stat">424 Tests Passing</div></div></div>
+            <div class="product-name">Banking Document Intelligence</div>
+            <div class="product-tagline">Secure RAG for Regulated Data</div>
+            <p class="product-desc">Staff ask plain-language questions about customer documents — with access control enforced before retrieval, so a role can never leak what it was never allowed to see.</p>
+            <div class="product-metric">424 tests · 100% pass · zero mocked security boundaries</div>
+            <div class="product-tags"><span class="tag">LangGraph</span><span class="tag">Keycloak</span><span class="tag">Ollama</span></div>
+            <a href="#bdis" onclick="showView('bdis'); return false;" class="product-link" style="margin-left:14px;">Learn more →</a>
+          </div>
+        </div>
+      </div>
       <div class="products-grid reveal-stagger reveal">
         <div class="product-card cta-card" style="grid-column: 1 / -1;">
           <div class="cta-card-inner">
-            <div class="cta-card-eyebrow">Building the eleventh system</div>
+            <div class="cta-card-eyebrow">Building the twelfth system</div>
             <div class="cta-card-title">Have an AI system that needs this kind of architecture?</div>
             <p class="cta-card-desc">Every product on this page started as one conversation about a gap someone needed closed. Yours could be next.</p>
             <a href="#contact" class="btn btn-primary" style="margin-top:18px; align-self:flex-start;">Start the conversation →</a>
@@ -5202,6 +5493,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -5354,6 +5646,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -5893,6 +6186,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -6051,6 +6345,7 @@ last-known-good prompt (never blocks)</div>
           <a href="#products" onclick="showView('products'); return false;"><strong>Predictive Risk &amp; Monitoring</strong><span>AIMO, SCIP</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Test Automation at Scale</strong><span>Universal Test Framework, Locator Framework</span></a>
           <a href="#products" onclick="showView('products'); return false;"><strong>Adaptive AI Learning Systems</strong><span>ARIA</span></a>
+          <a href="#products" onclick="showView('products'); return false;"><strong>Secure AI for Regulated Data</strong><span>Banking Document Intelligence</span></a>
         </div>
       </div>
 
@@ -6130,7 +6425,7 @@ last-known-good prompt (never blocks)</div>
       <div class="section-head reveal">
         <div class="section-eyebrow">Technologies</div>
         <h2 class="section-title">What's actually running underneath</h2>
-        <p class="section-desc">Every technology below is in real use across the ten systems above — multi-agent orchestration and agentic AI infrastructure, not a generic list, the actual stack.</p>
+        <p class="section-desc">Every technology below is in real use across the eleven systems above — multi-agent orchestration and agentic AI infrastructure, not a generic list, the actual stack.</p>
       </div>
 
       <div class="tech-grid reveal-stagger reveal">
@@ -6418,7 +6713,7 @@ last-known-good prompt (never blocks)</div>
   }
   (function() {
     var initial = window.location.hash.replace('#', '');
-    if (initial === 'catalogue' || initial === 'privacy' || initial === 'faq' || initial === 'research' || initial === 'qaip' || initial === 'scip' || initial === 'mts' || initial === 'aipq' || initial === 'bct' || initial === 'aimo' || initial === 'zentravix' || initial === 'aria' || initial === 'utf' || initial === 'locator' || initial === 'services' || initial === 'products' || initial === 'philosophy' || initial === 'decisions' || initial === 'journal' || initial === 'technologies') {
+    if (initial === 'catalogue' || initial === 'privacy' || initial === 'faq' || initial === 'research' || initial === 'qaip' || initial === 'scip' || initial === 'mts' || initial === 'aipq' || initial === 'bdis' || initial === 'bct' || initial === 'aimo' || initial === 'zentravix' || initial === 'aria' || initial === 'utf' || initial === 'locator' || initial === 'services' || initial === 'products' || initial === 'philosophy' || initial === 'decisions' || initial === 'journal' || initial === 'technologies') {
       showView(initial);
     }
   })();
@@ -6533,6 +6828,81 @@ last-known-good prompt (never blocks)</div>
     }
   });
 
+</script>
+
+<script>
+/* Right-side reading panel: built from each page's own headings, so it can't drift out of date */
+(function () {
+  var PRODUCTS = { mts: 'MTS', aipq: 'AIPQ', bct: 'BCT', qaip: 'QAIP', zentravix: 'ZENTRAVIX', aimo: 'AIMO', scip: 'SCIP', utf: 'Universal Test Framework', aria: 'ARIA', bdis: 'BDIS', locator: '' };
+  var PAGES = ['research', 'privacy', 'faq', 'journal'].concat(Object.keys(PRODUCTS));
+
+  function goContact() { showView('home', 'contact'); }
+  function goDemo(view) {
+    showView('home', 'demo-register');
+    var sel = document.getElementById('dr-system'), prefix = PRODUCTS[view];
+    if (sel) {
+      var match = prefix ? Array.prototype.find.call(sel.options, function (o) { return o.textContent.indexOf(prefix) === 0; }) : null;
+      var fallback = Array.prototype.find.call(sel.options, function (o) { return o.textContent.indexOf('Not sure') === 0; });
+      if (match || fallback) sel.value = (match || fallback).value || (match || fallback).textContent;
+    }
+  }
+  function cta(view) {
+    if (view in PRODUCTS) {
+      var name = document.querySelector('#view-' + view + ' h1');
+      return { title: 'See ' + (name ? name.textContent.trim() : 'it') + ' in action', text: 'A guided, one-on-one walkthrough of the working system.', label: 'Request a walkthrough', act: function () { goDemo(view); } };
+    }
+    if (view === 'research') return { title: 'Interested in this research?', text: 'It\u2019s in active development \u2014 happy to talk through the approach and where it\u2019s heading.', label: 'Get in touch', act: goContact };
+    if (view === 'journal') return { title: 'Building something similar?', text: 'Every entry here started as a real problem. Tell us yours.', label: 'Start the conversation', act: goContact };
+    if (view === 'privacy') return { title: 'Questions about your data?', text: 'Email us and we\u2019ll answer directly.', label: 'Email us', href: 'mailto:swamy.kumar02@gmail.com' };
+    return { title: 'Didn\u2019t find your answer?', text: 'Ask us directly \u2014 we typically reply within one business day.', label: 'Contact us', act: goContact };
+  }
+  function build(view) {
+    var root = document.getElementById('view-' + view); if (!root) return;
+    var container, heads;
+    if (view === 'journal') { container = root.querySelector('.journal-list'); heads = root.querySelectorAll('.journal-title'); }
+    else if (view === 'faq') { container = root.querySelector('main .priv-wrap'); heads = root.querySelectorAll('.faq-item > summary'); }
+    else { container = root.querySelector('main .priv-wrap'); heads = root.querySelectorAll('main .priv-wrap h2'); }
+    if (!container || !heads.length) return;
+    var rail = document.createElement('aside'); rail.className = 'cx-rail'; rail.setAttribute('aria-label', 'On this page');
+    var inner = document.createElement('div'); inner.className = 'cx-rail-inner';
+    var card = document.createElement('div'); card.className = 'cx-rail-card';
+    var label = document.createElement('div'); label.className = 'cx-rail-label'; label.textContent = view === 'faq' ? 'Questions' : (view === 'journal' ? 'Entries' : 'On this page');
+    var toc = document.createElement('div'); toc.className = 'cx-toc';
+    Array.prototype.forEach.call(heads, function (h, i) {
+      var target = view === 'faq' ? h.parentElement : h;
+      if (!target.id) target.id = view + '-sec-' + (i + 1);
+      target.classList.add('cx-anchor');
+      var a = document.createElement('a'); a.href = '#' + view; a.textContent = h.textContent.replace(/\s*[+\u2212\u2013-]\s*$/, '').trim();
+      a.addEventListener('click', function (e) { e.preventDefault(); if (view === 'faq') target.open = true; target.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      a._target = target; toc.appendChild(a);
+    });
+    card.appendChild(label); card.appendChild(toc);
+    var c = cta(view), box = document.createElement('div'); box.className = 'cx-rail-cta';
+    var t = document.createElement('div'); t.className = 'cx-rail-cta-title'; t.textContent = c.title;
+    var p = document.createElement('div'); p.className = 'cx-rail-cta-text'; p.textContent = c.text;
+    var btn = document.createElement('a'); btn.className = 'cx-rail-btn'; btn.textContent = c.label + ' \u2192';
+    if (c.href) { btn.href = c.href; } else { btn.href = '#'; btn.addEventListener('click', function (e) { e.preventDefault(); c.act(); }); }
+    box.appendChild(t); box.appendChild(p); box.appendChild(btn);
+    inner.appendChild(card); inner.appendChild(box); rail.appendChild(inner);
+    container.classList.add('cx-has-rail');
+    rail.style.right = view === 'journal' ? '0px' : '32px';
+    container.appendChild(rail);
+  }
+  function highlight() {
+    var view = Array.prototype.find.call(document.querySelectorAll('.app-view'), function (v) { return v.style.display !== 'none' && v.offsetParent !== null; });
+    if (!view) return;
+    var links = view.querySelectorAll('.cx-toc a'); if (!links.length) return;
+    var active = links[0];
+    Array.prototype.forEach.call(links, function (a) { if (a._target.getBoundingClientRect().top < 140) active = a; });
+    Array.prototype.forEach.call(links, function (a) { a.classList.toggle('active', a === active); });
+  }
+  PAGES.forEach(build);
+  var ticking = false;
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { highlight(); ticking = false; }); } }, { passive: true });
+  var orig = window.showView;
+  window.showView = function () { var r = orig.apply(this, arguments); setTimeout(highlight, 30); return r; };
+  highlight();
+})();
 </script>
 </body>
 </html>
