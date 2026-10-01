@@ -15,14 +15,21 @@
   "name": "Chaitrishodaya",
   "url": "https://chaitrishodaya.com",
   "description": "Global AI Quality Systems studio — AI architecture, quality engineering, and security consulting.",
-  "founder": {
-    "@type": "Person",
-    "name": "Kumara Swamy",
-    "jobTitle": "AI Technical Architect",
-    "sameAs": [
-      "https://linkedin.com/in/kumara-swamy-7731b020"
-    ]
-  }
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "B Kumara Swamy",
+      "jobTitle": "AI Technical Architect, Founder",
+      "sameAs": [
+        "https://linkedin.com/in/kumara-swamy-7731b020"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Dr Manoj Kumar Jain",
+      "jobTitle": "Co-Founder"
+    }
+  ]
 }
 </script>
 
@@ -679,6 +686,27 @@
       background: var(--gold) !important; color: #FFFFFF !important; font-family: var(--body) !important; font-size: 13px !important; font-weight: 600 !important; text-decoration: none !important; }
     .cx-rail-btn:hover { background: #8E650C !important; color: #FFFFFF !important; }
     .cx-anchor { scroll-margin-top: 100px; }
+  }
+
+  /* ===== Founders section ===== */
+  .founders-sec { padding: 84px 0 92px; background: var(--panel-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .founders-head { max-width: 640px; margin-bottom: 44px; }
+  .founders-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .founders-title { font-family: var(--serif); font-size: clamp(24px, 2.6vw, 30px); font-weight: 500; color: var(--text); letter-spacing: -0.2px; margin-bottom: 10px; }
+  .founders-desc { font-family: var(--body); font-size: 15px; color: var(--text-dim); line-height: 1.7; }
+  .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .founder-card { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 4px 14px 14px 4px; padding: 32px 30px 28px; display: flex; flex-direction: column; }
+  .founder-top { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+  .founder-avatar { width: 54px; height: 54px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), #7A5F0A); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 19px; font-weight: 600; flex-shrink: 0; }
+  .founder-name { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .founder-role { font-family: var(--mono); font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); margin-top: 3px; }
+  .founder-card p { font-family: var(--body); font-size: 14.5px; line-height: 1.75; color: var(--text-dim); margin-bottom: 14px; }
+  .founder-card p:last-of-type { margin-bottom: 18px; }
+  .founder-links { display: flex; gap: 14px; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+  .founder-links a { font-family: var(--mono); font-size: 12px; color: var(--text-dim); text-decoration: none; }
+  .founder-links a:hover { color: var(--gold); }
+  @media (max-width: 760px) {
+    .founders-grid { grid-template-columns: 1fr; }
   }
 </style>
 <style>
@@ -1357,6 +1385,44 @@
 
   
 
+
+  <section class="founders-sec">
+    <div class="wrap">
+      <div class="founders-head reveal">
+        <div class="founders-eyebrow">Who's Behind This</div>
+        <h2 class="founders-title">Founded by builders, not just strategists</h2>
+        <p class="founders-desc">Chaitrishodaya designs, builds, and operates complete AI systems that turn ambition into production-ready reality — engineered for real-world scale, built to earn trust from day one.</p>
+      </div>
+      <div class="founders-grid reveal">
+
+        <div class="founder-card">
+          <div class="founder-top">
+            <div class="founder-avatar">KS</div>
+            <div>
+              <div class="founder-name">B Kumara Swamy</div>
+              <div class="founder-role">Founder</div>
+            </div>
+          </div>
+          <p>AI engineering leader working at the intersection of AI research and production engineering — exploring emerging techniques, then proving them by shipping real systems, not papers or prototypes. 13+ years in enterprise and software engineering, with AI-focused work carried out throughout.</p>
+          <p>Architected an autonomous AI automation platform that reduced manual regression by 70% across 2,350+ CI builds in a prior enterprise engineering role. Independently designed and built ten AI systems end to end — including a prompt-quality gate with automatic rollback, a Socratic AI tutor tested to 100% adversarial compliance, and a supply-chain risk platform that caught a real production auth bypass before launch.</p>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-top">
+            <div class="founder-avatar">MJ</div>
+            <div>
+              <div class="founder-name">Dr Manoj Kumar Jain</div>
+              <div class="founder-role">Co-Founder</div>
+            </div>
+          </div>
+          <p>Technology leader, enterprise architect and transformation strategist with 20+ years of experience spanning IBM, PwC, Oracle, TCS, HCL and Wipro — working across business strategy, technology architecture, engineering and innovation, from boardroom vision through to production.</p>
+          <p>Connects the full transformation lifecycle: Business Vision → Strategy → Architecture → Modernization → Engineering → AI → Operations → Business Value. Specializes in Cloud and AI Transformation, Agentic AI, Enterprise Architecture and Platform Engineering. As Co-Founder, building Chaitrishodaya into a trusted partner helping organizations move confidently from legacy to modern, intelligent, and autonomous enterprises.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
     <!-- ===== Homepage: built-on strip ===== -->
   <section class="hx-stack">
     <div class="wrap">
@@ -1696,7 +1762,7 @@
       <div class="footer-row">
         <div>
           <div class="footer-brand-title">Chaitrishodaya<span class="brand-mark brand-mark-lg"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="petalOuterF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#8A6410"/><stop offset="45%" stop-color="#C9932E"/><stop offset="100%" stop-color="#F0C868"/></linearGradient><linearGradient id="petalInnerF" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#B8860B"/><stop offset="50%" stop-color="#E8B84B"/><stop offset="100%" stop-color="#FBE4A0"/></linearGradient><radialGradient id="centerGlowF" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFF3D0"/><stop offset="60%" stop-color="#D9A11F"/><stop offset="100%" stop-color="#8A6410"/></radialGradient><filter id="softGlowF" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g filter="url(#softGlowF)"><path d="M24.0,26.4 Q15.2,18.3 3.6,20.9 Q12.4,29.0 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q18.3,15.9 6.4,14.7 Q12.2,25.1 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q22.0,14.7 11.1,9.6 Q13.2,21.4 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q25.8,14.6 17.2,6.4 Q15.4,18.2 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q29.5,15.8 24.0,5.3 Q18.5,15.8 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q32.6,18.2 30.8,6.4 Q22.2,14.6 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q34.8,21.4 36.9,9.6 Q26.0,14.7 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.8,25.1 41.6,14.7 Q29.7,15.9 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q35.6,29.0 44.4,20.9 Q32.8,18.3 24.0,26.4 Z" fill="url(#petalOuterF)" opacity="0.95"/><path d="M24.0,26.4 Q21.5,18.5 13.4,16.7 Q15.9,24.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q23.7,18.1 16.4,14.1 Q16.7,22.4 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q26.0,18.3 20.1,12.5 Q18.1,20.6 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q28.1,19.2 24.0,12.0 Q19.9,19.2 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q29.9,20.6 27.9,12.5 Q22.0,18.3 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q31.3,22.4 31.6,14.1 Q24.3,18.1 24.0,26.4 Z" fill="url(#petalInnerF)"/><path d="M24.0,26.4 Q32.1,24.6 34.6,16.7 Q26.5,18.5 24.0,26.4 Z" fill="url(#petalInnerF)"/><circle cx="24.0" cy="26.4" r="3.6" fill="url(#centerGlowF)"/></g></svg></span></div>
-          <p class="footer-sub">Global AI quality systems studio. Founded by Kumara Swamy, AI Technical Architect.</p>
+          <p class="footer-sub">Global AI quality systems studio. Founded by B Kumara Swamy, AI Technical Architect, and Dr Manoj Kumar Jain, Co-Founder.</p>
         </div>
         <div class="footer-cols hx-footer-cols">
           <div class="footer-col">
@@ -5402,7 +5468,7 @@ encrypted, hash-chained audit log</div>
             <p class="product-desc">A pluggable Strategy-pattern locator engine for UI test automation — when the primary locator goes stale, it falls through to the next strategy and logs exactly which one healed it.</p>
             <div class="product-metric">9 tests, 100% pass — pure Python, synthetic HTML, and a real live site</div>
             <div class="product-tags"><span class="tag">Playwright</span><span class="tag">pytest</span><span class="tag">OpenCV</span></div>
-            <a href="/#demo-register" onclick="showView('home', 'demo-register'); return false;" class="product-link">Request access →</a>
+            <a href="https://locator.chaitrishodaya.com" class="product-link" target="_blank" rel="noopener">Live dashboard ↗</a>
             <a href="/locator.html" onclick="showView('locator'); return false;" class="product-link" style="margin-left:14px;">Learn more →</a>
           </div>
         </div>
