@@ -20,7 +20,7 @@
   var vids = document.querySelectorAll('video');
   vids.forEach(function(v){ v.addEventListener('play', function(){ vids.forEach(function(o){ if (o !== v) o.pause(); }); }); });
 
-  /* rise-in + count-up (content is fully visible before this runs) */
+  /* rise-in + count-up (html.js is set in <head> only when this can run) */
   if ('IntersectionObserver' in window && !still) {
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){
@@ -32,14 +32,70 @@
         });
         io.unobserve(e.target);
       });
-    }, {threshold: .15});
+    }, {threshold: .08, rootMargin: '0px 0px -40px 0px'});
     document.querySelectorAll('.rise').forEach(function(el){ io.observe(el); });
+  } else { document.documentElement.classList.remove('js'); }
+
+  /* roadmap: the active step moves along the line; hover or focus picks a step */
+  document.querySelectorAll('.roadmap').forEach(function(rm){
+    var steps = rm.querySelectorAll('.rm-step'), i = 0, timer = null;
+    function set(k){ steps.forEach(function(s, j){ s.classList.toggle('on', j === k); }); i = k; }
+    function play(){ if (still) return; stop(); timer = setInterval(function(){ set((i + 1) % steps.length); }, 2600); }
+    function stop(){ if (timer) clearInterval(timer); timer = null; }
+    steps.forEach(function(s, j){
+      s.addEventListener('mouseenter', function(){ stop(); set(j); });
+      s.addEventListener('focusin', function(){ stop(); set(j); });
+    });
+    rm.addEventListener('mouseleave', play);
+    set(0); play();
+  });
+
+  /* 60-second AI risk check */
+  var rc = document.getElementById('riskCheck');
+  if (rc) {
+    var qItems = rc.querySelectorAll('.q'), prog = rc.querySelector('.qprog i'), out = document.getElementById('riskResult');
+    var update = function(){
+      var answered = 0, yes = 0, gaps = [];
+      qItems.forEach(function(q){
+        var c = q.querySelector('input:checked');
+        if (c) { answered++; if (c.value === 'yes') yes++; else gaps.push(q.getAttribute('data-gap')); }
+      });
+      prog.style.width = (answered / qItems.length * 100) + '%';
+      if (answered < qItems.length) { out.hidden = true; return; }
+      var band = yes >= 7 ? ['Strong foundations', 'Your AI has most of the controls we look for. A short review can confirm the evidence holds up.'] :
+                 yes >= 4 ? ['Some gaps', 'Some important controls are missing. These are usually quick to close once they are named.'] :
+                            ['High risk', 'Your AI could be wrong without anyone noticing, and you may not be able to prove what it did.'];
+      out.querySelector('b').textContent = yes + '/' + qItems.length;
+      out.querySelector('.band').textContent = band[0];
+      out.querySelector('.msg').textContent = band[1];
+      var ul = out.querySelector('ul'); ul.innerHTML = '';
+      gaps.slice(0, 4).forEach(function(g){ var li = document.createElement('li'); li.textContent = g; ul.appendChild(li); });
+      ul.hidden = !gaps.length; out.querySelector('.gl').hidden = !gaps.length;
+      out.hidden = false;
+      var f = document.getElementById('cf-message'); if (f && !f.value) f.value = 'Risk check score: ' + yes + '/' + qItems.length + ' (' + band[0] + ').';
+    };
+    rc.addEventListener('change', update);
   }
 
-  /* contact / access form */
-  var f = document.getElementById('contactForm');
-  if (f) {
-    var s = document.getElementById('cf-status');
+  /* cost of a bad AI answer (illustrative calculator) */
+  var calc = document.getElementById('calc');
+  if (calc) {
+    var inr = function(n){ return '₹' + Math.round(n).toLocaleString('en-IN'); };
+    var num = function(n){ return Math.round(n).toLocaleString('en-IN'); };
+    var run = function(){
+      var v = {}; calc.querySelectorAll('input').forEach(function(i){ v[i.name] = +i.value; var o = calc.querySelector('output[for="' + i.id + '"]'); if (o) o.textContent = i.dataset.fmt === 'inr' ? inr(i.value) : (i.dataset.fmt === 'pct' ? i.value + '%' : num(i.value)); });
+      var wrong = v.volume * v.wrong / 100, costly = wrong * v.impact / 100, exposure = costly * v.cost, kept = exposure * (1 - v.caught / 100);
+      document.getElementById('cWrong').textContent = num(wrong);
+      document.getElementById('cCostly').textContent = num(costly);
+      document.getElementById('cExposure').textContent = inr(exposure);
+      document.getElementById('cKept').textContent = inr(kept);
+    };
+    calc.addEventListener('input', run); run();
+  }
+
+  /* every lead form posts to the same inbox (Formspree) */
+  document.querySelectorAll('form[data-form]').forEach(function(f){
+    var s = f.querySelector('.status');
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { s.className = 'status'; s.textContent = 'Please add your name, a valid work email and a short message.'; return; }
@@ -48,7 +104,7 @@
         .then(function(r){ if (!r.ok) throw new Error(); s.className = 'status ok'; s.textContent = 'Thank you. We will reply within one business day.'; f.reset(); })
         .catch(function(){ s.className = 'status'; s.textContent = 'The message could not be sent just now. Please try again in a moment, or message us on LinkedIn.'; });
     });
-  }
+  });
 
   /* quick message panel (goes to the inbox; no phone number is shown) */
   var cb = document.querySelector('.chat-btn'), cp = document.getElementById('chatPanel');
