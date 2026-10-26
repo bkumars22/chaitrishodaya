@@ -106,23 +106,105 @@
     });
   });
 
-  /* quick message panel (goes to the inbox; no phone number is shown) */
-  var cb = document.querySelector('.chat-btn'), cp = document.getElementById('chatPanel');
-  if (cb && cp) {
-    var setOpen = function(o){ cp.hidden = !o; cb.setAttribute('aria-expanded', o ? 'true' : 'false'); if (o) { var f1 = document.getElementById('qm-name'); if (f1) f1.focus(); } };
-    cb.addEventListener('click', function(){ setOpen(cp.hidden); });
-    cp.querySelector('.chat-close').addEventListener('click', function(){ setOpen(false); cb.focus(); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !cp.hidden) { setOpen(false); cb.focus(); } });
-    var qf = document.getElementById('chatForm'), qs = document.getElementById('qm-status');
-    qf.addEventListener('submit', function(e){
-      e.preventDefault();
-      if (!qf.checkValidity()) { qs.className = 'status'; qs.textContent = 'Please add your name, an email or phone number, and a message.'; return; }
-      qs.className = 'status'; qs.textContent = 'Sending…';
-      fetch('https://formspree.io/f/mdenzqll', {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(qf)})
-        .then(function(r){ if (!r.ok) throw new Error(); qs.className = 'status ok'; qs.textContent = 'Thank you. Your message has reached us.'; qf.reset(); })
-        .catch(function(){ qs.className = 'status'; qs.textContent = 'The message could not be sent just now. Please try again in a moment.'; });
-    });
-  }
+  /* site assistant: answers from the site's own knowledge base, in the browser */
+  (function(){
+    var btn = document.querySelector('.ask-btn'), panel = document.getElementById('askPanel'), kbEl = document.getElementById('askKB');
+    if (!btn || !panel || !kbEl) return;
+    var KB = JSON.parse(kbEl.textContent), log = document.getElementById('askLog'), chips = document.getElementById('askChips');
+    var form = document.getElementById('askForm'), input = document.getElementById('askInput'), started = false, lead = null, lastQ = '';
+    var STOP = 'a an the is are am be to of for and or in on at by with do does did you your we our us i me my it this that what which how can could would should will about tell please there any from have has get'.split(' ');
+    var SYN = {cost:'price',costs:'price',pricing:'price',fee:'price',fees:'price',charge:'price',charges:'price',quote:'price',budget:'price',
+               banks:'bank',banking:'bank',nbfc:'bank',kyc:'bank',rbi:'bank',bangalore:'bengaluru',testing:'test',tests:'test',tested:'test',
+               agents:'agent',agentic:'agent',demos:'demo',videos:'demo',video:'demo',founders:'founder',ceo:'founder',secure:'security',
+               cheaper:'cheap',saving:'cheap',savings:'cheap',onprem:'premises',contact:'talk',call:'talk',email:'talk',phone:'talk'};
+    function stem(w){ w = SYN[w] || w; if (w.length > 4) w = w.replace(/(ing|ed|es|s)$/,''); return SYN[w] || w; }
+    function toks(t){ return (t.toLowerCase().match(/[a-z0-9₹%-]+/g) || []).filter(function(w){ return STOP.indexOf(w) < 0 && w.length > 1; }).map(stem); }
+    var docs = KB.map(function(e){ return {e:e, k:toks(e.k + ' ' + e.t), t:toks(e.t), a:toks(e.a)}; });
+    var df = {}; docs.forEach(function(d){ var seen = {}; d.k.concat(d.a).forEach(function(w){ if (!seen[w]) { seen[w] = 1; df[w] = (df[w] || 0) + 1; } }); });
+    function idf(w){ return Math.log(1 + (docs.length - (df[w] || 0) + .5) / ((df[w] || 0) + .5)); }
+    function score(q){
+      var qt = toks(q);
+      if (!qt.length) qt = (q.toLowerCase().match(/[a-z0-9]+/g) || []).map(stem);
+      if (!qt.length) return null;
+      var best = null;
+      docs.forEach(function(d){
+        var s = 0;
+        qt.forEach(function(w){
+          var i = idf(w);
+          if (d.k.indexOf(w) >= 0) s += 3 * i;
+          if (d.t.indexOf(w) >= 0) s += 1.5 * i;
+          if (d.a.indexOf(w) >= 0) s += .6 * i;
+        });
+        s = s / Math.sqrt(qt.length);
+        if (!best || s > best.s) best = {s:s, e:d.e};
+      });
+      return best;
+    }
+    function el(tag, cls, html){ var x = document.createElement(tag); if (cls) x.className = cls; if (html != null) x.innerHTML = html; return x; }
+    function esc(t){ return t.replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    function scroll(){ log.scrollTop = log.scrollHeight; }
+    function user(t){ var m = el('div', 'msg me'); m.textContent = t; log.appendChild(m); scroll(); }
+    function bot(text, links, next, delay){
+      var typing = el('div', 'msg bot typing', '<span></span><span></span><span></span>'); log.appendChild(typing); scroll();
+      chips.innerHTML = '';
+      setTimeout(function(){
+        typing.remove();
+        var m = el('div', 'msg bot'); m.appendChild(el('p', null, esc(text)));
+        if (links && links.length) { var l = el('div', 'msg-links'); links.forEach(function(x){ var a = el('a', null, esc(x[0]) + ' <span aria-hidden="true">→</span>'); a.href = x[1]; l.appendChild(a); }); m.appendChild(l); }
+        log.appendChild(m); scroll(); setChips(next);
+      }, still ? 0 : (delay || Math.min(1100, 380 + text.length * 4)));
+    }
+    function setChips(list){
+      chips.innerHTML = '';
+      (list || []).forEach(function(t){ var c = el('button', 'chip'); c.type = 'button'; c.textContent = t; c.addEventListener('click', function(){ ask(t); }); chips.appendChild(c); });
+    }
+    function find(t){ for (var i = 0; i < KB.length; i++) if (KB[i].t.toLowerCase() === t.toLowerCase()) return KB[i]; return null; }
+    function startLead(q){
+      lead = {step:'name', q:q || lastQ};
+      bot('Happy to connect you with a founder. What is your name?', null, []);
+      input.placeholder = 'Your name';
+    }
+    function leadStep(t){
+      if (lead.step === 'name') { lead.name = t; lead.step = 'email'; input.placeholder = 'Work email'; bot('Thanks, ' + t.split(' ')[0] + '. What is the best email to reach you?', null, []); return; }
+      if (lead.step === 'email') {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)) { bot('That email does not look right. Could you check it?', null, []); return; }
+        lead.email = t; lead.step = 'msg'; input.placeholder = 'Your question or a line about your AI system';
+        bot(lead.q ? 'And your question was: “' + lead.q + '”. Add anything else, or type “send”.' : 'What would you like to ask, or what AI system should we look at?', null, lead.q ? ['send'] : []); return;
+      }
+      if (lead.step === 'msg') {
+        var msg = (t.toLowerCase() === 'send' ? '' : t), fd = new FormData();
+        fd.append('form_type', 'site-assistant'); fd.append('name', lead.name); fd.append('email', lead.email);
+        fd.append('message', [lead.q, msg].filter(Boolean).join('\n\n') || '(no message)'); fd.append('page', location.pathname);
+        lead = null; input.placeholder = 'Ask about services, banking, pricing…';
+        var typing = el('div', 'msg bot typing', '<span></span><span></span><span></span>'); log.appendChild(typing); scroll();
+        fetch('https://formspree.io/f/mdenzqll', {method:'POST', headers:{'Accept':'application/json'}, body:fd})
+          .then(function(r){ if (!r.ok) throw 0; typing.remove(); bot('Sent. A founder will reply within one business day. Anything else I can help with?', null, ['What do you do?', 'See a demo'], 200); })
+          .catch(function(){ typing.remove(); bot('Sorry, that did not go through. Please try the contact form instead.', [['Contact form', 'index.html#contact']], [], 200); });
+      }
+    }
+    function ask(t){
+      t = (t || '').trim(); if (!t) return;
+      user(t); input.value = '';
+      if (lead) { leadStep(t); return; }
+      var e = find(t), nq = t.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim();
+      if (!e && nq.length >= 6) for (var i = 0; i < KB.length; i++) if ((' ' + KB[i].k + ' ').indexOf(' ' + nq + ' ') >= 0) { e = KB[i]; break; }
+      if (!e) { var r = score(t); if (r && r.s >= 1.6) e = r.e; }
+      if (e && e.id === 'human') { startLead(lastQ); return; }
+      if (!e) { lastQ = t; bot('I don’t have a confident answer to that from our site, and I’d rather not guess. Shall I pass your question to a founder?', null, ['Yes, contact a founder', 'Services', 'Banking and RBI']); return; }
+      lastQ = t; bot(e.a, e.l, e.n);
+    }
+    var _ask = ask; ask = function(t){ if (t === 'Yes, contact a founder') { user(t); startLead(lastQ); return; } _ask(t); };
+    function open(o){
+      panel.hidden = !o; btn.setAttribute('aria-expanded', o ? 'true' : 'false'); btn.classList.toggle('on', o);
+      if (o && !started) { started = true; bot('Hello! I’m the Chaitrishodaya assistant. Ask me about our services, our eleven AI systems, banking and RBI, or how to start.', null, ['What do you do?', 'Banking and RBI', 'See a demo', 'How do we start?', 'Pricing', 'Talk to a founder'], 450); }
+      if (o) setTimeout(function(){ input.focus(); }, 60);
+    }
+    btn.addEventListener('click', function(){ open(panel.hidden); });
+    panel.querySelector('.ask-x').addEventListener('click', function(){ open(false); btn.focus(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
+    form.addEventListener('submit', function(e){ e.preventDefault(); ask(input.value); });
+    document.querySelectorAll('[data-ask]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); open(true); }); });
+  })();
 
   /* hero: AI outputs flowing through evaluate -> gate -> audit */
   var c = document.getElementById('aiCanvas');
