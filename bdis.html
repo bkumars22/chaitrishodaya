@@ -376,14 +376,15 @@ a.card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 24
 .fine{font-size:13px;color:var(--dim);line-height:1.5}
 
 /* founders */
-.person{display:grid;grid-template-columns:minmax(200px,270px) minmax(0,1fr);gap:30px;align-items:start;padding:26px}
+.person{display:grid;grid-template-columns:88px minmax(0,1fr);gap:24px;align-items:start;padding:28px}
 .person .who{display:flex;flex-direction:column;gap:10px;min-width:0;padding-top:6px}
 .person h3{font-family:var(--display);font-weight:400;font-size:var(--fs-sub);text-transform:uppercase;letter-spacing:.01em;line-height:1}
 .portrait{position:relative;margin:0;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--sheen-soft);box-shadow:0 26px 50px -30px rgba(30,42,59,.55),0 0 0 1px rgba(200,144,26,.35)}
 .portrait img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .portrait::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--gold-grad)}
 .person:hover .portrait img{transform:scale(1.03)}
-.mono{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:32px;color:var(--gold);background:var(--gold-soft)}
+.mono{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:38px;color:#2A1E05;background:var(--gold-grad);box-shadow:0 14px 30px -16px rgba(140,94,8,.8)}
+.mono.b{background:linear-gradient(135deg,#1E2A3B,#2D3D55);color:var(--gold-hi)}
 .role{color:var(--gold)}
 @media (max-width:640px){.person{grid-template-columns:minmax(0,1fr)}.portrait{max-width:260px}}
 
