@@ -27,8 +27,8 @@
         if (!e.isIntersecting) return;
         e.target.classList.add('in');
         e.target.querySelectorAll('[data-count]').forEach(function(b){
-          var n = +b.getAttribute('data-count'), pre = b.getAttribute('data-prefix') || '', suf = b.getAttribute('data-suffix') || '', st = performance.now();
-          (function f(now){ var k = Math.min(1, (now - st) / 1200); b.textContent = pre + Math.round(n * (1 - Math.pow(1 - k, 3))).toLocaleString('en-IN') + suf; if (k < 1) requestAnimationFrame(f); })(st);
+          var n = +b.getAttribute('data-count'), from = +(b.getAttribute('data-from') || 0), dec = +(b.getAttribute('data-dec') || 0), pre = b.getAttribute('data-prefix') || '', suf = b.getAttribute('data-suffix') || '', st = performance.now();
+          (function f(now){ var k = Math.min(1, (now - st) / 1400), v = from + (n - from) * (1 - Math.pow(1 - k, 3)); b.textContent = pre + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-IN')) + suf; if (k < 1) requestAnimationFrame(f); })(st);
         });
         io.unobserve(e.target);
       });
