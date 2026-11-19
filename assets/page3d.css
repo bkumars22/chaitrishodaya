@@ -28,3 +28,10 @@
 .tilt:hover::after{opacity:1}
 .card.tilt,.tool.tilt,.person.tilt{position:relative}
 @media (prefers-reduced-motion: reduce){.tilt{transition:none}}
+/* no live 3D (graphics acceleration off, old device, reduced motion): show a rendered still of the same scene */
+.page-hero.ph-still{background-color:#070C16;background-repeat:no-repeat;background-size:cover;background-position:right center}
+.page-hero.ph-still[data-still="gold"]{background-image:url(../images/globe-gold.jpg)}
+.page-hero.ph-still[data-still="blue"]{background-image:url(../images/globe-blue.jpg)}
+.page-hero.ph-still[data-still="coral"]{background-image:url(../images/globe-coral.jpg)}
+.page-hero.ph-still[data-still="green"]{background-image:url(../images/globe-green.jpg)}
+@media (max-width:899px){.page-hero.ph-still{background-position:72% center}}

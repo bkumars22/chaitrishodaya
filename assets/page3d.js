@@ -15,6 +15,7 @@
   var stage = { qaip:0, zentravix:0, scip:0, aria:0, bdis:0, mts:1, bct:1, utf:1, locator:1, aipq:2, aimo:3 };
   var accents = ['#E3B95A', '#93ADE6', '#F08A5D', '#5BC08A'];
   var accent = accents[stage[page] !== undefined ? stage[page] : 0];
+  var stillName = ['gold', 'blue', 'coral', 'green'][stage[page] !== undefined ? stage[page] : 0];
 
   function tilt(){
     if (!can3d || !(window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches)) return;
@@ -125,6 +126,8 @@
     return true;
   }
 
-  if (can3d) { try { scene(); } catch(e){ /* keep the static header */ } }
+  var live = false;
+  if (can3d) { try { live = scene(); } catch(e){ live = false; } }
+  if (!live) { hero.classList.add('ph-still'); hero.setAttribute('data-still', stillName); }  // pre-rendered picture of the same 3D scene
   tilt();
 })();

@@ -633,7 +633,8 @@ input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-of
 .orb-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .orb-label{position:absolute;left:0;top:0;font:600 12px var(--sans);letter-spacing:.06em;color:#FFF8EA;background:rgba(7,12,22,.72);border:1px solid color-mix(in srgb,var(--c) 60%,transparent);border-radius:999px;padding:5px 11px;cursor:pointer;white-space:nowrap;will-change:transform}
 .orb-label:hover,.orb-label.on{background:var(--c);color:#0B111D;border-color:var(--c)}
-.orbit.flat{height:auto;display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:10px;padding:24px;background:none}
+.orbit.flat{height:560px;display:flex;flex-wrap:wrap;align-items:flex-start;align-content:flex-start;gap:10px;padding:24px;background:#0B111D url(images/explore-3d.jpg) center 62%/contain no-repeat}
+@media (max-width:900px){.orbit.flat{height:440px;background-size:cover}}
 .orbit.flat canvas,.orbit.flat .orb-hint,.orbit.flat .orb-legend{display:none}
 .orbit.flat .orb-label{position:static;transform:none!important;opacity:1!important}
 .orb-panel{border:1px solid rgba(227,185,90,.25);border-radius:14px;background:rgba(16,23,36,.8);padding:30px;display:flex;flex-direction:column;gap:14px;min-width:0}
@@ -1281,7 +1282,7 @@ input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-of
     var sel = 0, hover = -1;
     function select(i, user){ sel = i; showPanel(sys[i]); labels.forEach(function(l, k){ l.classList.toggle('on', k === i); }); if (user) idle = 0; }
     select(0);
-    if (!can3d) { stage.classList.add('flat'); return false; }
+    if (!can3d) { stage.classList.add('flat'); var dsc = document.querySelector('#explore .sec-desc'); if (dsc) dsc.textContent = 'Pick any system to see what it does and what it proved.'; return false; }
 
     var R; try { R = new T.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch(e){ stage.classList.add('flat'); return false; }
     R.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75)); R.setClearColor(0x000000, 0);
