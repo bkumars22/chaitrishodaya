@@ -1,0 +1,30 @@
+/* Chaitrishodaya inner pages: cinematic dark header with a live 3D scene (assets/page3d.js).
+   Same palette as the home hero: night navy, gold, accent per system stage. */
+.page-hero{position:relative;overflow:hidden;isolation:isolate;min-height:460px;padding-block:44px 92px;color:#F4EEE2;border-bottom:1px solid rgba(227,185,90,.28);
+  background:radial-gradient(60% 90% at 78% 40%,rgba(227,185,90,.16),transparent 60%),radial-gradient(40% 60% at 90% 90%,rgba(147,173,230,.10),transparent 70%),linear-gradient(180deg,#0A1120,#070C16)}
+.page-hero .ph3d{position:absolute;inset:0;width:100%;height:100%;z-index:-2;display:block}
+.page-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,12,22,.92) 0%,rgba(7,12,22,.62) 42%,rgba(7,12,22,.05) 75%),linear-gradient(180deg,transparent 70%,rgba(7,12,22,.6) 100%)}
+@media (max-width:899px){.page-hero::after{background:linear-gradient(180deg,rgba(7,12,22,.35) 0%,rgba(7,12,22,.82) 55%,rgba(7,12,22,.94) 100%)}}
+.page-hero .wrap{position:relative}
+.page-hero .crumbs,.page-hero .crumbs a{color:rgba(244,238,226,.68)}
+.page-hero .crumbs a:hover{color:#F3D58C}
+.page-hero .eyebrow{color:#E3B95A}
+.page-hero h1{color:#FFF8EA}
+.page-hero h1 em{color:transparent;background:linear-gradient(100deg,#F6DB8E,#E3B95A 45%,#C8901A);-webkit-background-clip:text;background-clip:text}
+.page-hero .lede{color:#C9CFD8}
+.page-hero .chips span,.page-hero .chips a{color:#E6EAF0;background:rgba(255,255,255,.04);border-color:rgba(227,185,90,.3)}
+.page-hero .badge{background:rgba(227,185,90,.18);color:#F3D58C}
+.page-hero .badge.blue{background:rgba(147,173,230,.18);color:#C3D3F4}
+.page-hero .btn-dark{background:linear-gradient(100deg,#F6DB8E,#E3B95A 45%,#C8901A);color:#2A1E05}
+.page-hero .btn-dark:hover{filter:brightness(1.06);color:#2A1E05}
+.page-hero .btn-line{border-color:rgba(255,248,234,.45);color:#FFF8EA}
+.page-hero .ph-tag{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:14px;font:400 11px/1 ui-monospace,Consolas,monospace;color:rgba(244,238,226,.38);letter-spacing:.04em;pointer-events:none}
+@media (max-width:899px){.page-hero .ph-tag{display:none}.page-hero{min-height:0}}
+/* cards lean toward the pointer (only where hardware 3D is available) */
+.tilt{transition:transform .18s ease-out,box-shadow .3s}
+.tilt:hover{box-shadow:0 30px 60px -30px rgba(120,84,10,.45)}
+.tilt::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(255,226,150,.16),transparent 60%);opacity:0;transition:opacity .3s}
+.tilt:hover::after{opacity:1}
+.card.tilt,.tool.tilt,.person.tilt{position:relative}
+@media (prefers-reduced-motion: reduce){.tilt{transition:none}}
