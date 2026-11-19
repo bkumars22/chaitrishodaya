@@ -514,8 +514,8 @@ input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-of
 .card .points{margin-top:auto;padding-top:6px}
 
 /* motion: content is visible without JS; JS adds a gentle rise */
-.js .rise{opacity:0;transform:translateY(22px)}
-.js .rise.in{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rise{opacity:1;transform:none}
+.js .rise.in{opacity:1;transform:none}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.track,.brand-name{animation:none}.js .rise{opacity:1;transform:none}}
 
 /* site assistant */
