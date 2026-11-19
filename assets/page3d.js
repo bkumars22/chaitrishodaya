@@ -126,8 +126,62 @@
     return true;
   }
 
+
+  /* animated 2D version of the same globe: runs on the CPU, so it works without hardware 3D */
+  function scene2d(){
+    var cv = document.createElement('canvas'); cv.className = 'ph3d'; cv.setAttribute('aria-hidden', 'true');
+    var x = cv.getContext && cv.getContext('2d'); if (!x) return false;
+    hero.insertBefore(cv, hero.firstChild);
+    var tag = document.createElement('span'); tag.className = 'ph-tag'; tag.textContent = 'Live · move your pointer'; hero.appendChild(tag);
+    var N = 260, P = [], pairs = [];
+    for (var i = 0; i < N; i++){ var y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = i * 2.399963; P.push([Math.cos(th) * r, y, Math.sin(th) * r]); }
+    for (var a = 0; a < N; a++){ var b1 = -1, b2 = -1, d1 = 9, d2 = 9;
+      for (var b = 0; b < N; b++){ if (a === b) continue; var dx = P[a][0]-P[b][0], dy = P[a][1]-P[b][1], dz = P[a][2]-P[b][2], d = dx*dx+dy*dy+dz*dz;
+        if (d < d2){ if (d < d1){ b2 = b1; d2 = d1; b1 = b; d1 = d; } else { b2 = b; d2 = d; } } }
+      if (b1 > a) pairs.push([a, b1]); if (b2 > a) pairs.push([a, b2]); }
+    var arcs = []; while (arcs.length < 16){ var A = P[Math.floor(Math.random()*N)], B = P[Math.floor(Math.random()*N)], dd = Math.hypot(A[0]-B[0],A[1]-B[1],A[2]-B[2]); if (dd < .7) continue;
+      var m = [(A[0]+B[0])/2,(A[1]+B[1])/2,(A[2]+B[2])/2], ml = Math.hypot(m[0],m[1],m[2]) || 1, lift = 1 + .28 + dd * .18;
+      arcs.push({ A: A, B: B, C: [m[0]/ml*lift, m[1]/ml*lift, m[2]/ml*lift], t: Math.random(), v: .16 + Math.random() * .2 }); }
+    var ac = accent, W = 0, H = 0, cx = 0, cy = 0, R = 100, rot = 0, mx = 0, my = 0, px = 0, py = 0, run = false, vis = true, last = performance.now(), ring = 0;
+    function hex(h, al){ var n = parseInt(h.slice(1), 16); return 'rgba(' + (n >> 16) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + al + ')'; }
+    function size(){ var dpr = Math.min(window.devicePixelRatio || 1, 1.5); W = hero.clientWidth; H = hero.clientHeight; cv.width = W * dpr; cv.height = H * dpr; x.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var wide = W >= 900; cx = wide ? W * .73 : W * .68; cy = wide ? H * .47 : H * .3; R = wide ? Math.min(H * .33, W * .17) : Math.min(W * .32, 150); }
+    addEventListener('resize', size); size();
+    hero.addEventListener('pointermove', function(e){ var r = hero.getBoundingClientRect(); mx = (e.clientX - r.left) / r.width - .5; my = (e.clientY - r.top) / r.height - .5; });
+    hero.addEventListener('pointerleave', function(){ mx = my = 0; });
+    var tilt = .32, F = 3.2;
+    function proj(p, ry, rx){ var c = Math.cos(ry), s = Math.sin(ry), X = p[0]*c + p[2]*s, Z = -p[0]*s + p[2]*c, Y = p[1];
+      var c2 = Math.cos(rx), s2 = Math.sin(rx), Y2 = Y*c2 - Z*s2, Z2 = Y*s2 + Z*c2, k = F / (F + Z2); return [cx + X * R * k, cy - Y2 * R * k, Z2]; }
+    function frame(now){
+      if (!run) return; var dt = Math.max(0, Math.min(.05, (now - last) / 1000)); if (dt < 1 / 32){ requestAnimationFrame(frame); return; } last = now;
+      px += (mx - px) * .06; py += (my - py) * .06; rot += dt * .16; ring += dt * .35;
+      var ry = rot + px * .6, rx = tilt + py * .4; x.clearRect(0, 0, W, H);
+      var g = x.createRadialGradient(cx, cy, 0, cx, cy, R * 1.6); g.addColorStop(0, 'rgba(255,182,72,.22)'); g.addColorStop(1, 'rgba(255,182,72,0)'); x.fillStyle = g; x.fillRect(cx - R * 2, cy - R * 2, R * 4, R * 4);
+      var Q = P.map(function(p){ return proj(p, ry, rx); });
+      x.lineWidth = 1;
+      for (var i = 0; i < pairs.length; i++){ var a = Q[pairs[i][0]], b = Q[pairs[i][1]], z = (a[2] + b[2]) / 2; x.strokeStyle = 'rgba(227,185,90,' + (.07 + .2 * (1 - (z + 1) / 2)).toFixed(3) + ')'; x.beginPath(); x.moveTo(a[0], a[1]); x.lineTo(b[0], b[1]); x.stroke(); }
+      for (var j = 0; j < Q.length; j++){ var q = Q[j], f = 1 - (q[2] + 1) / 2; x.fillStyle = 'rgba(246,219,142,' + (.25 + .7 * f).toFixed(3) + ')'; x.beginPath(); x.arc(q[0], q[1], .8 + 1.5 * f, 0, 6.283); x.fill(); }
+      // orbit ring with travelling light
+      var RR = 1.45, rt = 1.15;
+      function ringPt(u){ var p = [Math.cos(u) * RR, 0, Math.sin(u) * RR], c = Math.cos(rt - 1.57), s = Math.sin(rt - 1.57), y = p[1]*c - p[2]*s, z = p[1]*s + p[2]*c; return proj([p[0], y, z], .25, rx); }
+      x.strokeStyle = 'rgba(227,185,90,.55)'; x.lineWidth = 1.4; x.beginPath(); for (var u = 0; u <= 64; u++){ var rp = ringPt(u / 64 * 6.283); u ? x.lineTo(rp[0], rp[1]) : x.moveTo(rp[0], rp[1]); } x.stroke();
+      for (var k = 0; k < 5; k++){ var rp2 = ringPt(ring + k * 1.256); x.fillStyle = 'rgba(255,240,200,.9)'; x.beginPath(); x.arc(rp2[0], rp2[1], 2.4, 0, 6.283); x.fill(); }
+      // signal arcs
+      for (var n = 0; n < arcs.length; n++){ var A2 = arcs[n]; A2.t += A2.v * dt; if (A2.t > 1.3) A2.t = 0; var tt = Math.min(1, A2.t), al = A2.t > 1 ? Math.max(0, 1 - (A2.t - 1) * 3.3) : Math.min(1, A2.t * 5);
+        x.strokeStyle = hex(ac, (.1 + .3 * al).toFixed(3)); x.lineWidth = 1.2; x.beginPath();
+        for (var s2 = 0; s2 <= 20; s2++){ var w = s2 / 20, o = 1 - w, pt = [o*o*A2.A[0] + 2*o*w*A2.C[0] + w*w*A2.B[0], o*o*A2.A[1] + 2*o*w*A2.C[1] + w*w*A2.B[1], o*o*A2.A[2] + 2*o*w*A2.C[2] + w*w*A2.B[2]], pp = proj(pt, ry, rx); s2 ? x.lineTo(pp[0], pp[1]) : x.moveTo(pp[0], pp[1]); } x.stroke();
+        var o2 = 1 - tt, hp = proj([o2*o2*A2.A[0] + 2*o2*tt*A2.C[0] + tt*tt*A2.B[0], o2*o2*A2.A[1] + 2*o2*tt*A2.C[1] + tt*tt*A2.B[1], o2*o2*A2.A[2] + 2*o2*tt*A2.C[2] + tt*tt*A2.B[2]], ry, rx);
+        var hg = x.createRadialGradient(hp[0], hp[1], 0, hp[0], hp[1], 9); hg.addColorStop(0, hex(ac, al)); hg.addColorStop(1, hex(ac, 0)); x.fillStyle = hg; x.beginPath(); x.arc(hp[0], hp[1], 9, 0, 6.283); x.fill(); }
+      requestAnimationFrame(frame);
+    }
+    function setRun(){ var want = vis && !document.hidden; if (want && !run){ run = true; last = performance.now() - 40; requestAnimationFrame(frame); } else if (!want) run = false; }
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ vis = es[0].isIntersecting; setRun(); }, { threshold: .01 }).observe(hero);
+    document.addEventListener('visibilitychange', setRun); setRun();
+    window.__page2d = true; return true;
+  }
   var live = false;
   if (can3d) { try { live = scene(); } catch(e){ live = false; } }
-  if (!live) { hero.classList.add('ph-still'); hero.setAttribute('data-still', stillName); }  // pre-rendered picture of the same 3D scene
+  if (!live && !reduce) { try { live = scene2d(); } catch(e){ live = false; } }
+  if (!live) { hero.classList.add('ph-still'); hero.setAttribute('data-still', stillName); }  // last resort: pre-rendered picture of the same 3D scene
   tilt();
 })();
