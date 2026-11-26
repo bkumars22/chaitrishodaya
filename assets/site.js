@@ -196,7 +196,7 @@
     var _ask = ask; ask = function(t){ if (t === 'Yes, contact a founder') { user(t); startLead(lastQ); return; } _ask(t); };
     function open(o){
       panel.hidden = !o; btn.setAttribute('aria-expanded', o ? 'true' : 'false'); btn.classList.toggle('on', o);
-      if (o && !started) { started = true; bot('Hello! I’m the Chaitrishodaya assistant. Ask me about our services, our eleven AI systems, banking and RBI, or how to start.', null, ['What do you do?', 'Banking and RBI', 'See a demo', 'How do we start?', 'Pricing', 'Talk to a founder'], 450); }
+      if (o && !started) { started = true; bot('Hello! I’m the Chaitrishodaya assistant. Ask me about our services, our AI solutions, banking and RBI, or how to start.', null, ['What do you do?', 'Banking and RBI', 'See a demo', 'How do we start?', 'Pricing', 'Talk to a founder'], 450); }
       if (o) setTimeout(function(){ input.focus(); }, 60);
     }
     btn.addEventListener('click', function(){ open(panel.hidden); });
